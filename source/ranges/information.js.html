@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.76% </span>
+                <span class="strong">23.8% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/21</span>
+                <span class='fraction'>5/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">7.69% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>1/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">22.22% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>2/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.76% </span>
+                <span class="strong">23.8% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/21</span>
+                <span class='fraction'>5/21</span>
             </div>
         
             
@@ -230,10 +230,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -269,9 +269,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -300,7 +300,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -393,8 +393,8 @@ import { models } from '../../../config/database';
 &nbsp;
 const { Op } = Sequelize;
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getRange(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return RangeDao.findRange(query, {</span>
+async function getRange(query, opts = {}) {
+  return RangeDao.findRange(query, {
     // raw: true,
     attributes: [
       'id',
@@ -429,10 +429,10 @@ async function <span class="fstat-no" title="function not covered" >getRange(</s
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllRanges(</span>opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const RangesQuery = <span class="cstat-no" title="statement not covered" >{};</span>
+async function getAllRanges(opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  const RangesQuery = {};
 &nbsp;
-  const Ranges = <span class="cstat-no" title="statement not covered" >await RangeDao.findRanges(RangesQuery, {</span>
+  const Ranges = await RangeDao.findRanges(RangesQuery, {
     attributes: [
       'id',
       'code',
@@ -461,7 +461,7 @@ async function <span class="fstat-no" title="function not covered" >getAllRanges
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return Ranges;</span>
+  return Ranges;
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getOptionsRanges(</span>query = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
@@ -553,7 +553,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

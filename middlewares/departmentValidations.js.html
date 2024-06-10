@@ -129,7 +129,18 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -151,23 +162,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,6 +178,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,38 +218,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import APIError from '../helpers/error';
-import I18n from '../helpers/i18n'
+import { t } from '../helpers/i18n';
 import DepartmentInformation from '../source/departments/information';
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >validDepartmentId(</span>req) {
   const departmentId = <span class="cstat-no" title="statement not covered" >req.body.departmentId || req.query.departmentId;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!departmentId) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_DEPARTMENT_ID');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_ID', t('BEE3421' /* ID inválido */));</span>
   } else {
     const existDepartment = <span class="cstat-no" title="statement not covered" >await DepartmentInformation.getDepartment({</span>
       id: departmentId,
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!existDepartment) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError('NOT_EXIST_DEPARTMENT_ID', I18n.t('BEE1191', {0:departmentId} /* Departamento %{0} não localizado ! */));</span>
+<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+        'NOT_EXIST_DEPARTMENT_ID',
+        t(
+          'BEE1191',
+          { 0: departmentId } /* Departamento %{0} não localizado ! */
+        )
+      );
     }
   }
-&nbsp;
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >validCode(</span>req) {
   const code = <span class="cstat-no" title="statement not covered" >req.body.code || req.query.code;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!code) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_DEPARTMENT_CODE');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CODE', t('BEE3430' /* Código inválido */));</span>
   } else {
     const existDepartment = <span class="cstat-no" title="statement not covered" >await DepartmentInformation.getDepartment({</span>
       code,
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (existDepartment) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError('EXIST_DEPARTMENT_CODE', I18n.t('BEE1173', {0:code} /* Codigo %{0} já cadastrado  */));</span>
+<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+        'EXIST_DEPARTMENT_CODE',
+        t('BEE1173', { 0: code } /* Codigo %{0} já cadastrado  */)
+      );
     }
   }
 }
@@ -235,14 +265,17 @@ async function <span class="fstat-no" title="function not covered" >validCode(</
 async function <span class="fstat-no" title="function not covered" >validExistingCode(</span>req) {
   const code = <span class="cstat-no" title="statement not covered" >req.body.code || req.query.code;</span>
 <span class="cstat-no" title="statement not covered" >  if (!code) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_DEPARTMENT_CODE');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CODE', t('BEE3430' /* Código inválido */));</span>
   } else {
     const existDepartment = <span class="cstat-no" title="statement not covered" >await DepartmentInformation.getDepartment({</span>
       code,
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!existDepartment) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError('NOT_EXIST_DEPARTMENT_CODE', I18n.t('BEE1192', {0:code} /* Código %{0} não cadastrado */));</span>
+<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+        'NOT_EXIST_DEPARTMENT_CODE',
+        t('BEE1192', { 0: code } /* Código %{0} não cadastrado */)
+      );
     }
   }
 }
@@ -251,7 +284,7 @@ function <span class="fstat-no" title="function not covered" >validName(</span>r
   const name = <span class="cstat-no" title="statement not covered" >req.body.name || req.query.name;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!name) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_DEPARTMENT_NAME');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_NAME', t('BEE3562' /* Nome inválido */));</span>
   }
 }
 &nbsp;
@@ -268,7 +301,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../prettify.js"></script>
         <script>

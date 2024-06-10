@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4% </span>
+                <span class="strong">16% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/25</span>
+                <span class='fraction'>4/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>5/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>2/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4% </span>
+                <span class="strong">16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/25</span>
+                <span class='fraction'>4/25</span>
             </div>
         
             
@@ -473,10 +473,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -682,7 +682,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -725,7 +725,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -880,8 +880,8 @@ import UserDao from '../../database/dao/user';
 &nbsp;
 const { Op } = Sequelize;
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getUser(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> includeDeps = <span class="branch-0 cbranch-no" title="branch not covered" >false)</span> {
-<span class="cstat-no" title="statement not covered" >  return UserDao.findUser(query, {</span>
+async function getUser(query, opts = {}, includeDeps = false) {
+  return UserDao.findUser(query, {
     // raw: true,
     attributes: [
       'id',
@@ -990,7 +990,7 @@ async function <span class="fstat-no" title="function not covered" >getUser(</sp
             ],
           },
           ...(includeDeps
-            ? [
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >[</span>
                 {
                   required: false,
                   model: models.Deposit,
@@ -1086,8 +1086,8 @@ async function <span class="fstat-no" title="function not covered" >getUser(</sp
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllUsers(</span>query = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const users = <span class="cstat-no" title="statement not covered" >await UserDao.findUsers(query, {</span>
+async function getAllUsers(query = {}, opts = {}) {
+  const users = await UserDao.findUsers(query, {
     attributes: [
       'id',
       'login',
@@ -1130,7 +1130,7 @@ async function <span class="fstat-no" title="function not covered" >getAllUsers(
     ],
     ...opts,
   });
-<span class="cstat-no" title="statement not covered" >  return users;</span>
+  return users;
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getUsersList(</span>
@@ -1285,7 +1285,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

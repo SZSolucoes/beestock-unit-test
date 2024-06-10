@@ -145,7 +145,15 @@
 <a name='L80'></a><a href='#L80'>80</a>
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
-<a name='L83'></a><a href='#L83'>83</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -212,12 +220,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -286,21 +302,29 @@ export async function <span class="fstat-no" title="function not covered" >gener
   });
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >generateSheetHeader(</span>headers) {
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE145' /* Filial */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE182' /* Depósito */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2726' /* Endereço de Origem */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2715' /* Endereço de Picking */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE378' /* Código do Produto */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE758' /* Descrição do Produto */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2669' /* Critério do Ressuprimento */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2662' /* Capacidade Máxima (UN) */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2663' /* Ponto de Ressuprimento (UN) */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2652' /* Saldo no picking */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2649' /* Quantidade Sugerida */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2727' /* Quantidade Pendente */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2724' /* Ressuprimento gerado? */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE277' /* Descrição */));</span>
+export async function <span class="fstat-no" title="function not covered" >generateSheetHeader(</span>headers, appLanguage) {
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE145' /* Filial */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE182' /* Depósito */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2726' /* Endereço de Origem */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2715' /* Endereço de Picking */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE378' /* Código do Produto */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE758' /* Descrição do Produto */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(</span>
+    t('BEE2669' /* Critério do Ressuprimento */, undefined, appLanguage)
+  );
+<span class="cstat-no" title="statement not covered" >  headers.push(</span>
+    t('BEE2662' /* Capacidade Máxima (UN) */, undefined, appLanguage)
+  );
+<span class="cstat-no" title="statement not covered" >  headers.push(</span>
+    t('BEE2663' /* Ponto de Ressuprimento (UN) */, undefined, appLanguage)
+  );
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2652' /* Saldo no picking */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2649' /* Quantidade Sugerida */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2727' /* Quantidade Pendente */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(</span>
+    t('BEE2724' /* Ressuprimento gerado? */, undefined, appLanguage)
+  );
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE277' /* Descrição */, undefined, appLanguage));</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return headers;</span>
 }
@@ -316,7 +340,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>7/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>6/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>4/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">58.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>7/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -454,7 +454,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -555,7 +555,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -682,12 +682,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -706,12 +706,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -730,7 +730,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -836,8 +836,8 @@ import OutboundOrderDao from '../../database/dao/outboundOrder';
 &nbsp;
 import { models, sequelize } from '../../../config/database';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getOutboundVolume(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> whereVolumeProduct = <span class="branch-0 cbranch-no" title="branch not covered" >null)</span> {
-<span class="cstat-no" title="statement not covered" >  return OutboundVolumeDao.findOutboundVolume(query, {</span>
+async function getOutboundVolume(query, opts = {}, whereVolumeProduct = null) {
+  return OutboundVolumeDao.findOutboundVolume(query, {
     attributes: [
       'id',
       'outboundOrderId',
@@ -916,7 +916,7 @@ async function <span class="fstat-no" title="function not covered" >getOutboundV
         model: models.OutboundVolumeProduct,
         as: 'products',
         attributes: ['id'],
-        ...(whereVolumeProduct &amp;&amp; { where: { ...whereVolumeProduct } }),
+        ...(whereVolumeProduct &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >{ where: { ...whereVolumeProduct } })</span>,
         include: [
           {
             required: false,
@@ -937,8 +937,8 @@ async function <span class="fstat-no" title="function not covered" >getOutboundV
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getOutboundVolumes(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const outboundVolumes = <span class="cstat-no" title="statement not covered" >await OutboundVolumeDao.findOutboundVolumes(query, {</span>
+async function getOutboundVolumes(query, opts = {}) {
+  const outboundVolumes = await OutboundVolumeDao.findOutboundVolumes(query, {
     attributes: [
       'id',
       'outboundOrderId',
@@ -1065,12 +1065,12 @@ async function <span class="fstat-no" title="function not covered" >getOutboundV
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return outboundVolumes;</span>
+  return outboundVolumes;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getOutboundVolumeProduct(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+async function getOutboundVolumeProduct(query, opts = {}) {
   const outboundVolumeProduct =
-<span class="cstat-no" title="statement not covered" >    await OutboundVolumeProductDao.findOutboundVolumeProduct(query, {</span>
+    await OutboundVolumeProductDao.findOutboundVolumeProduct(query, {
       attributes: [
         'id',
         'outboundOrderId',
@@ -1089,12 +1089,12 @@ async function <span class="fstat-no" title="function not covered" >getOutboundV
       ...opts,
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return outboundVolumeProduct;</span>
+  return outboundVolumeProduct;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getOutboundVolumeProducts(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+async function getOutboundVolumeProducts(query, opts = {}) {
   const outboundVolumeProducts =
-<span class="cstat-no" title="statement not covered" >    await OutboundVolumeProductDao.findOutboundVolumeProducts(query, {</span>
+    await OutboundVolumeProductDao.findOutboundVolumeProducts(query, {
       attributes: [
         'id',
         'outboundOrderId',
@@ -1113,7 +1113,7 @@ async function <span class="fstat-no" title="function not covered" >getOutboundV
       ...opts,
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return outboundVolumeProducts;</span>
+  return outboundVolumeProducts;
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getLastSequenceVolume(</span>outboundOrderId, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
@@ -1219,7 +1219,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

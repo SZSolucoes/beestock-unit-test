@@ -103,29 +103,26 @@
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -135,6 +132,31 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,10 +169,11 @@
 import OutboundRangeInformation from '../source/outboundRange/information';
 import I18n from '../helpers/i18n';
 &nbsp;
-&nbsp;
 async function <span class="fstat-no" title="function not covered" >validOutboundRangeId(</span>req) {
   const { outboundRangeId } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-  const existOutboundRange = <span class="cstat-no" title="statement not covered" >await OutboundRangeInformation.getOutboundRange({ id: outboundRangeId });</span>
+  const existOutboundRange = <span class="cstat-no" title="statement not covered" >await OutboundRangeInformation.getOutboundRange({</span>
+    id: outboundRangeId,
+  });
 <span class="cstat-no" title="statement not covered" >  if (!existOutboundRange) {</span>
 <span class="cstat-no" title="statement not covered" >    throw new APIError('OUTBOUND_RANGE_ID_NOT_FOUND', '');</span>
   }
@@ -159,13 +182,19 @@ async function <span class="fstat-no" title="function not covered" >validOutboun
 function <span class="fstat-no" title="function not covered" >validFieldsOutboundRange(</span>req) {
   const { fieldsOutboundRange } = <span class="cstat-no" title="statement not covered" >req.body;</span>
 <span class="cstat-no" title="statement not covered" >  if (!Object.keys(fieldsOutboundRange).length) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', I18n.t('BEE2005' /* Nenhuma Informação para atualizar */));</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+      '',
+      I18n.t('BEE2005' /* Nenhuma Informação para atualizar */)
+    );
   }
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >validOutboundRangeProductId(</span>req) {
   const { outboundRangeProductId } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-  const existOutboundRangeProduct = <span class="cstat-no" title="statement not covered" >await OutboundRangeInformation.getOutboundRangeProduct({ id: outboundRangeProductId });</span>
+  const existOutboundRangeProduct =
+<span class="cstat-no" title="statement not covered" >    await OutboundRangeInformation.getOutboundRangeProduct({</span>
+      id: outboundRangeProductId,
+    });
 <span class="cstat-no" title="statement not covered" >  if (!existOutboundRangeProduct) {</span>
 <span class="cstat-no" title="statement not covered" >    throw new APIError('OUTBOUND_RANGE_PRODUCT_ID_NOT_FOUND', '');</span>
   }
@@ -174,7 +203,10 @@ async function <span class="fstat-no" title="function not covered" >validOutboun
 function <span class="fstat-no" title="function not covered" >validFieldsOutboundRangeProduct(</span>req) {
   const { fieldsOutboundRangeProduct } = <span class="cstat-no" title="statement not covered" >req.body;</span>
 <span class="cstat-no" title="statement not covered" >  if (!Object.keys(fieldsOutboundRangeProduct).length) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', I18n.t('BEE2005' /* Nenhuma Informação para atualizar */));</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+      '',
+      I18n.t('BEE2005' /* Nenhuma Informação para atualizar */)
+    );
   }
 }
 &nbsp;
@@ -183,14 +215,15 @@ export default {
   validOutboundRangeId,
   validOutboundRangeProductId,
   validFieldsOutboundRangeProduct,
-}</pre></td></tr></table></pre>
+};
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/16</span>
+                <span class='fraction'>10/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>6/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.33% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/15</span>
+                <span class='fraction'>10/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -210,11 +210,13 @@
 <a name='L145'></a><a href='#L145'>145</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,11 +246,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -274,14 +276,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -296,7 +296,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -334,11 +334,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -357,8 +357,8 @@ import { models } from '../../../config/database';
 const Op = Sequelize.Op;
 const CustomerModel = models.Customer;
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getCustomer(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return CustomerDao.findCustomer(</span>
+async function getCustomer(query, opts = {}) {
+  return CustomerDao.findCustomer(
     query,
     {
       raw: true,
@@ -389,10 +389,10 @@ async function <span class="fstat-no" title="function not covered" >getCustomer(
   );
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllCustomers(</span>opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const customersQuery = <span class="cstat-no" title="statement not covered" >{};</span>
+async function getAllCustomers(opts = {}) {
+  const customersQuery = {};
 &nbsp;
-  const customers = <span class="cstat-no" title="statement not covered" >await CustomerDao.findCustomers(</span>
+  const customers = await CustomerDao.findCustomers(
     customersQuery, 
     {
       attributes: [
@@ -420,13 +420,13 @@ async function <span class="fstat-no" title="function not covered" >getAllCustom
       ...opts
     }
   );
-<span class="cstat-no" title="statement not covered" >  return customers;</span>
+  return customers;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getCustomersList(</span>page = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span> pageSize = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span> sorted = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> filtered = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+async function getCustomersList(page = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span> pageSize = <span class="branch-0 cbranch-no" title="branch not covered" >0,</span> sorted = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> filtered = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> opts = {}) {
 &nbsp;
-  const customerQuery = <span class="cstat-no" title="statement not covered" >{</span>
-    ...(filtered.length ? filtered.reduce(<span class="fstat-no" title="function not covered" >(a</span>cum, it) =&gt; {
+  const customerQuery = {
+    ...(filtered.length ? <span class="branch-0 cbranch-no" title="branch not covered" >filtered.reduce(<span class="fstat-no" title="function not covered" >(a</span>cum, it) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      try {</span>
 <span class="cstat-no" title="statement not covered" >        acum[Op.and].push(</span>
           Sequelize.where(
@@ -440,7 +440,7 @@ async function <span class="fstat-no" title="function not covered" >getCustomers
     }, { [Op.and]: [] }) : {}),
   };
 &nbsp;
-  const customers = <span class="cstat-no" title="statement not covered" >await CustomerDao.findAndCountCustomers(</span>
+  const customers = await CustomerDao.findAndCountCustomers(
     customerQuery, 
     {
       attributes: [
@@ -468,7 +468,7 @@ async function <span class="fstat-no" title="function not covered" >getCustomers
       offset: page * pageSize,
       limit: pageSize,
       ...(sorted.length
-        ? { order: sorted.map(<span class="fstat-no" title="function not covered" >it</span> =&gt; {
+        ? <span class="branch-0 cbranch-no" title="branch not covered" >{ order: sorted.map(<span class="fstat-no" title="function not covered" >it</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >          if (it.id === 'code') <span class="cstat-no" title="statement not covered" >return ([Sequelize.cast(Sequelize.col('code'), 'unsigned'), it.desc ? 'DESC' : 'ASC']);</span></span>
 <span class="cstat-no" title="statement not covered" >          return ([it.id, it.desc ? 'DESC' : 'ASC']);</span>
         }) } 
@@ -478,11 +478,11 @@ async function <span class="fstat-no" title="function not covered" >getCustomers
     }
   );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return customers;</span>
+  return customers;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getOptionsCustomers(</span>opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return CustomerDao.findCustomers({},</span>
+async function getOptionsCustomers(opts = {}) {
+  return CustomerDao.findCustomers({},
     { 
       attributes: ['id', 'code', 'name' ],
       ...opts
@@ -502,7 +502,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

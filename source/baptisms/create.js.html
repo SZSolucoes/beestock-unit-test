@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,8 +110,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,24 +121,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,9 +150,9 @@
 import APIError from '../../helpers/error';
 import BaptismDao from '../../database/dao/baptism';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >createBaptism(</span>baptism) {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const newBaptism = <span class="cstat-no" title="statement not covered" >await BaptismDao.createBaptism({</span>
+async function createBaptism(baptism) {
+  try {
+    const newBaptism = await BaptismDao.createBaptism({
       code: baptism.code,
       branchCode: baptism.branchCode,
       type: baptism.type,
@@ -162,24 +162,24 @@ async function <span class="fstat-no" title="function not covered" >createBaptis
       updatedAt: moment().format(),
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return newBaptism;</span>
+    return newBaptism;
   } catch(error) {
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', error);</span>
+    throw new APIError('', error);
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >createBaptisms(</span>baptisms) {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-<span class="cstat-no" title="statement not covered" >    for (const baptism of baptisms) {</span>
-<span class="cstat-no" title="statement not covered" >      baptism.createdAt = moment().format()</span>
-<span class="cstat-no" title="statement not covered" >      baptism.updatedAt = moment().format()</span>
+async function createBaptisms(baptisms) {
+  try {
+    for (const baptism of baptisms) {
+      baptism.createdAt = moment().format()
+      baptism.updatedAt = moment().format()
     }
 &nbsp;
-    const newBaptisms = <span class="cstat-no" title="statement not covered" >await BaptismDao.createBaptisms(baptisms);</span>
+    const newBaptisms = await BaptismDao.createBaptisms(baptisms);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return newBaptisms;</span>
+    return newBaptisms;
   } catch(error) {
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', error);</span>
+    throw new APIError('', error);
   }
 }
 &nbsp;
@@ -193,7 +193,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

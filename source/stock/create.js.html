@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -157,8 +157,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,15 +186,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -227,9 +227,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -243,9 +243,9 @@ import StockBalanceDao from '../../database/dao/stockBalance';
 import StockMovementDao from '../../database/dao/stockMovement';
 import APIError from '../../helpers/error';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >createStockBalance(</span>stockBalance, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const newBalance = <span class="cstat-no" title="statement not covered" >await StockBalanceDao.createStockBalance(</span>
+async function createStockBalance(stockBalance, opts = {}) {
+  try {
+    const newBalance = await StockBalanceDao.createStockBalance(
       {
         branchCode: stockBalance.branchCode,
         warehouseCode: stockBalance.warehouseCode,
@@ -273,15 +273,15 @@ async function <span class="fstat-no" title="function not covered" >createStockB
       { ...opts }
     );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return newBalance;</span>
+    return newBalance;
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', error);</span>
+    throw new APIError('', error);
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >createStockMovement(</span>stockMovement, opts) {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const newMovement = <span class="cstat-no" title="statement not covered" >await StockMovementDao.createStockMovement(</span>
+async function createStockMovement(stockMovement, opts) {
+  try {
+    const newMovement = await StockMovementDao.createStockMovement(
       {
         stockBalanceId: stockMovement.stockBalanceId,
         operation: stockMovement.operation,
@@ -314,9 +314,9 @@ async function <span class="fstat-no" title="function not covered" >createStockM
       { ...opts }
     );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return newMovement;</span>
+    return newMovement;
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', error);</span>
+    throw new APIError('', error);
   }
 }
 &nbsp;
@@ -331,7 +331,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

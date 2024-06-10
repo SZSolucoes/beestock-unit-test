@@ -230,7 +230,13 @@
 <a name='L165'></a><a href='#L165'>165</a>
 <a name='L166'></a><a href='#L166'>166</a>
 <a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -253,20 +259,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -274,13 +266,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -289,6 +284,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -399,7 +411,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import validator from 'validator';
 import APIError from '../helpers/error';
-import I18n from '../helpers/i18n';
+import { t } from '../helpers/i18n';
 import CustomerInformation from '../source/customers/information';
 import validateCNPJ from '../helpers/validators/cnpj';
 &nbsp;
@@ -407,30 +419,35 @@ async function <span class="fstat-no" title="function not covered" >validCustome
   const customerId = <span class="cstat-no" title="statement not covered" >req.body.customerId || req.query.customerId;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!customerId) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_ID');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_ID', t('BEE3421' /* ID inválido */));</span>
   } else {
     const existCustomer = <span class="cstat-no" title="statement not covered" >await CustomerInformation.getCustomer({</span>
       id: customerId,
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!existCustomer) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError('NOT_EXIST_CUSTOMER_ID', I18n.t('BEE1190', { 0:customerId} /* Cliente %{0} não localizado */));</span>
+<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+        'NOT_EXIST_CUSTOMER_ID',
+        t('BEE1190', { 0: customerId } /* Cliente %{0} não localizado */)
+      );
     }
   }
-&nbsp;
 }
 async function <span class="fstat-no" title="function not covered" >validCode(</span>req) {
   const code = <span class="cstat-no" title="statement not covered" >req.body.code || req.query.code;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!code) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_CODE');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CODE', t('BEE3430' /* Código inválido */));</span>
   } else {
     const existCustomer = <span class="cstat-no" title="statement not covered" >await CustomerInformation.getCustomer({</span>
       code,
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (existCustomer) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError('EXIST_CUSTOMER_CODE', I18n.t('BEE1173', {0:code} /* Codigo %{0} já cadastrado  */));</span>
+<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+        'EXIST_CUSTOMER_CODE',
+        t('BEE1173', { 0: code } /* Codigo %{0} já cadastrado  */)
+      );
     }
   }
 }
@@ -439,7 +456,7 @@ function <span class="fstat-no" title="function not covered" >validCustomerName(
   const name = <span class="cstat-no" title="statement not covered" >req.body.name || req.query.name;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!name) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_NAME');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_NAME', t('BEE3562' /* Nome inválido */));</span>
   }
 }
 &nbsp;
@@ -447,22 +464,23 @@ function <span class="fstat-no" title="function not covered" >validEmail(</span>
   const email = <span class="cstat-no" title="statement not covered" >req.body.email || req.query.email;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (email &amp;&amp; !validator.isEmail(email)) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_EMAIL');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_EMAIL', t('BEE3305' /* E-mail inválido */));</span>
   }
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >validCnpj(</span>req) {
   const cnpj = <span class="cstat-no" title="statement not covered" >req.body.cnpj || req.query.cnpj;</span>
 &nbsp;
-  const valid = (<span class="cstat-no" title="statement not covered" >cnpj &amp;&amp; validateCNPJ(cnpj))</span>;
-<span class="cstat-no" title="statement not covered" >  if (!valid) <span class="cstat-no" title="statement not covered" >throw new APIError('INVALID_CUSTOMER_CNPJ');</span></span>
+  const valid = <span class="cstat-no" title="statement not covered" >cnpj &amp;&amp; validateCNPJ(cnpj);</span>
+<span class="cstat-no" title="statement not covered" >  if (!valid) <span class="cstat-no" title="statement not covered" >throw new APIError('INVALID_CNPJ');</span></span>
 }
 &nbsp;
 function <span class="fstat-no" title="function not covered" >validStateRegistration(</span>req) {
-  const stateRegistration = <span class="cstat-no" title="statement not covered" >req.body.stateRegistration || req.query.stateRegistration;</span>
+  const stateRegistration =
+<span class="cstat-no" title="statement not covered" >    req.body.stateRegistration || req.query.stateRegistration;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!stateRegistration) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_STATE_REGISTRATION');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_STATE_REGISTRATION');</span>
   }
 }
 &nbsp;
@@ -470,7 +488,7 @@ function <span class="fstat-no" title="function not covered" >validNote(</span>r
   const note = <span class="cstat-no" title="statement not covered" >req.body.note || req.query.note;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!note) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_NOTE');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_NOTE');</span>
   }
 }
 &nbsp;
@@ -478,7 +496,7 @@ function <span class="fstat-no" title="function not covered" >validPostalCode(</
   const postalCode = <span class="cstat-no" title="statement not covered" >req.body.postalCode || req.query.postalCode;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!postalCode) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_POSTAL_CODE');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_POSTAL_CODE');</span>
   }
 }
 &nbsp;
@@ -486,7 +504,7 @@ function <span class="fstat-no" title="function not covered" >validIbge(</span>r
   const ibge = <span class="cstat-no" title="statement not covered" >req.body.ibge || req.query.ibge;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!ibge) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_IBGE');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_IBGE');</span>
   }
 }
 &nbsp;
@@ -494,7 +512,7 @@ function <span class="fstat-no" title="function not covered" >validStreet(</span
   const street = <span class="cstat-no" title="statement not covered" >req.body.street || req.query.street;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!street) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_STREET');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_STREET');</span>
   }
 }
 &nbsp;
@@ -502,7 +520,7 @@ function <span class="fstat-no" title="function not covered" >validNumber(</span
   const number = <span class="cstat-no" title="statement not covered" >req.body.number || req.query.number;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!number) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_NUMBER');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_NUMBER');</span>
   }
 }
 &nbsp;
@@ -510,7 +528,7 @@ function <span class="fstat-no" title="function not covered" >validComplement(</
   const complement = <span class="cstat-no" title="statement not covered" >req.body.complement || req.query.complement;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!complement) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_COMPLEMENT');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_COMPLEMENT');</span>
   }
 }
 &nbsp;
@@ -518,7 +536,7 @@ function <span class="fstat-no" title="function not covered" >validDistrict(</sp
   const district = <span class="cstat-no" title="statement not covered" >req.body.district || req.query.district;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!district) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_DISTRICT');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_DISTRICT');</span>
   }
 }
 &nbsp;
@@ -526,7 +544,7 @@ function <span class="fstat-no" title="function not covered" >validCity(</span>r
   const city = <span class="cstat-no" title="statement not covered" >req.body.city || req.query.city;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!city) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_CITY');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CITY');</span>
   }
 }
 &nbsp;
@@ -534,7 +552,7 @@ function <span class="fstat-no" title="function not covered" >validState(</span>
   const state = <span class="cstat-no" title="statement not covered" >req.body.state || req.query.state;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!state) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_STATE');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_STATE');</span>
   }
 }
 &nbsp;
@@ -542,7 +560,7 @@ function <span class="fstat-no" title="function not covered" >validCountry(</spa
   const country = <span class="cstat-no" title="statement not covered" >req.body.country || req.query.country;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!country) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_CUSTOMER_COUNTRY');</span>
+<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_COUNTRY');</span>
   }
 }
 &nbsp;
@@ -571,7 +589,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../prettify.js"></script>
         <script>

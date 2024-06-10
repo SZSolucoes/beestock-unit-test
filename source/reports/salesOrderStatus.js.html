@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/62</span>
+                <span class='fraction'>0/63</span>
             </div>
         
             
@@ -290,7 +290,10 @@
 <a name='L225'></a><a href='#L225'>225</a>
 <a name='L226'></a><a href='#L226'>226</a>
 <a name='L227'></a><a href='#L227'>227</a>
-<a name='L228'></a><a href='#L228'>228</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -363,6 +366,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -390,6 +394,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -524,61 +530,61 @@ import { models } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 import outboundOrderProductDao from '../../database/dao/outboundOrderProduct';
 &nbsp;
-function <span class="fstat-no" title="function not covered" >orderStatus(</span>status) {
+function <span class="fstat-no" title="function not covered" >orderStatus(</span>status, appLanguage) {
 <span class="cstat-no" title="statement not covered" >  switch (status) {</span>
     case 1:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1946' /* Pendente Alocação */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1946' /* Pendente Alocação */, undefined, appLanguage);</span>
     case 2:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1947' /* Pendente Corte de Cabos */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1947' /* Pendente Corte de Cabos */, undefined, appLanguage);</span>
     case 3:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1365' /* Pendente Separação */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1365' /* Pendente Separação */, undefined, appLanguage);</span>
     case 4:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1367' /* Em Separação */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1367' /* Em Separação */, undefined, appLanguage);</span>
     case 5:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1948' /* Pendente Conferência */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1948' /* Pendente Conferência */, undefined, appLanguage);</span>
     case 6:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1949' /* Pendente Docas */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1949' /* Pendente Docas */, undefined, appLanguage);</span>
     case 7:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1773' /* Pendente Romaneio */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1773' /* Pendente Romaneio */, undefined, appLanguage);</span>
     case 8:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1769' /* Pendente Consolidação */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1769' /* Pendente Consolidação */, undefined, appLanguage);</span>
     case 9:
-<span class="cstat-no" title="statement not covered" >      return t('BEE2963' /* Pendente de Faturamento */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE2963' /* Pendente de Faturamento */, undefined, appLanguage);</span>
     case 10:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1833' /* Finalizado */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1833' /* Finalizado */, undefined, appLanguage);</span>
     case 11:
-<span class="cstat-no" title="statement not covered" >      return t('BEE176' /* Divergência */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE176' /* Divergência */, undefined, appLanguage);</span>
     case 12:
-<span class="cstat-no" title="statement not covered" >      return t('BEE64' /* Cancelado */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE64' /* Cancelado */, undefined, appLanguage);</span>
     case 13:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1899' /* Devolvido */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1899' /* Devolvido */, undefined, appLanguage);</span>
     default:
 <span class="cstat-no" title="statement not covered" >      return status;</span>
   }
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >productStatus(</span>status) {
+function <span class="fstat-no" title="function not covered" >productStatus(</span>status, appLanguage) {
 <span class="cstat-no" title="statement not covered" >  switch (status) {</span>
     case 1:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1946' /* Pendente Alocação */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1946' /* Pendente Alocação */, undefined, appLanguage);</span>
     case 2:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1947' /* Pendente Corte de Cabos */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1947' /* Pendente Corte de Cabos */, undefined, appLanguage);</span>
     case 3:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1803' /* Corte Finalizado */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1803' /* Corte Finalizado */, undefined, appLanguage);</span>
     case 4:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1365' /* Pendente Separação */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1365' /* Pendente Separação */, undefined, appLanguage);</span>
     case 5:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1368' /* Separado */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1368' /* Separado */, undefined, appLanguage);</span>
     case 6:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1948' /* Pendente Conferência */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1948' /* Pendente Conferência */, undefined, appLanguage);</span>
     case 7:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1833' /* Finalizado */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1833' /* Finalizado */, undefined, appLanguage);</span>
     case 8:
-<span class="cstat-no" title="statement not covered" >      return t('BEE176' /* Divergência */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE176' /* Divergência */, undefined, appLanguage);</span>
     case 9:
-<span class="cstat-no" title="statement not covered" >      return t('BEE64' /* Cancelado */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE64' /* Cancelado */, undefined, appLanguage);</span>
     case 10:
-<span class="cstat-no" title="statement not covered" >      return t('BEE1899' /* Devolvido */);</span>
+<span class="cstat-no" title="statement not covered" >      return t('BEE1899' /* Devolvido */, undefined, appLanguage);</span>
     default:
 <span class="cstat-no" title="statement not covered" >      return status;</span>
   }
@@ -588,35 +594,38 @@ export default async function <span class="fstat-no" title="function not covered
   filters,
   headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
   rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
-  opts = <span class="branch-0 cbranch-no" title="branch not covered" >{}</span>
+  opts = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span>
+  appLanguage = <span class="branch-0 cbranch-no" title="branch not covered" >'ptBr'</span>
 ) {
   const where = <span class="cstat-no" title="statement not covered" >mountWhereBasedFilter(filters);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1994' /* Código Filial */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2156' /* Nr. Pedido */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2160' /* Status Pedido */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2161' /* Data Emissão Pedido */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2162' /* Data Envio Separação */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2163' /* Hora Envio Separação */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1729' /* Espécie */));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1994' /* Código Filial */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2156' /* Nr. Pedido */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2160' /* Status Pedido */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2161' /* Data Emissão Pedido */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2162' /* Data Envio Separação */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2163' /* Hora Envio Separação */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1729' /* Espécie */, undefined, appLanguage));</span>
   // headers.push(t('BEE2164' /* Descrição Espécie */))
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2021' /* Código Cliente */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2165' /* Nome Cliente */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1374' /* Vendedor */));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2021' /* Código Cliente */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2165' /* Nome Cliente */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1374' /* Vendedor */, undefined, appLanguage));</span>
   // headers.push(t('BEE2166' /* Observação Nota Fiscal */))
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2167' /* Observação Separação */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1391' /* Nome Transportadora */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2168' /* Tipo Frete Pedido */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2169' /* Status Item Pedido */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE225' /* Produto */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2170' /* Descrição Produto */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1756' /* Unidade de Medida */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2171' /* Quantidade Pedido */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2172' /* Valor Unitário */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2173' /* Valor Líquido */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2174' /* Número Nota Fiscal */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2197' /* Sequência do Volume */));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2193' /* Código Produto / Volume */));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2167' /* Observação Separação */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1391' /* Nome Transportadora */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2168' /* Tipo Frete Pedido */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2169' /* Status Item Pedido */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE225' /* Produto */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2170' /* Descrição Produto */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE1756' /* Unidade de Medida */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2171' /* Quantidade Pedido */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2172' /* Valor Unitário */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2173' /* Valor Líquido */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2174' /* Número Nota Fiscal */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(t('BEE2197' /* Sequência do Volume */, undefined, appLanguage));</span>
+<span class="cstat-no" title="statement not covered" >  headers.push(</span>
+    t('BEE2193' /* Código Produto / Volume */, undefined, appLanguage)
+  );
 &nbsp;
   const dados = <span class="cstat-no" title="statement not covered" >await outboundOrderProductDao.findOutboundOrderProducts(where, {</span>
     attributes: ['status', 'productCode', 'quantity', 'value'],
@@ -700,7 +709,7 @@ export default async function <span class="fstat-no" title="function not covered
 <span class="cstat-no" title="statement not covered" >    rows.push([</span>
       orderElement.outboundOrder.branchCode,
       orderElement.outboundOrder.customerOrderCode,
-      orderStatus(orderElement.outboundOrder.status),
+      orderStatus(orderElement.outboundOrder.status, appLanguage),
       orderElement.outboundOrder &amp;&amp; orderElement.outboundOrder.orderDate
         ? moment(orderElement.outboundOrder.orderDate).format('L')
         : '',
@@ -724,7 +733,7 @@ export default async function <span class="fstat-no" title="function not covered
       orderElement.outboundOrder &amp;&amp; orderElement.outboundOrder.deliveryType
         ? orderElement.outboundOrder.deliveryType
         : '',
-      productStatus(orderElement.status),
+      productStatus(orderElement.status, appLanguage),
       orderElement.productCode,
       orderElement.product.name,
       orderElement.product.unitMeasure,
@@ -751,7 +760,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

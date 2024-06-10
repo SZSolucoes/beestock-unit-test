@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>0/20</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/26</span>
+                <span class='fraction'>0/27</span>
             </div>
         
             
@@ -124,7 +124,22 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,26 +165,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -181,9 +178,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import moment from 'moment-timezone';
 import DockDao from '../../database/dao/dock';
@@ -192,68 +208,76 @@ import I18n from '../../helpers/i18n';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 &nbsp;
 // Funcao criada para popular o array headers e rows enviados por parametro
-export default async function <span class="fstat-no" title="function not covered" >generateData(</span>columns, filters, headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+export default async function <span class="fstat-no" title="function not covered" >generateData(</span>
+  columns,
+  filters,
+  headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+  rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+  opts = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span>
+  appLanguage = <span class="branch-0 cbranch-no" title="branch not covered" >'ptBr'</span>
+) {
   const where = <span class="cstat-no" title="statement not covered" >mountWhereBasedFilter(filters);</span>
-  const headersValue = <span class="cstat-no" title="statement not covered" >columns.map(<span class="fstat-no" title="function not covered" >it</span> =&gt; <span class="cstat-no" title="statement not covered" >it.value)</span>;</span>
-  const dados = <span class="cstat-no" title="statement not covered" >await DockDao.findDocks(where, { </span>
+  const headersValue = <span class="cstat-no" title="statement not covered" >columns.map(<span class="fstat-no" title="function not covered" >(i</span>t) =&gt; <span class="cstat-no" title="statement not covered" >it.value)</span>;</span>
+  const dados = <span class="cstat-no" title="statement not covered" >await DockDao.findDocks(where, {</span>
     attributes: headersValue,
-    include: [{
-      required: true,
-      model: models.User,
-      as: 'userCreated',
-      attributes: ['login'],
-    }, {
-      required: true,
-      model: models.User,
-      as: 'userUpdated',
-      attributes: ['login'],
-    },],
-    ...opts
+    include: [
+      {
+        required: true,
+        model: models.User,
+        as: 'userCreated',
+        attributes: ['login'],
+      },
+      {
+        required: true,
+        model: models.User,
+        as: 'userUpdated',
+        attributes: ['login'],
+      },
+    ],
+    ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  columns.forEach(<span class="fstat-no" title="function not covered" >it</span> =&gt; { <span class="cstat-no" title="statement not covered" >headers.push(it.label); </span>});</span>
-<span class="cstat-no" title="statement not covered" >  dados.forEach(<span class="fstat-no" title="function not covered" >it</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  columns.forEach(<span class="fstat-no" title="function not covered" >(i</span>t) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    headers.push(it.label);</span>
+  });
+<span class="cstat-no" title="statement not covered" >  dados.forEach(<span class="fstat-no" title="function not covered" >(i</span>t) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    it.createdUser = it.userCreated.dataValues.login;</span>
+<span class="cstat-no" title="statement not covered" >    it.updatedUser = it.userUpdated.dataValues.login;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    it.createdUser = it.userCreated.dataValues.login</span>
-<span class="cstat-no" title="statement not covered" >    it.updatedUser = it.userUpdated.dataValues.login</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    if(it.dockType === 1){</span>
-<span class="cstat-no" title="statement not covered" >     it.dockType = I18n.t('BEE201' /* Entrada */)</span>
-    }
-    else <span class="cstat-no" title="statement not covered" >if (it.dockType === 2) {</span>
-<span class="cstat-no" title="statement not covered" >     it.dockType = I18n.t('BEE202' /* Saída */)</span>
-    }
-    else <span class="cstat-no" title="statement not covered" >if (it.dockType === 3) {</span>
-<span class="cstat-no" title="statement not covered" >     it.dockType = I18n.t('BEE212' /* Ambas */)</span>
+<span class="cstat-no" title="statement not covered" >    if (it.dockType === 1) {</span>
+<span class="cstat-no" title="statement not covered" >      it.dockType = I18n.t('BEE201' /* Entrada */, undefined, appLanguage);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (it.dockType === 2) {</span>
+<span class="cstat-no" title="statement not covered" >      it.dockType = I18n.t('BEE202' /* Saída */, undefined, appLanguage);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (it.dockType === 3) {</span>
+<span class="cstat-no" title="statement not covered" >      it.dockType = I18n.t('BEE212' /* Ambas */, undefined, appLanguage);</span>
     }
 <span class="cstat-no" title="statement not covered" >    if (it.status === 1) {</span>
-<span class="cstat-no" title="statement not covered" >      it.status = I18n.t('BEE205' /* Liberada */)</span>
-    }
-    else <span class="cstat-no" title="statement not covered" >if (it.status === 2) {</span>
-<span class="cstat-no" title="statement not covered" >      it.status = I18n.t('BEE206' /* Ocupada */)</span>
-    }
-    else <span class="cstat-no" title="statement not covered" >if (it.status === 3) {</span>
-<span class="cstat-no" title="statement not covered" >      it.status = I18n.t('BEE213' /* Bloqueada */)</span>
+<span class="cstat-no" title="statement not covered" >      it.status = I18n.t('BEE205' /* Liberada */, undefined, appLanguage);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (it.status === 2) {</span>
+<span class="cstat-no" title="statement not covered" >      it.status = I18n.t('BEE206' /* Ocupada */, undefined, appLanguage);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (it.status === 3) {</span>
+<span class="cstat-no" title="statement not covered" >      it.status = I18n.t('BEE213' /* Bloqueada */, undefined, appLanguage);</span>
     }
     const row = <span class="cstat-no" title="statement not covered" >[];</span>
 <span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; headersValue.length; index++) {</span>
       const column = <span class="cstat-no" title="statement not covered" >headersValue[index];</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      row.push(it[column]);</span>
-<span class="cstat-no" title="statement not covered" >      if (column === 'createdAt' || column==='updatedAt') {</span>
-<span class="cstat-no" title="statement not covered" >        row[index] = moment(row[index]).format('l LTS')</span>
-      }  
+<span class="cstat-no" title="statement not covered" >      if (column === 'createdAt' || column === 'updatedAt') {</span>
+<span class="cstat-no" title="statement not covered" >        row[index] = moment(row[index]).format('l LTS');</span>
+      }
     }
 <span class="cstat-no" title="statement not covered" >    rows.push(row);</span>
   });
-};</pre></td></tr></table></pre>
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

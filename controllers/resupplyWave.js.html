@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/112</span>
+                <span class='fraction'>0/110</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/112</span>
+                <span class='fraction'>0/110</span>
             </div>
         
             
@@ -663,7 +663,22 @@
 <a name='L598'></a><a href='#L598'>598</a>
 <a name='L599'></a><a href='#L599'>599</a>
 <a name='L600'></a><a href='#L600'>600</a>
-<a name='L601'></a><a href='#L601'>601</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L601'></a><a href='#L601'>601</a>
+<a name='L602'></a><a href='#L602'>602</a>
+<a name='L603'></a><a href='#L603'>603</a>
+<a name='L604'></a><a href='#L604'>604</a>
+<a name='L605'></a><a href='#L605'>605</a>
+<a name='L606'></a><a href='#L606'>606</a>
+<a name='L607'></a><a href='#L607'>607</a>
+<a name='L608'></a><a href='#L608'>608</a>
+<a name='L609'></a><a href='#L609'>609</a>
+<a name='L610'></a><a href='#L610'>610</a>
+<a name='L611'></a><a href='#L611'>611</a>
+<a name='L612'></a><a href='#L612'>612</a>
+<a name='L613'></a><a href='#L613'>613</a>
+<a name='L614'></a><a href='#L614'>614</a>
+<a name='L615'></a><a href='#L615'>615</a>
+<a name='L616'></a><a href='#L616'>616</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -719,20 +734,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -755,7 +756,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1319,40 +1349,52 @@ async function <span class="fstat-no" title="function not covered" >getAllResupp
 async function <span class="fstat-no" title="function not covered" >getResupplyWaveToExecute(</span>req, res) {
   const { userId } = <span class="cstat-no" title="statement not covered" >req;</span>
   const { screen } = <span class="cstat-no" title="statement not covered" >req.query;</span>
-  let resupplyWave = <span class="cstat-no" title="statement not covered" >{};</span>
+&nbsp;
+  const params = <span class="cstat-no" title="statement not covered" >{</span>
+    Withdraw: {
+      query: {
+        status: [1, 2],
+        pickedUser: userId,
+        branchCode: req.userMainBranch,
+      },
+      opts: {
+        userBranches: req.userBranches,
+        order: [
+          'status',
+          sequelize.col('resupply.int_status'),
+          Sequelize.literal('`resupply.pickupAddress.outboundSequence`'),
+          sequelize.col('resupply.str_pickup_address_code'),
+        ],
+      },
+      whereResupply: {},
+    },
+    Guard: {
+      query: {
+        status: 3,
+        storageUser: userId,
+        branchCode: req.userMainBranch,
+      },
+      opts: {
+        userBranches: req.userBranches,
+        order: [
+          'status',
+          Sequelize.literal('`resupply.Order`'),
+          Sequelize.literal('`resupply.storageAddress.inboundSequence`'),
+          sequelize.col('resupply.str_pickup_address_code'),
+        ],
+      },
+      whereResupply: {
+        status: [3, 5],
+      },
+    },
+  };
+&nbsp;
 <span class="cstat-no" title="statement not covered" >  try {</span>
-<span class="cstat-no" title="statement not covered" >    if (screen === 'Withdraw') {</span>
-<span class="cstat-no" title="statement not covered" >      resupplyWave = await ResupplyWaveInformation.getAllResupplyWave(</span>
-        { status: [1, 2], pickedUser: userId, branchCode: req.userMainBranch },
-        {
-          userBranches: req.userBranches,
-          order: [
-            'status',
-            sequelize.col('resupply.int_status'),
-            sequelize.col('resupply.str_pickup_address_code'),
-          ],
-        }
-      );
-    } else {
-<span class="cstat-no" title="statement not covered" >      resupplyWave = await ResupplyWaveInformation.getAllResupplyWave(</span>
-        {
-          status: 3,
-          storageUser: userId,
-          branchCode: req.userMainBranch,
-        },
-        {
-          userBranches: req.userBranches,
-          order: [
-            'status',
-            Sequelize.literal('`resupply.Order`'),
-            sequelize.col('resupply.str_pickup_address_code'),
-          ],
-        },
-        {
-          status: [3, 5],
-        }
-      );
-    }
+    const resupplyWave = <span class="cstat-no" title="statement not covered" >await ResupplyWaveInformation.getAllResupplyWave(</span>
+      params[screen].query,
+      params[screen].opts,
+      params[screen].whereResupply
+    );
 &nbsp;
     const resupplyWavePending =
 <span class="cstat-no" title="statement not covered" >      await ResupplyWaveInformation.getAllResupplyWave(</span>
@@ -1368,6 +1410,9 @@ async function <span class="fstat-no" title="function not covered" >getResupplyW
           order: [
             'status',
             Sequelize.literal('`resupply.Order`'),
+            screen === 'Withdraw'
+              ? Sequelize.literal('`resupply.pickupAddress.outboundSequence`')
+              : Sequelize.literal('`resupply.storageAddress.inboundSequence`'),
             sequelize.col('resupply.str_pickup_address_code'),
           ],
         },
@@ -1870,7 +1915,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../prettify.js"></script>
         <script>

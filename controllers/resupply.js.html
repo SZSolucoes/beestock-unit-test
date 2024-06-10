@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/180</span>
+                <span class='fraction'>0/189</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/126</span>
+                <span class='fraction'>0/136</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>0/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/180</span>
+                <span class='fraction'>0/189</span>
             </div>
         
             
@@ -980,7 +980,25 @@
 <a name='L915'></a><a href='#L915'>915</a>
 <a name='L916'></a><a href='#L916'>916</a>
 <a name='L917'></a><a href='#L917'>917</a>
-<a name='L918'></a><a href='#L918'>918</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L918'></a><a href='#L918'>918</a>
+<a name='L919'></a><a href='#L919'>919</a>
+<a name='L920'></a><a href='#L920'>920</a>
+<a name='L921'></a><a href='#L921'>921</a>
+<a name='L922'></a><a href='#L922'>922</a>
+<a name='L923'></a><a href='#L923'>923</a>
+<a name='L924'></a><a href='#L924'>924</a>
+<a name='L925'></a><a href='#L925'>925</a>
+<a name='L926'></a><a href='#L926'>926</a>
+<a name='L927'></a><a href='#L927'>927</a>
+<a name='L928'></a><a href='#L928'>928</a>
+<a name='L929'></a><a href='#L929'>929</a>
+<a name='L930'></a><a href='#L930'>930</a>
+<a name='L931'></a><a href='#L931'>931</a>
+<a name='L932'></a><a href='#L932'>932</a>
+<a name='L933'></a><a href='#L933'>933</a>
+<a name='L934'></a><a href='#L934'>934</a>
+<a name='L935'></a><a href='#L935'>935</a>
+<a name='L936'></a><a href='#L936'>936</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1038,10 +1056,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1955,15 +1991,33 @@ async function <span class="fstat-no" title="function not covered" >getAllResupp
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getPickingAddressToResupply(</span>req, res) {
   const { filter } = <span class="cstat-no" title="statement not covered" >req.body;</span>
+&nbsp;
+  const { columnSide } = <span class="cstat-no" title="statement not covered" >filter;</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >  try {</span>
     const addressPicking =
 <span class="cstat-no" title="statement not covered" >      await ResupplyInformation.getPickingAddressToResupply({}, filter, {</span>
         userBranches: req.userBranches,
       });
 &nbsp;
+    const filteredData = <span class="cstat-no" title="statement not covered" >addressPicking.filter(<span class="fstat-no" title="function not covered" >(a</span>ddress) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (address.column !== '') {</span>
+        const value = <span class="cstat-no" title="statement not covered" >address.column.replace(address.column.substr(0, 1), '');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (columnSide === 'even' &amp;&amp; value % 2 !== 0) {</span>
+<span class="cstat-no" title="statement not covered" >          return false;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (columnSide === 'odd' &amp;&amp; value % 2 === 0) {</span>
+<span class="cstat-no" title="statement not covered" >          return false;</span>
+        }
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    });
+&nbsp;
     const response = <span class="cstat-no" title="statement not covered" >{</span>
       success: true,
-      data: addressPicking,
+      data: filteredData,
     };
 <span class="cstat-no" title="statement not covered" >    res.json(response);</span>
   } catch (err) {
@@ -2426,7 +2480,7 @@ async function <span class="fstat-no" title="function not covered" >createResupp
   const { userId } = <span class="cstat-no" title="statement not covered" >req;</span>
   const { addressPicking, tableFilter } = <span class="cstat-no" title="statement not covered" >req.body;</span>
   const headers = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >  generateSheetHeader(headers);</span>
+<span class="cstat-no" title="statement not covered" >  generateSheetHeader(headers, req.appLanguage);</span>
 &nbsp;
   const { rows } = <span class="cstat-no" title="statement not covered" >await createResupply(</span>
     tableFilter,
@@ -2821,7 +2875,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../prettify.js"></script>
         <script>

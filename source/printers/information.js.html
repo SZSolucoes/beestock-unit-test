@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.63% </span>
+                <span class="strong">31.81% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/22</span>
+                <span class='fraction'>7/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">5.26% </span>
+                <span class="strong">10.52% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/19</span>
+                <span class='fraction'>2/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">37.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>3/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.63% </span>
+                <span class="strong">31.81% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/22</span>
+                <span class='fraction'>7/22</span>
             </div>
         
             
@@ -203,22 +203,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -229,14 +226,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -342,8 +342,8 @@ import { models } from '../../../config/database';
 const { Op } = Sequelize;
 const PrinterModel = models.Printer;
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getPrinter(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return PrinterDao.findPrinter(query, {</span>
+async function getPrinter(query, opts = {}) {
+  return PrinterDao.findPrinter(query, {
     raw: true,
     attributes: ['id', 'code', 'name', 'note', 'type', 'location', 'agentCode'],
     ...opts,
@@ -364,15 +364,15 @@ async function getPrinterWithAgent(query, opts = {}) {
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllPrinters(</span>opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const printersQuery = <span class="cstat-no" title="statement not covered" >{};</span>
+async function getAllPrinters(opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  const printersQuery = {};
 &nbsp;
-  const printers = <span class="cstat-no" title="statement not covered" >await PrinterDao.findPrinters(printersQuery, {</span>
+  const printers = await PrinterDao.findPrinters(printersQuery, {
     attributes: ['id', 'code', 'name', 'note', 'type', 'location', 'agentCode'],
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return printers;</span>
+  return printers;
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getOptionsPrinters(</span>opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
@@ -478,7 +478,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

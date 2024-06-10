@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>4/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>4/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>4/10</span>
             </div>
         
             
@@ -352,7 +352,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -402,7 +402,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -420,7 +420,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -500,7 +500,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -634,8 +634,8 @@
 import InboundOrderProductDao from '../../database/dao/inboundOrderProduct';
 import { models, sequelize } from '../../../config/database';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getInboundOrderProduct(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return InboundOrderProductDao.findInboundOrderProduct(query, {</span>
+async function getInboundOrderProduct(query, opts = {}) {
+  return InboundOrderProductDao.findInboundOrderProduct(query, {
     attributes: [
       'id',
       'branchCode',
@@ -684,9 +684,9 @@ async function <span class="fstat-no" title="function not covered" >getInboundOr
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getInboundOrderProducts(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> addInclude = <span class="branch-0 cbranch-no" title="branch not covered" >false)</span> {
-  const inboundOrderProductPartial = <span class="cstat-no" title="statement not covered" >addInclude</span>
-    ? [
+async function getInboundOrderProducts(query, opts = {}, addInclude = false) {
+  const inboundOrderProductPartial = addInclude
+    ? <span class="branch-0 cbranch-no" title="branch not covered" >[</span>
         {
           required: false,
           model: models.InboundOrderProductPartial,
@@ -703,7 +703,7 @@ async function <span class="fstat-no" title="function not covered" >getInboundOr
     : [];
 &nbsp;
   const inboundOrderProducts =
-<span class="cstat-no" title="statement not covered" >    await InboundOrderProductDao.findInboundOrderProducts(query, {</span>
+    await InboundOrderProductDao.findInboundOrderProducts(query, {
       attributes: [
         'id',
         'branchCode',
@@ -783,7 +783,7 @@ async function <span class="fstat-no" title="function not covered" >getInboundOr
       ...opts,
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return inboundOrderProducts;</span>
+  return inboundOrderProducts;
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getInboundOrderProductsDocAndInfo(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
@@ -919,7 +919,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

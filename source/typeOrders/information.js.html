@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">22.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>4/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">30% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>3/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>2/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">22.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>4/18</span>
             </div>
         
             
@@ -167,21 +167,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,7 +199,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -264,17 +264,17 @@ import { Op } from 'sequelize';
 import TypeOrderDao from '../../database/dao/typeOrder';
 import DepositsDao from '../../database/dao/deposit';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllTypeOrders(</span>query = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const typeOrders = <span class="cstat-no" title="statement not covered" >await TypeOrderDao.findOrders(query, {</span>
+async function getAllTypeOrders(query = {}, opts = {}) {
+  const typeOrders = await TypeOrderDao.findOrders(query, {
     raw: true,
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return typeOrders;</span>
+  return typeOrders;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getTypeOrder(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const typeOrders = <span class="cstat-no" title="statement not covered" >await TypeOrderDao.findOrder(query, {</span>
+async function getTypeOrder(query, opts = {}) {
+  const typeOrders = await TypeOrderDao.findOrder(query, {
     attributes: [
       'depositCode',
       'type',
@@ -302,7 +302,7 @@ async function <span class="fstat-no" title="function not covered" >getTypeOrder
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return typeOrders;</span>
+  return typeOrders;
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getTypeOrderValid(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
@@ -364,7 +364,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

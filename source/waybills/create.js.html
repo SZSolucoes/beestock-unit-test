@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">77.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>7/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,9 +121,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,13 +138,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,10 +153,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,11 +170,11 @@ import WaybillDao from '../../database/dao/waybill';
 import WaybillDocumentDao from '../../database/dao/waybillDocument';
 &nbsp;
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >createWaybill(</span>waybill, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const lastWaybill = <span class="cstat-no" title="statement not covered" >await WaybillDao.getLastWaybillNumber(waybill.branchCode);</span>
-    const newWaybill = <span class="cstat-no" title="statement not covered" >await WaybillDao.createWaybill({</span>
-      waybillNumber: lastWaybill ? parseFloat(lastWaybill) + 1 : 1,
+async function createWaybill(waybill, opts = {}) {
+  try {
+    const lastWaybill = await WaybillDao.getLastWaybillNumber(waybill.branchCode);
+    const newWaybill = await WaybillDao.createWaybill({
+      waybillNumber: lastWaybill ? <span class="branch-0 cbranch-no" title="branch not covered" >parseFloat(lastWaybill) + 1 </span>: 1,
       branchCode: waybill.branchCode,
       carrierCode: waybill.carrierCode,
       dockControlId: waybill.dockControlId,
@@ -188,13 +188,13 @@ async function <span class="fstat-no" title="function not covered" >createWaybil
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return newWaybill;</span>
   } catch(error) {
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', error);</span>
+    throw new APIError('', error);
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >createWaybillDocument(</span>waybill, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const newWaybillDocument = <span class="cstat-no" title="statement not covered" >await WaybillDocumentDao.createWaybillDocument({</span>
+async function createWaybillDocument(waybill, opts = {}) {
+  try {
+    const newWaybillDocument = await WaybillDocumentDao.createWaybillDocument({
       outboundOrderId: waybill.outboundOrderId,
       waybillId: waybill.waybillId,
       note: waybill.note,
@@ -206,7 +206,7 @@ async function <span class="fstat-no" title="function not covered" >createWaybil
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return newWaybillDocument;</span>
   } catch(error) {
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', error);</span>
+    throw new APIError('', error);
   }
 }
 &nbsp;
@@ -220,7 +220,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

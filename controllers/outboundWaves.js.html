@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/203</span>
+                <span class='fraction'>0/197</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/317</span>
+                <span class='fraction'>0/322</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/29</span>
+                <span class='fraction'>0/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/200</span>
+                <span class='fraction'>0/196</span>
             </div>
         
             
@@ -983,7 +983,12 @@
 <a name='L918'></a><a href='#L918'>918</a>
 <a name='L919'></a><a href='#L919'>919</a>
 <a name='L920'></a><a href='#L920'>920</a>
-<a name='L921'></a><a href='#L921'>921</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L921'></a><a href='#L921'>921</a>
+<a name='L922'></a><a href='#L922'>922</a>
+<a name='L923'></a><a href='#L923'>923</a>
+<a name='L924'></a><a href='#L924'>924</a>
+<a name='L925'></a><a href='#L925'>925</a>
+<a name='L926'></a><a href='#L926'>926</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1324,13 +1329,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2238,21 +2248,26 @@ async function <span class="fstat-no" title="function not covered" >outboundWave
                     ? element.outboundOrder.typeOrders
                         .automaticPickingConfirmation
                     : false,
+                outboundSequence:
+                  (elem.allocation &amp;&amp;
+                  elem.allocation.balance &amp;&amp;
+                  elem.allocation.balance.address
+                    ? elem.allocation.balance.address.outboundSequence ||
+                      9999999999
+                    : 9999999999) || 9999999999,
               });
             }
           });
         }
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      outboundWavesProducts.sort(<span class="fstat-no" title="function not covered" >(f</span>irst, second) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (first.addressCode &lt; second.addressCode) <span class="cstat-no" title="statement not covered" >return -1;</span></span>
-<span class="cstat-no" title="statement not covered" >        if (first.addressCode &gt; second.addressCode) <span class="cstat-no" title="statement not covered" >return 1;</span></span>
-<span class="cstat-no" title="statement not covered" >        return 0;</span>
-      });
-&nbsp;
 <span class="cstat-no" title="statement not covered" >      res.json({</span>
         success: true,
-        data: outboundWavesProducts,
+        data: _.orderBy(
+          outboundWavesProducts,
+          ['outboundSequence', 'addressCode'],
+          'asc'
+        ),
       });
     } else {
 <span class="cstat-no" title="statement not covered" >      res.json({</span>
@@ -2830,7 +2845,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../prettify.js"></script>
         <script>

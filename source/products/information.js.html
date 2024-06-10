@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.14% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/28</span>
+                <span class='fraction'>7/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>1/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">16.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>2/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.14% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/28</span>
+                <span class='fraction'>7/28</span>
             </div>
         
             
@@ -346,8 +346,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -367,7 +367,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -423,13 +423,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -472,7 +472,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -645,8 +645,8 @@ async function <span class="fstat-no" title="function not covered" >getProductDe
 <span class="cstat-no" title="statement not covered" >  return product;</span>
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getProduct(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const product = <span class="cstat-no" title="statement not covered" >await ProductDao.findProduct(query, {</span>
+async function getProduct(query, opts = {}) {
+  const product = await ProductDao.findProduct(query, {
     attributes: [
       'id',
       'productCode',
@@ -702,13 +702,13 @@ async function <span class="fstat-no" title="function not covered" >getProduct(<
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return product;</span>
+  return product;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllProducts(</span>opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const productsQuery = <span class="cstat-no" title="statement not covered" >{};</span>
+async function getAllProducts(opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  const productsQuery = {};
 &nbsp;
-  const products = <span class="cstat-no" title="statement not covered" >await ProductDao.findProducts(productsQuery, {</span>
+  const products = await ProductDao.findProducts(productsQuery, {
     attributes: [
       'id',
       'productCode',
@@ -751,7 +751,7 @@ async function <span class="fstat-no" title="function not covered" >getAllProduc
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return products;</span>
+  return products;
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getProductsList(</span>
@@ -907,7 +907,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-28T18:17:22.499Z
+                at 2024-06-10T14:45:14.491Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

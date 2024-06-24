@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -238,18 +238,18 @@
 <a name='L173'></a><a href='#L173'>173</a>
 <a name='L174'></a><a href='#L174'>174</a>
 <a name='L175'></a><a href='#L175'>175</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -411,19 +411,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default async function <span class="fstat-no" title="function not covered" >valeLabel(</span>dataConsolidation, company) {
-  let companyLogo = <span class="cstat-no" title="statement not covered" >'';</span>
-<span class="cstat-no" title="statement not covered" >  if (company === '4') {</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default async function valeLabel(dataConsolidation, company) {
+  let companyLogo = '';
+  if (company === '4') {
     // notel
-<span class="cstat-no" title="statement not covered" >    companyLogo =</span>
+    companyLogo =
       '^FD^FO70,30^GFA,1533,1533,21,,:::::03FF8007FES01FCP03FF,07FF8007FES01FFP03FF8,07FFC007FES01FF8O03FFC,07FFE007FES01FF8O03FFC,07FFE007FES01FFCO03FFC,07IF007FES01FFCO03FFC,:07IF807FES01FFCO03FFC,07IFC07FES01FFCO03FFC,07IFC07FE007FE003E0079PF8003FFC,07IFE07FE03IFC03F81F9QF803FFC,07IFE07FE0KF03FC7F9QFE03FFC,07JF07FE1KF83FE7F9RF03FFC,07JF07FE3KFC3FEFF9RF83FFC,07FDFF87FE7KFE3JF9RFC3FFC,07FDFFC7FCMF3JF9NFE3FFC3FFC,07FCFFC7FCIF0IFBIFC03FFC03FFC0FFE3FFC,07FCFFE7JFE07FFBIF001FFC03FF80FFE3FFC,07FC7FE7JFE07KFE001FFC03FF807FF3FFC,07FC3FF7JFE03KFC001FFC07FF807FF3FFC,07FC3MFC03KFC001FFC07MF3FFC,07FC1MFC03KF8001FFC07MF3FFC,07FC0MFC03KF8001FFC07MF3FFC,:07FC07LFC03KF8001FFC07MF3FFC,:07FC03LFC03KF8001FFC07FF8J03FFC,07FC01LFE03KF8001FFC07FF8J03FFC,07FC01LFE07FFBFF8001FFC07FF807FF3FFC,07FC00IFDFFE07FFBFF8001IF03FFC0IF3FFC,07FC00IFCIF0IF3FF8001JF3FFE1FFE3FFC,07FC007FFE7LF3FF8001JF1LFE3FFC,07FC003FFE7KFE3FF8001JF0LFC3FFC,03F8001FFC1KFC3FFJ0IFE07KF81FF8,,::02gW08,gY08,gW03F8,gQ01JF,gL03IFE,g01IFE,T01JF,N01JFE,I01IFE,07,,:::::::T0101EP07,T03033O0198,T0383038F18F1CA108E7B1E39E48,T0681E649249A6C10126CB249248,T04C034493C88C810114CB319248,T07C21449208A4818934CB34933,T0C41F6D924D2680F9A4CBE4933,W0C10018A1I060C00342003,gI08O03J06,,::^FS';
-  } else <span class="cstat-no" title="statement not covered" >if (company === '2') {</span>
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (company === '2') {
     // dimensional
-<span class="cstat-no" title="statement not covered" >    companyLogo =</span>
+    companyLogo =
       '^FO25,25^GFA,1045,2880,32,:Z64:eJztVctq20AUvaMHGGkhG6J11a6MvMheAluGZK+C9D8TeyMcaH9BOBszWbRLYUGbL+g3hGYTuul2iIOnd8ZxIyfSGErpqpdhNOPjo3PunYcA/mn4iRb+JLZUA5M8z3UvGNV1XWlwpPdPumFXoPyCOl0WbKXebSDe1EgNwrJTPtOYk/IcHz220sl3R1zXSjkM23E/z3V0ELviO4zRNpgcsW9uNlzJM1a24Wg/1fFPhbiVT8baC3DMPq49BWk/ZK14rucbmP6TfGv+R9OvN3LrGewP0/d26XfJy/QTHR9Xn8m1D8OgFT9WvokQC8Y65aV/Ld/cPMil78he1k9bPtx+j3LrsaILP8Yf6U6+NKAtP0bHsTsegXYKkGqn3pwf/sAPh/4L4+S5Dgpx5y8Srw6Hfre+4nuUHuKNqdKHzpD86JKuwlEZgbGGMKLmGuu4ps5lCdGCcnlsSOr773PcQJDliY1Tgg8/xQM5TeWld8EnYiNuTwUV4n4iKPfEvSe2psCh3HbIl/e+f57gEcrsaWrnmWqKX8YXVXy1viwjs4znVWTgdLl2sZUxrdA91s+HjKTY8FUZqKmd+NiQ/4Z6lE/o1uTba74F/vUe+Jh+8W7GH6l3wxt8KS6tkPQEThQfrUBMXRSkDybHT09E+GhDeQSRS7G5h/oge4KmJR98GyTfoxPMnz6a/BEA9cG7Vfp07ElnYCf5b/8J9haSmv5dVs9Rf21W8XUZkSpyy8q9WqO+yWrU39UPlPNE9bJ+KeoTVT9VZaXvCYr6sv4u1p+OqfiJ+pDv/dvZrsdFx/VLfMjPkQ/PHxt1fowS9r91fIb+R0fcGvsbyGm9ilKwnkZWvw2vDLz+Z8vVcNjDwTB0nGWvAZM+gWn/jPQl2xrAdGAlzfeYBVR31bdl8aHswaws7hbF97LJz8CSfOsssSAZWFMfpk15gxnO1efFu94scHqzt8VdUARNvmXt9RPSP0P+oD9NGrjjwCrszWYrFhirYVD86BXBzessyX6QvMaUjf0gwJRo+3/+YvwCpQs/rg==:4A49';
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return `~~CD,~CC^~CT~</span>
+  return `~~CD,~CC^~CT~
   ^XA
   ~TA000
   ~JSN
@@ -592,7 +592,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T14:45:14.491Z
+                at 2024-06-24T14:39:37.818Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

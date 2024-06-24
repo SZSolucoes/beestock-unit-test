@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">58.82% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>10/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -197,10 +197,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -274,15 +274,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -312,17 +312,17 @@ import stockBalanceDao from '../../database/dao/stockBalance';
 import { models, sequelize } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 &nbsp;
-export default async function <span class="fstat-no" title="function not covered" >generateData(</span>
+export default async function generateData(
   columns,
   filters,
   headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
   rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
   opts = <span class="branch-0 cbranch-no" title="branch not covered" >{}</span>
 ) {
-  const where = <span class="cstat-no" title="statement not covered" >mountWhereBasedFilter(filters);</span>
-<span class="cstat-no" title="statement not covered" >  where[Op.and] = { ...where[Op.and], lotNumber: { [Op.ne]: '' } };</span>
+  const where = mountWhereBasedFilter(filters);
+  where[Op.and] = { ...where[Op.and], lotNumber: { [Op.ne]: '' } };
 &nbsp;
-  const dados = <span class="cstat-no" title="statement not covered" >await stockBalanceDao.findStockBalances(where, {</span>
+  const dados = await stockBalanceDao.findStockBalances(where, {
     attributes: [
       'branchCode',
       'productCode',
@@ -396,15 +396,15 @@ export default async function <span class="fstat-no" title="function not covered
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  columns.forEach(<span class="fstat-no" title="function not covered" >(i</span>t) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    headers.push(it.label);</span>
+  columns.forEach((it) =&gt; {
+    headers.push(it.label);
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  for (const index in dados) {</span>
-<span class="cstat-no" title="statement not covered" >    if (Object.hasOwnProperty.call(dados, index)) {</span>
-      const element = <span class="cstat-no" title="statement not covered" >dados[index];</span>
+  for (const index in dados) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (Object.hasOwnProperty.call(dados, index)) {
+      const element = dados[index];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      rows.push([</span>
+      rows.push([
         element.branchCode,
         element.productCode,
         element.product.name,
@@ -413,18 +413,18 @@ export default async function <span class="fstat-no" title="function not covered
         element.dataValues.sumQuantity,
         // element.quantity,
         element.product.productBranch[0].averageCost,
-        element.product.grossWeight ? element.product.grossWeight : '',
+        element.product.grossWeight ? element.product.grossWeight : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         element.lotNumber,
         element.movements.length &amp;&amp;
         element.movements[0].supplier &amp;&amp;
         element.movements[0].supplier.name
           ? element.movements[0].supplier.name
-          : '',
+          : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         element.movements.length &amp;&amp;
         element.movements[0].supplier &amp;&amp;
         element.movements[0].supplier.businessName
           ? element.movements[0].supplier.businessName
-          : '',
+          : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       ]);
     }
   }
@@ -436,7 +436,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T14:45:14.491Z
+                at 2024-06-24T14:39:37.818Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -119,40 +119,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,41 +169,41 @@
 import OutboundRangeInformation from '../source/outboundRange/information';
 import I18n from '../helpers/i18n';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validOutboundRangeId(</span>req) {
-  const { outboundRangeId } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-  const existOutboundRange = <span class="cstat-no" title="statement not covered" >await OutboundRangeInformation.getOutboundRange({</span>
+async function validOutboundRangeId(req) {
+  const { outboundRangeId } = req.body;
+  const existOutboundRange = await OutboundRangeInformation.getOutboundRange({
     id: outboundRangeId,
   });
-<span class="cstat-no" title="statement not covered" >  if (!existOutboundRange) {</span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!existOutboundRange) {
 <span class="cstat-no" title="statement not covered" >    throw new APIError('OUTBOUND_RANGE_ID_NOT_FOUND', '');</span>
   }
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >validFieldsOutboundRange(</span>req) {
-  const { fieldsOutboundRange } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-<span class="cstat-no" title="statement not covered" >  if (!Object.keys(fieldsOutboundRange).length) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+function validFieldsOutboundRange(req) {
+  const { fieldsOutboundRange } = req.body;
+  if (!Object.keys(fieldsOutboundRange).length) {
+    throw new APIError(
       '',
       I18n.t('BEE2005' /* Nenhuma Informação para atualizar */)
     );
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validOutboundRangeProductId(</span>req) {
-  const { outboundRangeProductId } = <span class="cstat-no" title="statement not covered" >req.body;</span>
+async function validOutboundRangeProductId(req) {
+  const { outboundRangeProductId } = req.body;
   const existOutboundRangeProduct =
-<span class="cstat-no" title="statement not covered" >    await OutboundRangeInformation.getOutboundRangeProduct({</span>
+    await OutboundRangeInformation.getOutboundRangeProduct({
       id: outboundRangeProductId,
     });
-<span class="cstat-no" title="statement not covered" >  if (!existOutboundRangeProduct) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('OUTBOUND_RANGE_PRODUCT_ID_NOT_FOUND', '');</span>
+  if (!existOutboundRangeProduct) {
+    throw new APIError('OUTBOUND_RANGE_PRODUCT_ID_NOT_FOUND', '');
   }
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >validFieldsOutboundRangeProduct(</span>req) {
-  const { fieldsOutboundRangeProduct } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-<span class="cstat-no" title="statement not covered" >  if (!Object.keys(fieldsOutboundRangeProduct).length) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+function validFieldsOutboundRangeProduct(req) {
+  const { fieldsOutboundRangeProduct } = req.body;
+  if (!Object.keys(fieldsOutboundRangeProduct).length) {
+    throw new APIError(
       '',
       I18n.t('BEE2005' /* Nenhuma Informação para atualizar */)
     );
@@ -223,7 +223,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T14:45:14.491Z
+                at 2024-06-24T14:39:37.818Z
             </div>
         <script src="../prettify.js"></script>
         <script>

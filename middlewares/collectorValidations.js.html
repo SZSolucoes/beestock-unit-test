@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>15/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -125,47 +125,47 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -181,48 +181,48 @@
 import I18n from '../helpers/i18n';
 import CollectorInformation from '../source/collectors/information';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validCollectorId(</span>req) {
-  const collectorId = <span class="cstat-no" title="statement not covered" >req.body.collectorId || req.query.collectorId;</span>
+async function validCollectorId(req) {
+  const collectorId = req.body.collectorId || req.query.collectorId;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!collectorId) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError('INVALID_COLLECTOR_ID');</span>
+  if (!collectorId) {
+    throw new APIError('INVALID_COLLECTOR_ID');
   } else {
-    const existCollector = <span class="cstat-no" title="statement not covered" >await CollectorInformation.getCollector({</span>
+    const existCollector = await CollectorInformation.getCollector({
       id: collectorId,
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!existCollector) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+    if (!existCollector) {
+      throw new APIError(
         I18n.t('BEE1695', { 0: collectorId } /* Coletor %{0} não localizado */),
         'NOT_EXIST_COLLECTOR_ID'
       );
     }
   }
 }
-async function <span class="fstat-no" title="function not covered" >validCode(</span>req) {
-  const code = <span class="cstat-no" title="statement not covered" >req.body.code || req.query.code;</span>
+async function validCode(req) {
+  const code = req.body.code || req.query.code;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!code) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  if (!code) {
+    throw new APIError(
       I18n.t('BEE1713' /* Informe o código do coletor (obrigatório) */),
       'INVALID_COLLECTOR_CODE'
     );
   } else {
-    const existCollector = <span class="cstat-no" title="statement not covered" >await CollectorInformation.getCollector({</span>
+    const existCollector = await CollectorInformation.getCollector({
       code,
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (existCollector) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError('EXIST_COLLECTOR_CODE');</span>
+    if (existCollector) {
+      throw new APIError('EXIST_COLLECTOR_CODE');
     }
   }
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >validName(</span>req) {
-  const name = <span class="cstat-no" title="statement not covered" >req.body.name || req.query.name;</span>
+function validName(req) {
+  const name = req.body.name || req.query.name;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!name) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (!name) {
+    throw new APIError(
       I18n.t('BEE1714' /* Informe o nome do coletor (obrigatório) */),
       'INVALID_COLLECTOR_NAME'
     );
@@ -241,7 +241,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T14:45:14.491Z
+                at 2024-06-24T14:39:37.818Z
             </div>
         <script src="../prettify.js"></script>
         <script>

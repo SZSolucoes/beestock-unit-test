@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">70.27% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/37</span>
+                <span class='fraction'>26/37</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -182,22 +182,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -254,9 +252,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,27 +281,27 @@ import I18n from '../../helpers/i18n';
 import { models, sequelize } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 &nbsp;
-export default async function <span class="fstat-no" title="function not covered" >generateData(</span>
+export default async function generateData(
   filters,
   headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
   rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
-  opts = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span>
-  appLanguage = <span class="branch-0 cbranch-no" title="branch not covered" >'ptBr'</span>
+  opts = {},
+  appLanguage = 'ptBr'
 ) {
-  const where = <span class="cstat-no" title="statement not covered" >mountWhereBasedFilter(filters);</span>
-<span class="cstat-no" title="statement not covered" >  where[Op.and] = { ...where[Op.and], quantity: { [Op.gt]: 0 } };</span>
+  const where = mountWhereBasedFilter(filters);
+  where[Op.and] = { ...where[Op.and], quantity: { [Op.gt]: 0 } };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE1994' /* Código Filial */, undefined, appLanguage));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE1997' /* Nome Filial */, undefined, appLanguage));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE1995' /* Código Depósito */, undefined, appLanguage));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE1996' /* Nome Depósito */, undefined, appLanguage));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE1999' /* Código Produto */, undefined, appLanguage));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE1998' /* Nome Produto */, undefined, appLanguage));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE432' /* Endereço */, undefined, appLanguage));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE1966' /* Curva Endereço */, undefined, appLanguage));</span>
-<span class="cstat-no" title="statement not covered" >  headers.push(I18n.t('BEE1965' /* Curva Produto */, undefined, appLanguage));</span>
+  headers.push(I18n.t('BEE1994' /* Código Filial */, undefined, appLanguage));
+  headers.push(I18n.t('BEE1997' /* Nome Filial */, undefined, appLanguage));
+  headers.push(I18n.t('BEE1995' /* Código Depósito */, undefined, appLanguage));
+  headers.push(I18n.t('BEE1996' /* Nome Depósito */, undefined, appLanguage));
+  headers.push(I18n.t('BEE1999' /* Código Produto */, undefined, appLanguage));
+  headers.push(I18n.t('BEE1998' /* Nome Produto */, undefined, appLanguage));
+  headers.push(I18n.t('BEE432' /* Endereço */, undefined, appLanguage));
+  headers.push(I18n.t('BEE1966' /* Curva Endereço */, undefined, appLanguage));
+  headers.push(I18n.t('BEE1965' /* Curva Produto */, undefined, appLanguage));
 &nbsp;
-  const dados = <span class="cstat-no" title="statement not covered" >await StockBalanceDao.findStockBalances(where, {</span>
+  const dados = await StockBalanceDao.findStockBalances(where, {
     attributes: [
       'branchCode',
       'warehouseCode',
@@ -360,24 +360,24 @@ export default async function <span class="fstat-no" title="function not covered
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; dados.length; index++) {</span>
-    const element = <span class="cstat-no" title="statement not covered" >dados[index];</span>
-<span class="cstat-no" title="statement not covered" >    rows.push([</span>
-      element.branch &amp;&amp; element.branch.code ? element.branch.code : '',
-      element.branch &amp;&amp; element.branch.name ? element.branch.name : '',
+  for (let index = 0; index &lt; dados.length; index++) {
+    const element = dados[index];
+    rows.push([
+      element.branch &amp;&amp; element.branch.code ? element.branch.code : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+      element.branch &amp;&amp; element.branch.name ? element.branch.name : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       // (element.warehouse &amp;&amp; element.warehouse.code &amp;&amp; element.warehouse.name) ? `${element.warehouse.code} - ${element.warehouse.name}` : '',
-      element.deposit &amp;&amp; element.deposit.code ? element.deposit.code : '',
-      element.deposit &amp;&amp; element.deposit.name ? element.deposit.name : '',
-      element.productCode ? element.productCode : '',
-      element.product &amp;&amp; element.product.name ? element.product.name : '',
+      element.deposit &amp;&amp; element.deposit.code ? element.deposit.code : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+      element.deposit &amp;&amp; element.deposit.name ? element.deposit.name : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+      element.productCode ? element.productCode : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+      element.product &amp;&amp; element.product.name ? element.product.name : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       // (element.product &amp;&amp; element.product.fullName) ? element.product.fullName : '',
-      element.addressCode ? element.addressCode : '',
-      element.address &amp;&amp; element.address.curve ? element.address.curve : '',
+      element.addressCode ? element.addressCode : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+      element.address &amp;&amp; element.address.curve ? element.address.curve : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       element.product &amp;&amp;
       element.product.productBranch &amp;&amp;
       element.product.productBranch.curve
         ? element.product.productBranch.curve
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
     ]);
   }
 }
@@ -388,7 +388,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T14:45:14.491Z
+                at 2024-06-24T14:39:37.818Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

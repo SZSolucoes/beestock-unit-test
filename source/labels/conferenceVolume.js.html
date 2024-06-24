@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -215,20 +215,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -300,17 +300,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -357,25 +357,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default async function <span class="fstat-no" title="function not covered" >conferenceVolumeLabel(</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default async function conferenceVolumeLabel(
   conferenceVolume,
   company,
   volumeCheckList
 ) {
-  let companyLogo = <span class="cstat-no" title="statement not covered" >'';</span>
+  let companyLogo = '';
   // Etiqueta de Volume (Padrão apenas 1 item)
-<span class="cstat-no" title="statement not covered" >  if (volumeCheckList) {</span>
-<span class="cstat-no" title="statement not covered" >    if (company === '4') {</span>
+  if (volumeCheckList) {
+    if (company === '4') {
       // Nortel
-<span class="cstat-no" title="statement not covered" >      companyLogo =</span>
+      companyLogo =
         '^FO590,17^GFA,845,1896,24,:Z64:eJzlkj+L1EAYh2eMuMeCZBcWLLOkWraQA6+wMiopLHdhF0vBwtpCbGfgmoCCH+CaYBVSaCssuDkU7ivYiIEDPU7RyDWLzs3rO3+S3SS33XVOQmbn4dlf3nkz3YR0U07M6MZmTmPiCdIBi4lXmJkVhEniVtyVlq8Ig01fWC4IAHeBN3wQDR/qfpW/5gyyLX6+kW9/6fx8u08avs4vtvgrV5UUOydX/oIeickX6D+CwhGd34YXxpeYj09HumeGS5OPPsWVA571ofJf4WIfljYfuMr/Ah28AD4AK/1M+b/Q9nBxDGDzIVf5R2h78FBx41MolP8d/SW8AAxPl+rmsFL5h3AETFIMEWq/Hlap/WN8A1aP/kr1J5AEVkz734AJqveJfoBIccj1FhXXPsgIhMrPGKK1z+AchPZZ6efIubZUfhaUfm58sH6gW6i5ylcrne+Vflb33Zqv36bzOw2fUrL2aZUvOdH9b/rCnofcAdsfXT/2x090PqqqP2fGD9RftI98aX0XToOy/xmW6OE3M7704BBMP5EH8Ba/g/Klqk73P8OSPX0eMsVVdYXxl/b8VH4OglzWSN9cdCW63+2hzvPF/FL889lF/p90SFr+vGfqr0F5mkR2X2v/82xzvyVN03oflM/m7f5gaBpx3uKztvpfj+yOmU+aPNQT/VTHNPZ3RqPYd6Kh73dHvOLD3cGzyaR/j0znNwazsOROfPP11x8vF/s8OlikP6u30KfX7oezj1NKr/f7g/BB5b977Pt5tHCi6OCW/+R2ya/2nu+Fd6d9Opn2+3vhbsm7O+ORP0pSniTR+/G48s0w5fX03eZDQnLyDxPRJ9U=:8E75';
-    } else <span class="cstat-no" title="statement not covered" >if (company === '2') {</span>
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (company === '2') {
       // Dimensional
-<span class="cstat-no" title="statement not covered" >      companyLogo =</span>
+      companyLogo =
         '^FO586,17^GFA,917,1920,24,:Z64:eJzllUFL3EAYhmeSDVO0dFa7pR4kI55EinhcSkhW2GMPHnos+Ad68LiF0FnrwaLF0F/QxdNiwUKPPeh6qgdBbz02NhdpD0aKNEg602+yW6M7Y/9AB8LsPjx5551kIAj9HSNdZBxLv43YlrJj4g+lTE1cyu+ZpWMsJZrEpniBLDvWOIF0TPQVAglulGmcyx5CLDfUacNNQq8jirBhTgte3DRUJyv4sM8Ut3WfqZrAe1qdWC2i8X59Pb9fX+O4IFwO79ce1B/mRBFHf2NE+bQopftMrwmPp21JfbsQAfdoywL/eQm69rqIPAesxYMfS0M8+L0lQzzsN4alTzWOeA9z03mG6O2uFg97NbBigVu4YYyUP+9cmx1S8snB/BQuGpXR/mD24CKk5Gwwh7f46oFQR88vfENzyMdQx8EIo+oiblTRInqAalXw6VkUySgOTrmgmT8q6F5b5qE6BGRNfk15ynOWu0TCmyh4IMGXGc8CEez6VEYykTnkh4yQXxdpK+QBq7nw58vJeQh+TqMoybJsV+ztvvb96ChJ4hz6twhZ209bF89Cxo5dz/68n/SUn4G/GmdSeJQJ37fPVpPYg/xlQshK/AI6MCKUv5L0vNK/3A7puvKPwFc5oK2txK0UhRQx1yXKV/xl0Pd9j/qBH3yIVpNLAfkBJwTHLR5CH+7C7vHJ1X7B38ty+k74VMAfqfpTWeSzFBbKXSeHclzl21vWq3ZnarQzM2J1Zq2u1e7Mzsz88wD9l2Oqf5a107o8Zvazunf6LVmf2Nw529w5LPniZKX5Fj2p4vvNhfFmybv29PNP0wf1iY+Pfkxfe/7H2GriWqM6Ng7+fMnfPJ47fL9zcG9je25jq36FcaVSay4sNJwKchxUvdmp/7m7i9D8Td7/3FUQaiD0BzXnXqU=:CF22';
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return `</span>
+    return `
     CT~~CD,~CC^~CT~
     ^XA
     ~TA000
@@ -447,17 +447,17 @@
     `;
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (company === '4') {</span>
+  if (company === '4') {
     // Nortel
-<span class="cstat-no" title="statement not covered" >    companyLogo =</span>
+    companyLogo =
       '^FO612,40^GFA,841,2016,24,:Z64:eJzVlD2LE0EYx2cuF5IisDk4C0HYMx8gFjZW7grByiKB285SrG1snVGbja+12ISzickXOAhoOps7ULCxcrXyLLwNIo536zw+87JvcSMcWOiTDbPzn9/+55lnZpeQfyzW9JXdZy3zCbth+42+bihqFGICwuqONC1EWmdxyqd6TGoIZ7oD1XrD6FTrCWGZP3DDCxxLVvCy6M9zf1jBA4dKf+AFnhd5Fq8hcUR2QcfI+s9Z3FCzUGH02PIRE56a5b7VpfWPWMzUU68So4PlYxZjJ4JDy+OjSkd6wdToe8GK/EsBx9gR+sI4xEeVv5uwBdIJg8TSc817kn3FuSUmfg5GnqTIKx357zDHUanq4yYEFlp3pMrSk5g31sdT2Wv/BijdBdwI5L2Mr+mUccXC8FPkjW75WPFqCYa/W+JBL0X5U3Wb8jznSYlnmtc6g0p/XublZDLW/kt8ku4v8cr5p+eHuKDqg/tg12t57qrdwvoofp7XB3vIY/0V/9ZVu2V8HMD6g+GlB9NUb2DC30BoHhw0/WD0mt5YYXhHHw30D/DqBwH++6QebNfx1g/6K17qP0Q4rviNCIWq0OezUj8ZL1bwr6v440mH/MbftEst85/HoXmDC/zPwC8sN+WPJlulMmi+on74PUHTk5f1vw/77d9aktt1X7fLlbrQingzJPwB580mz/XNVv3UmauDS+uDYHN70M70rnNvtnN9+Iw/n3W603yWa9QfnO+dpoRunF0f5rpsfno3+Xhw+9Hw6c4XPJ9pXG5dedPu7dO9hxudXjjP9DvO4ycvbh1w8WN2sRtG5WT9dGl+WY+sXuPkb8UvWpH5zA==:A0E3';
-  } else <span class="cstat-no" title="statement not covered" >if (company === '2') {</span>
+  } else <span class="missing-if-branch" title="else path not taken" >E</span>if (company === '2') {
     // Dimensional
-<span class="cstat-no" title="statement not covered" >    companyLogo =</span>
+    companyLogo =
       '^FO597,40^GFA,1069,2464,28,:Z64:eJzVVr9v00AUvoupLiSiTqQUqBTFARbEQIuoEKjWOX+COyBG+BMydMhgKa4ykLZDYe4SiaWChR9LKiTqTuW/wFWXMOFIDCfk+vHunKZuekZiYOAlenf2d99973uXk0LIv42nrVzIhF+52HOAPMgAAD8HYwBreYIOJP7Q0DO7EJGbLNBBBYABKbBQh1FVJYt0mAkJkk2hwyyIZY71ZUrKQaIvM1RZh4HCtK3BMgOVNZih3hpajKX2FHs2lD3MSnUmJva0vNSeo9WTpyCzzp8SwjITDU8JYZmaflLFwzI155A2BMvUnF/aENDaU21Bsq5MJn8tKKc7PsTa0p3u2LGdyQ/Qlom8GIvUdhPrFEuQcyEoRCgJPzUQWhPyHo20WDfC+3eqhYgTkTJa1IalvQhplMN8jLT+gP117NmZBz59q3LHy2DTdR2VBc9g03l6IB3tnu10hRYTmZ1no5NZMRvqrYsrarRFXTKHH3wmtIVJ6hmJ4BbsjMzEPAidETeSDRBlEJKHPwbbgm+RGTOIuqLOYAPkVOoxkDwQDuAM9zDhBBITIsljh8h7NvYsi42j9optscNTz2KR1DN95G2LmJs7oRBN7vSOxRenp/RMIjzLCD2PHQWRR+wGHUeNBlV6iHHHCO0uvPQFhJwjhknpWdhPiwZeF46Cdjey65JXp1O9Bu4JsOOLpRgp30eYJnopzyMs6FCvfkEv5XFeYL4gnHPjBB+Mc3/Isxnz2xVb+osaZ/6wL41eGDsHqJck2JfjkJ/1BdAf8ixgQdSNbQbIm/QTe43bh7aZoJ4juAG9EJPikXW3hsdXodEccW8ENbpOWzU6dl2JFYukiJn0MZX8ycOeHP7DuHJhuBDhqq9Gx7+MBdV0rASXIDp4PL86f5/fbZrb+8NPH5tZrFKvVqsPCu0mWVzEWRYzhuXh/rs3W2Gz/3Wz/3l3kOW16avXK7eut5Zdd/PaWrWVwQrD5vsPgzu3Xyz3+5vbu0/CrLvKAqo8fNRamKtcXatWs9WWiqVScevePVIq9Tf33hYvu0yro/jNw4hPcv6PnMdvT5Gluw==:47B9';
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return `CT~~CD,~CC^~CT~</span>
+  return `CT~~CD,~CC^~CT~
   ^XA
   ~TA000
   ~JSN
@@ -511,7 +511,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T14:45:14.491Z
+                at 2024-06-24T14:39:37.818Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>12/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>21/21</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,9 +121,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,31 +139,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import moment from 'moment-timezone';
 import prioritiesDao from '../../database/dao/priority';
@@ -171,10 +171,10 @@ import { models } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 &nbsp;
 // Função criada para popular o array headers e rows enviados por parametro
-export default async function <span class="fstat-no" title="function not covered" >generateData(</span>columns, filters, headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const where = <span class="cstat-no" title="statement not covered" >mountWhereBasedFilter(filters);</span>
-  const headersValue = <span class="cstat-no" title="statement not covered" >columns.map(<span class="fstat-no" title="function not covered" >it</span> =&gt; <span class="cstat-no" title="statement not covered" >it.value)</span>;</span>
-  const dados = <span class="cstat-no" title="statement not covered" >await prioritiesDao.findPriorities(where, {</span>
+export default async function generateData(columns, filters, headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> opts = {}) {
+  const where = mountWhereBasedFilter(filters);
+  const headersValue = columns.map(it =&gt; it.value);
+  const dados = await prioritiesDao.findPriorities(where, {
     attributes: headersValue,
     include: [{
       required: false,
@@ -190,31 +190,31 @@ export default async function <span class="fstat-no" title="function not covered
     ...opts
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  columns.forEach(<span class="fstat-no" title="function not covered" >it</span> =&gt; { <span class="cstat-no" title="statement not covered" >headers.push(it.label); </span>});</span>
-<span class="cstat-no" title="statement not covered" >  dados.forEach(<span class="fstat-no" title="function not covered" >it</span> =&gt; {</span>
+  columns.forEach(it =&gt; { headers.push(it.label); });
+  dados.forEach(it =&gt; {
     // usuário de criação
-<span class="cstat-no" title="statement not covered" >    it.createdUser = it.userCreated.dataValues.login</span>
+    it.createdUser = it.userCreated.dataValues.login
     // usuário de atualização
-<span class="cstat-no" title="statement not covered" >    it.updatedUser = it.userUpdated.dataValues.login</span>
+    it.updatedUser = it.userUpdated.dataValues.login
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    it.afterBilling == true ? it.afterBilling = 'Sim' : it.afterBilling = 'Não';</span>
-<span class="cstat-no" title="statement not covered" >    it.considerDate == true ? it.considerDate = 'Sim' : it.considerDate = 'Não';</span>
-<span class="cstat-no" title="statement not covered" >    it.storeBilling == true ? it.storeBilling = 'Sim' : it.storeBilling = 'Não';</span>
-<span class="cstat-no" title="statement not covered" >    it.disabled == true ? it.disabled = 'Sim' : it.disabled = 'Não';</span>
-<span class="cstat-no" title="statement not covered" >    it.ignoreCutPlan == true ? it.ignoreCutPlan = 'Sim' : it.ignoreCutPlan = 'Não';</span>
-<span class="cstat-no" title="statement not covered" >    it.withdraw == true ? it.withdraw = 'Sim' : it.withdraw = 'Não';</span>
-<span class="cstat-no" title="statement not covered" >    it.sticksRow == true ? it.sticksRow = 'Sim' : it.sticksRow = 'Não';</span>
+    it.afterBilling == true ? it.afterBilling = 'Sim' : <span class="branch-1 cbranch-no" title="branch not covered" >it.afterBilling = 'Não';</span>
+    it.considerDate == true ? <span class="branch-0 cbranch-no" title="branch not covered" >it.considerDate = 'Sim' </span>: it.considerDate = 'Não';
+    it.storeBilling == true ? it.storeBilling = 'Sim' : <span class="branch-1 cbranch-no" title="branch not covered" >it.storeBilling = 'Não';</span>
+    it.disabled == true ? <span class="branch-0 cbranch-no" title="branch not covered" >it.disabled = 'Sim' </span>: it.disabled = 'Não';
+    it.ignoreCutPlan == true ? it.ignoreCutPlan = 'Sim' : <span class="branch-1 cbranch-no" title="branch not covered" >it.ignoreCutPlan = 'Não';</span>
+    it.withdraw == true ? <span class="branch-0 cbranch-no" title="branch not covered" >it.withdraw = 'Sim' </span>: it.withdraw = 'Não';
+    it.sticksRow == true ? it.sticksRow = 'Sim' : <span class="branch-1 cbranch-no" title="branch not covered" >it.sticksRow = 'Não';</span>
 &nbsp;
-    const row = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; headersValue.length; index++) {</span>
-      const column = <span class="cstat-no" title="statement not covered" >headersValue[index];</span>
+    const row = [];
+    for (let index = 0; index &lt; headersValue.length; index++) {
+      const column = headersValue[index];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      row.push(it[column]);</span>
-<span class="cstat-no" title="statement not covered" >      if (column === 'createdAt' || column === 'updatedAt') {</span>
-<span class="cstat-no" title="statement not covered" >        row[index] = moment(row[index]).format('l LTS')</span>
+      row.push(it[column]);
+      if (column === 'createdAt' || column === 'updatedAt') {
+        row[index] = moment(row[index]).format('l LTS')
       }
     }
-<span class="cstat-no" title="statement not covered" >    rows.push(row);</span>
+    rows.push(row);
   });
 };</pre></td></tr></table></pre>
 
@@ -223,7 +223,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-10T14:45:14.491Z
+                at 2024-06-24T14:39:37.818Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

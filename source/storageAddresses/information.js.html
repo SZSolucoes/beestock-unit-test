@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">1.47% </span>
+                <span class="strong">1.4% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/68</span>
+                <span class='fraction'>1/71</span>
             </div>
         
             
@@ -888,7 +888,16 @@
 <a name='L823'></a><a href='#L823'>823</a>
 <a name='L824'></a><a href='#L824'>824</a>
 <a name='L825'></a><a href='#L825'>825</a>
-<a name='L826'></a><a href='#L826'>826</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L826'></a><a href='#L826'>826</a>
+<a name='L827'></a><a href='#L827'>827</a>
+<a name='L828'></a><a href='#L828'>828</a>
+<a name='L829'></a><a href='#L829'>829</a>
+<a name='L830'></a><a href='#L830'>830</a>
+<a name='L831'></a><a href='#L831'>831</a>
+<a name='L832'></a><a href='#L832'>832</a>
+<a name='L833'></a><a href='#L833'>833</a>
+<a name='L834'></a><a href='#L834'>834</a>
+<a name='L835'></a><a href='#L835'>835</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1452,7 +1461,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2277,48 +2295,57 @@ async function <span class="fstat-no" title="function not covered" >getRangeUser
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >addressesWithStockBalance(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const storageAddresses = <span class="cstat-no" title="statement not covered" >await StorageAddressDao.findStorageAddresses(query, {</span>
-    attributes: ['id', 'code', 'branchCode', 'rangeCode'],
-    include: [
-      {
-        required: true,
-        model: models.StorageAddressType,
-        as: 'addressType',
-        attributes: ['code', 'name'],
-      },
-      {
-        required: true,
-        model: models.StorageAddressSize,
-        as: 'addressSize',
-        attributes: ['code', 'name'],
-      },
-      {
-        required: false,
-        model: models.StockBalance,
-        where: { branchCode: query.branchCode, quantity: { [Op.gt]: 0 } },
-        attributes: ['id', 'addressCode', 'productCode', 'quantity'],
-        as: 'balances',
-        include: [
-          {
-            required: false,
-            model: models.Product,
-            as: 'product',
-            attributes: ['name', 'productCode'],
-            include: [
-              {
-                required: false,
-                model: models.ProductBranch,
-                where: { branchCode: query.branchCode },
-                as: 'productBranch',
-                attributes: ['averageCost', 'productCode'],
-              },
-            ],
+  /* const storageAddresses = await StorageAddressDao.findStorageAddresses(query, { */
+  const storageAddresses = <span class="cstat-no" title="statement not covered" >await StorageAddressDao.findStorageAddresses(</span>
+    { branchCode: query.branchCode, blocked: query.blocked },
+    {
+      attributes: ['id', 'code', 'branchCode', 'rangeCode'],
+      include: [
+        {
+          required: true,
+          model: models.StorageAddressType,
+          as: 'addressType',
+          attributes: ['code', 'name'],
+        },
+        {
+          required: true,
+          model: models.StorageAddressSize,
+          as: 'addressSize',
+          attributes: ['code', 'name'],
+        },
+        {
+          required: false,
+          model: models.StockBalance,
+          where: {
+            branchCode: query.branchCode,
+            ...(query.depositCode &amp;&amp;
+              query.depositCode &gt; 0 &amp;&amp; { depositCode: query.depositCode }),
+            quantity: { [Op.gt]: 0 },
           },
-        ],
-      },
-    ],
-    ...opts,
-  });
+          attributes: ['id', 'addressCode', 'productCode', 'quantity'],
+          as: 'balances',
+          include: [
+            {
+              required: false,
+              model: models.Product,
+              as: 'product',
+              attributes: ['name', 'productCode'],
+              include: [
+                {
+                  required: false,
+                  model: models.ProductBranch,
+                  where: { branchCode: query.branchCode },
+                  as: 'productBranch',
+                  attributes: ['averageCost', 'productCode'],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+      ...opts,
+    }
+  );
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return storageAddresses;</span>
 }
@@ -2545,7 +2572,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-25T20:13:03.784Z
+                at 2024-07-24T19:37:20.675Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

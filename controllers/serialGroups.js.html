@@ -617,22 +617,7 @@
 <a name='L552'></a><a href='#L552'>552</a>
 <a name='L553'></a><a href='#L553'>553</a>
 <a name='L554'></a><a href='#L554'>554</a>
-<a name='L555'></a><a href='#L555'>555</a>
-<a name='L556'></a><a href='#L556'>556</a>
-<a name='L557'></a><a href='#L557'>557</a>
-<a name='L558'></a><a href='#L558'>558</a>
-<a name='L559'></a><a href='#L559'>559</a>
-<a name='L560'></a><a href='#L560'>560</a>
-<a name='L561'></a><a href='#L561'>561</a>
-<a name='L562'></a><a href='#L562'>562</a>
-<a name='L563'></a><a href='#L563'>563</a>
-<a name='L564'></a><a href='#L564'>564</a>
-<a name='L565'></a><a href='#L565'>565</a>
-<a name='L566'></a><a href='#L566'>566</a>
-<a name='L567'></a><a href='#L567'>567</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L555'></a><a href='#L555'>555</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -773,13 +758,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -808,13 +789,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -853,6 +830,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1172,13 +1152,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1196,11 +1172,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable import/no-named-as-default-member */
-/* eslint-disable no-useless-catch */
-/* eslint-disable no-restricted-syntax */
-import * as Sentry from '@sentry/node';
+&nbsp;
 import moment from 'moment-timezone';
-import { propOr } from 'ramda';
 import Sequelize, { Op } from 'sequelize';
 &nbsp;
 import { sequelize } from '../../config/database';
@@ -1234,28 +1207,28 @@ async function getAllSerialGroups(req, res) {
 &nbsp;
   const sortParams = sorted.length
     ? {
-      order: sorted.map((it) =&gt; {
-        switch (it.id) {
-          case 'product.name':
-            return [
-              Sequelize.col('product.str_name'),
-              it.desc ? 'DESC' : 'ASC',
-            ];
-          case 'productionOrder.code':
-            return [
-              Sequelize.col('productionOrder.str_code'),
-              it.desc ? 'DESC' : 'ASC',
-            ];
-          case 'balance.addressCode':
-            return [
-              Sequelize.col('balance.str_storage_address_code'),
-              it.desc ? 'DESC' : 'ASC',
-            ];
-          default:
-            return [it.id, it.desc ? 'DESC' : 'ASC'];
-        }
-      }),
-    }
+        order: sorted.map((it) =&gt; {
+          switch (it.id) {
+            case 'product.name':
+              return [
+                Sequelize.col('product.str_name'),
+                it.desc ? 'DESC' : 'ASC',
+              ];
+            case 'productionOrder.code':
+              return [
+                Sequelize.col('productionOrder.str_code'),
+                it.desc ? 'DESC' : 'ASC',
+              ];
+            case 'balance.addressCode':
+              return [
+                Sequelize.col('balance.str_storage_address_code'),
+                it.desc ? 'DESC' : 'ASC',
+              ];
+            default:
+              return [it.id, it.desc ? 'DESC' : 'ASC'];
+          }
+        }),
+      }
     : { order: [['code', 'DESC']] };
 &nbsp;
   for (const element of filtered) {
@@ -1339,14 +1312,10 @@ async function getAllSerialGroups(req, res) {
     };
     res.json(response);
   } catch (err) {
-    const sentryExceptionId = Sentry.captureException(err, {
-      tags: propOr({}, 'tags', req.transactionData),
-    });
+    // eslint-disable-next-line no-console
+    console.log(err);
     const response = {
       success: false,
-      debug: {
-        sentryExceptionId,
-      },
     };
     res.json(response);
   }
@@ -1374,14 +1343,10 @@ async function getSerialGroupDocument(req, res) {
 &nbsp;
     res.json(response);
   } catch (err) {
-    const sentryExceptionId = Sentry.captureException(err, {
-      tags: propOr({}, 'tags', req.transactionData),
-    });
+    // eslint-disable-next-line no-console
+    console.log(err);
     const response = {
       success: false,
-      debug: {
-        sentryExceptionId,
-      },
     };
     res.json(response);
   }
@@ -1430,12 +1395,15 @@ async function serialGroupOrSerialLabel(req, res) {
         : '',
       addressName:
         (serial.serialGroup.balance &amp;&amp;
-          serial.serialGroup.balance.addressCode) || '',
+          serial.serialGroup.balance.addressCode) ||
+        '',
       lotNumber:
-        (serial.serialGroup.balance &amp;&amp; serial.serialGroup.balance.lotNumber) || '',
+        (serial.serialGroup.balance &amp;&amp; serial.serialGroup.balance.lotNumber) ||
+        '',
       expirationDate:
         (serial.serialGroup.balance &amp;&amp;
-          serial.serialGroup.balance.expirationDate) || '',
+          serial.serialGroup.balance.expirationDate) ||
+        '',
       controlExpirationDate: serial.product.controlExpirationDate,
     };
   }
@@ -1631,28 +1599,28 @@ async function getSerialGroupToPrint(req, res) {
 &nbsp;
     const sortParams = sorted.length
       ? {
-        order: sorted.map((it) =&gt; {
-          switch (it.id) {
-            case 'product.name':
-              return [
-                Sequelize.col('product.str_name'),
-                it.desc ? 'DESC' : 'ASC',
-              ];
-            case 'productionOrder.code':
-              return [
-                Sequelize.col('productionOrder.str_code'),
-                it.desc ? 'DESC' : 'ASC',
-              ];
-            case 'balance.addressCode':
-              return [
-                Sequelize.col('balance.str_storage_address_code'),
-                it.desc ? 'DESC' : 'ASC',
-              ];
-            default:
-              return [it.id, it.desc ? 'DESC' : 'ASC'];
-          }
-        }),
-      }
+          order: sorted.map((it) =&gt; {
+            switch (it.id) {
+              case 'product.name':
+                return [
+                  Sequelize.col('product.str_name'),
+                  it.desc ? 'DESC' : 'ASC',
+                ];
+              case 'productionOrder.code':
+                return [
+                  Sequelize.col('productionOrder.str_code'),
+                  it.desc ? 'DESC' : 'ASC',
+                ];
+              case 'balance.addressCode':
+                return [
+                  Sequelize.col('balance.str_storage_address_code'),
+                  it.desc ? 'DESC' : 'ASC',
+                ];
+              default:
+                return [it.id, it.desc ? 'DESC' : 'ASC'];
+            }
+          }),
+        }
       : { order: [['createdAt', 'DESC']] };
 &nbsp;
     for (const element of filtered) {
@@ -1738,14 +1706,10 @@ async function getSerialGroupToPrint(req, res) {
     };
     res.json(response);
   } catch (err) {
-    const sentryExceptionId = Sentry.captureException(err, {
-      tags: propOr({}, 'tags', req.transactionData),
-    });
+    // eslint-disable-next-line no-console
+    console.log(err);
     const response = {
       success: false,
-      debug: {
-        sentryExceptionId,
-      },
     };
     res.json(response);
   }
@@ -1768,7 +1732,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-06-25T20:13:03.784Z
+                at 2024-07-24T19:37:20.675Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -337,17 +337,12 @@
 <a name='L272'></a><a href='#L272'>272</a>
 <a name='L273'></a><a href='#L273'>273</a>
 <a name='L274'></a><a href='#L274'>274</a>
-<a name='L275'></a><a href='#L275'>275</a>
-<a name='L276'></a><a href='#L276'>276</a>
-<a name='L277'></a><a href='#L277'>277</a>
-<a name='L278'></a><a href='#L278'>278</a>
-<a name='L279'></a><a href='#L279'>279</a>
-<a name='L280'></a><a href='#L280'>280</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L275'></a><a href='#L275'>275</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">56x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -368,9 +363,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -469,9 +461,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -488,6 +477,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -667,9 +657,6 @@ async function getProduct(query, opts = {}) {
       'netWeight',
       'origin',
       'taxClassification',
-      'storeNextPicking',
-      'picking',
-      'fractional',
       'conversionFactor',
       'multipleSale',
       'businessUnit',
@@ -729,9 +716,6 @@ async function getAllProducts(opts = <span class="branch-0 cbranch-no" title="br
       'netWeight',
       'origin',
       'taxClassification',
-      'storeNextPicking',
-      'picking',
-      'fractional',
       'conversionFactor',
       'multipleSale',
       'businessUnit',
@@ -764,28 +748,29 @@ async function <span class="fstat-no" title="function not covered" >getProductsL
   const productsQuery = <span class="cstat-no" title="statement not covered" >{</span>
     ...(filtered.length
       ? filtered.reduce(
-<span class="fstat-no" title="function not covered" >        (a</span>cum, it) =&gt; {
-<span class="cstat-no" title="statement not covered" >          try {</span>
-<span class="cstat-no" title="statement not covered" >            acum[Op.and].push(</span>
-              Sequelize.where(
-                Sequelize.cast(
-                  Sequelize.col(
-                    `${ProductModel.name}.${ProductModel.rawAttributes[it.id].field
-                    }`
+<span class="fstat-no" title="function not covered" >          (a</span>cum, it) =&gt; {
+<span class="cstat-no" title="statement not covered" >            try {</span>
+<span class="cstat-no" title="statement not covered" >              acum[Op.and].push(</span>
+                Sequelize.where(
+                  Sequelize.cast(
+                    Sequelize.col(
+                      `${ProductModel.name}.${
+                        ProductModel.rawAttributes[it.id].field
+                      }`
+                    ),
+                    'char'
                   ),
-                  'char'
-                ),
-                { [Op.like]: `%${it.value}%` }
-              )
-            );
-          } catch (e) {
-            // empty
-          }
+                  { [Op.like]: `%${it.value}%` }
+                )
+              );
+            } catch (e) {
+              // empty
+            }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          return acum;</span>
-        },
-        { [Op.and]: [] }
-      )
+<span class="cstat-no" title="statement not covered" >            return acum;</span>
+          },
+          { [Op.and]: [] }
+        )
       : {}),
   };
 &nbsp;
@@ -907,7 +892,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-07-24T19:37:20.675Z
+                at 2024-07-31T20:08:59.515Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

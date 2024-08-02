@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -108,33 +108,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -146,34 +146,34 @@ import { t } from '../helpers/i18n';
 import InformationSerialGroups from '../source/serialGroup/information';
 import InformationSerialLabel from '../source/serialLabel/information';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validLabel(</span>req) {
-  const { label } = <span class="cstat-no" title="statement not covered" >req.query;</span>
+async function validLabel(req) {
+  const { label } = req.query;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!label) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  if (!label) {
+    throw new APIError(
       'BAD_REQUEST',
       t('BEE2982' /* Etiqueta não informada */)
     );
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validSerialGroupAndLabel(</span>req) {
-  const { label } = <span class="cstat-no" title="statement not covered" >req.query;</span>
+async function validSerialGroupAndLabel(req) {
+  const { label } = req.query;
 &nbsp;
-  let serial = <span class="cstat-no" title="statement not covered" >await InformationSerialGroups.getSerialGroup({ code: label });</span>
+  let serial = await InformationSerialGroups.getSerialGroup({ code: label });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!serial) {</span>
-<span class="cstat-no" title="statement not covered" >    serial = await InformationSerialLabel.getSerialLabel({ code: label });</span>
+  if (!serial) {
+    serial = await InformationSerialLabel.getSerialLabel({ code: label });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!serial) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  if (!serial) {
+    throw new APIError(
       'BAD_REQUEST',
       t('BEE2857' /* Etiqueta não encontrada. */)
     );
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  req.serial = serial;</span>
+  req.serial = serial;
 }
 &nbsp;
 export default {
@@ -187,7 +187,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-02T20:11:03.112Z
+                at 2024-08-02T20:44:41.653Z
             </div>
         <script src="../prettify.js"></script>
         <script>

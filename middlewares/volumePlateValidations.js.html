@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>7/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -124,31 +124,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,9 +140,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,16 +177,16 @@ import { t } from '../helpers/i18n';
 import InboundDocumentInformation from '../source/inboundDocuments/information';
 import inboundOrdersInformation from '../source/inboundOrders/information';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validAccessKey(</span>req) {
-  const { accessKey } = <span class="cstat-no" title="statement not covered" >req.body || req.query;</span>
+async function validAccessKey(req) {
+  const { accessKey } = req.body || <span class="branch-1 cbranch-no" title="branch not covered" >req.query;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!accessKey) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  if (!accessKey) {
+    throw new APIError(
       '',
       t('BEE3168' /* Chave de Acesso deve ser informada! */)
     );
   } else {
-    const inboundDocument = <span class="cstat-no" title="statement not covered" >await InboundDocumentInformation.getInboundDocument(</span>
+    const inboundDocument = await InboundDocumentInformation.getInboundDocument(
       {
         accessKey,
       },
@@ -194,15 +194,15 @@ async function <span class="fstat-no" title="function not covered" >validAccessK
     );
 &nbsp;
     const inboundOrders =
-<span class="cstat-no" title="statement not covered" >      await inboundOrdersInformation.getInboundOrderValidation(</span>
+      await inboundOrdersInformation.getInboundOrderValidation(
         {
           accessKey,
         },
         { userBranches: req.userBranches }
       );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!inboundDocument) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+    if (!inboundDocument) {
+      throw new APIError(
         '',
         t(
           'BEE3169',
@@ -211,8 +211,8 @@ async function <span class="fstat-no" title="function not covered" >validAccessK
           } /* Nenhum documento foi localizado para a Chave de Acesso %{0}. */
         )
       );
-    } else <span class="cstat-no" title="statement not covered" >if (inboundOrders.status !== 1) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+    } else if (inboundOrders.status !== 1) {
+      throw new APIError(
         '',
         t(
           'BEE2537' /* Status do Documento não permite a Conferência de Placa */
@@ -232,7 +232,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-02T12:20:27.448Z
+                at 2024-08-02T12:30:37.428Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -119,42 +119,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,24 +169,24 @@
 import WaybillInformation from '../source/waybills/information';
 import { t } from '../helpers/i18n';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validWaybillId(</span>req) {
-  const waybillId = <span class="cstat-no" title="statement not covered" >req.body.waybillId || req.query.waybillId;</span>
+async function validWaybillId(req) {
+  const waybillId = req.body.waybillId || req.query.waybillId;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!waybillId) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  if (!waybillId) {
+    throw new APIError(
       '',
       t('BEE3248' /* O ID do Romaneio deve ser informado! */)
     );
   } else {
-    const existWaybill = <span class="cstat-no" title="statement not covered" >await WaybillInformation.getWaybill(</span>
+    const existWaybill = await WaybillInformation.getWaybill(
       {
         id: waybillId,
       },
       { userBranches: req.userBranches }
     );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!existWaybill) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+    if (!existWaybill) {
+      throw new APIError(
         '',
         t('BEE3171', { 0: waybillId } /* Romaneio ID = %{0} não localizado */)
       );
@@ -194,18 +194,18 @@ async function <span class="fstat-no" title="function not covered" >validWaybill
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validWaybillSync(</span>req) {
-  const waybillId = <span class="cstat-no" title="statement not covered" >req.body.waybillId || req.query.waybillId;</span>
+async function validWaybillSync(req) {
+  const waybillId = req.body.waybillId || <span class="branch-1 cbranch-no" title="branch not covered" >req.query.waybillId;</span>
 &nbsp;
-  const waybill = <span class="cstat-no" title="statement not covered" >await WaybillInformation.getWaybill(</span>
+  const waybill = await WaybillInformation.getWaybill(
     {
       id: waybillId,
     },
     { userBranches: req.userBranches }
   );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (waybill.status &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  if (waybill.status &gt; 1) {
+    throw new APIError(
       '',
       t('BEE3172' /* Romaneio já foi integrado com ERP! */)
     );
@@ -223,7 +223,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-02T12:20:27.448Z
+                at 2024-08-02T12:30:37.428Z
             </div>
         <script src="../prettify.js"></script>
         <script>

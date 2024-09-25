@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/298</span>
+                <span class='fraction'>0/303</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/384</span>
+                <span class='fraction'>0/389</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/26</span>
+                <span class='fraction'>0/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/288</span>
+                <span class='fraction'>0/293</span>
             </div>
         
             
@@ -1556,7 +1556,20 @@
 <a name='L1491'></a><a href='#L1491'>1491</a>
 <a name='L1492'></a><a href='#L1492'>1492</a>
 <a name='L1493'></a><a href='#L1493'>1493</a>
-<a name='L1494'></a><a href='#L1494'>1494</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1494'></a><a href='#L1494'>1494</a>
+<a name='L1495'></a><a href='#L1495'>1495</a>
+<a name='L1496'></a><a href='#L1496'>1496</a>
+<a name='L1497'></a><a href='#L1497'>1497</a>
+<a name='L1498'></a><a href='#L1498'>1498</a>
+<a name='L1499'></a><a href='#L1499'>1499</a>
+<a name='L1500'></a><a href='#L1500'>1500</a>
+<a name='L1501'></a><a href='#L1501'>1501</a>
+<a name='L1502'></a><a href='#L1502'>1502</a>
+<a name='L1503'></a><a href='#L1503'>1503</a>
+<a name='L1504'></a><a href='#L1504'>1504</a>
+<a name='L1505'></a><a href='#L1505'>1505</a>
+<a name='L1506'></a><a href='#L1506'>1506</a>
+<a name='L1507'></a><a href='#L1507'>1507</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2145,12 +2158,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -2843,14 +2858,24 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2862,6 +2887,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3638,12 +3664,14 @@ async function <span class="fstat-no" title="function not covered" >confirmPicki
               { userBranches: req.userBranches }
             );
 &nbsp;
+            const formattedBranchCode =
+<span class="cstat-no" title="statement not covered" >              outboundRangeProduct.outboundRange.branchCode.length &gt; 8</span>
+                ? outboundRangeProduct.outboundRange.branchCode.substring(0, 8)
+                : outboundRangeProduct.outboundRange.branchCode;
+&nbsp;
             const dateAux = <span class="cstat-no" title="statement not covered" >moment().format('DDMMYYYY');</span>
-<span class="cstat-no" title="statement not covered" >            grouperCode = `${</span>
-              outboundRangeProduct.outboundRange.branchCode
-            }${String('D')}${dateAux}${String(
-              (lastGrouper.count || 0) + 1
-            ).padStart(3, '0')}`;
+            // eslint-disable-next-line prettier/prettier
+<span class="cstat-no" title="statement not covered" >            grouperCode = `${formattedBranchCode}${String('D')}${dateAux}${String((lastGrouper.count || 0) + 1).padStart(3, '0')}`;</span>
           }
 &nbsp;
           const sheetList = <span class="cstat-no" title="statement not covered" >[</span>
@@ -4344,6 +4372,16 @@ async function <span class="fstat-no" title="function not covered" >getOutboundR
 <span class="cstat-no" title="statement not covered" >        columnOrderSeparation = defaultColumnOrderSeparation;</span>
       }
 &nbsp;
+      let totalPackageQuantity = <span class="cstat-no" title="statement not covered" >0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      outboundRange.products.forEach(<span class="fstat-no" title="function not covered" >(p</span>roduct) =&gt; {</span>
+        const { factor = <span class="branch-0 cbranch-no" title="branch not covered" >1 </span>} = <span class="cstat-no" title="statement not covered" >product.dataValues;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        totalPackageQuantity += Math.ceil(</span>
+          parseFloat(product.quantity) / (factor || 1)
+        );
+      });
+&nbsp;
 <span class="cstat-no" title="statement not covered" >      for (const elem of outboundRange.products) {</span>
         const { factor = <span class="branch-0 cbranch-no" title="branch not covered" >1 </span>} = <span class="cstat-no" title="statement not covered" >elem.dataValues;</span>
 &nbsp;
@@ -4355,6 +4393,7 @@ async function <span class="fstat-no" title="function not covered" >getOutboundR
           const { fractionalLabel } = <span class="cstat-no" title="statement not covered" >elem.allocation.balance.deposit;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >          outboundRangeProducts.push({</span>
+            totalPackageQuantity,
             lineNumber:
               elem.outboundProduct &amp;&amp; elem.outboundProduct.lineNumber
                 ? elem.outboundProduct.lineNumber
@@ -4549,7 +4588,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-14T19:36:08.829Z
+                at 2024-09-25T17:54:13.824Z
             </div>
         <script src="../prettify.js"></script>
         <script>

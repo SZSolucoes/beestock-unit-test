@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">97.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>76/76</span>
+                <span class='fraction'>77/79</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">98% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>48/48</span>
+                <span class='fraction'>49/50</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">97.4% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>74/74</span>
+                <span class='fraction'>75/77</span>
             </div>
         
             
@@ -425,7 +425,34 @@
 <a name='L360'></a><a href='#L360'>360</a>
 <a name='L361'></a><a href='#L361'>361</a>
 <a name='L362'></a><a href='#L362'>362</a>
-<a name='L363'></a><a href='#L363'>363</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L363'></a><a href='#L363'>363</a>
+<a name='L364'></a><a href='#L364'>364</a>
+<a name='L365'></a><a href='#L365'>365</a>
+<a name='L366'></a><a href='#L366'>366</a>
+<a name='L367'></a><a href='#L367'>367</a>
+<a name='L368'></a><a href='#L368'>368</a>
+<a name='L369'></a><a href='#L369'>369</a>
+<a name='L370'></a><a href='#L370'>370</a>
+<a name='L371'></a><a href='#L371'>371</a>
+<a name='L372'></a><a href='#L372'>372</a>
+<a name='L373'></a><a href='#L373'>373</a>
+<a name='L374'></a><a href='#L374'>374</a>
+<a name='L375'></a><a href='#L375'>375</a>
+<a name='L376'></a><a href='#L376'>376</a>
+<a name='L377'></a><a href='#L377'>377</a>
+<a name='L378'></a><a href='#L378'>378</a>
+<a name='L379'></a><a href='#L379'>379</a>
+<a name='L380'></a><a href='#L380'>380</a>
+<a name='L381'></a><a href='#L381'>381</a>
+<a name='L382'></a><a href='#L382'>382</a>
+<a name='L383'></a><a href='#L383'>383</a>
+<a name='L384'></a><a href='#L384'>384</a>
+<a name='L385'></a><a href='#L385'>385</a>
+<a name='L386'></a><a href='#L386'>386</a>
+<a name='L387'></a><a href='#L387'>387</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -719,6 +746,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -756,7 +799,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -790,13 +838,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable no-useless-catch */
 import moment from 'moment-timezone';
 import { Op } from 'sequelize';
-&nbsp;
+import { t } from '../helpers/i18n';
 import { sequelize } from '../../config/database';
+import APIError from '../helpers/error';
 import BranchesInformation from '../source/branches/information';
 import DockControlCreate from '../source/dockControl/create';
 import DockControlDelete from '../source/dockControl/delete';
 import DockControlInformation from '../source/dockControl/information';
 import DockControlUpdate from '../source/dockControl/update';
+import DockVolumeRemovalCreate from '../source/dockVolumeRemoval/create';
+import DockVolumeRemovalInformation from '../source/dockVolumeRemoval/information';
 import OutboundOrdersInformation from '../source/outboundOrders/information';
 import OutboundOrdersUpdate from '../source/outboundOrders/update';
 import OutboundVolumesInformation from '../source/outboundVolumes/information';
@@ -1080,45 +1131,66 @@ async function outboundOrderWithdrawal(req, res) {
       id: outboundOrderId,
     });
 &nbsp;
-    await sequelize.transaction(async (transaction) =&gt; {
-      await OutboundOrdersUpdate.updateOutboundOrder(
-        outboundOrderId,
-        {
-          dockControlId: null,
-          status:
-            outboundOrder.status &lt; 6 || outboundOrder.status === 12
-              ? outboundOrder.status
-              : 6,
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (outboundOrder.typeOrders.validateDockRemoval) {
+      const dockVolumeRemoval =
+<span class="cstat-no" title="statement not covered" >        await DockVolumeRemovalCreate.createDockVolumeRemoval({</span>
+          outboundOrderId,
+          branchCode: outboundOrder.branchCode,
+          status: 1, // Pendente
+          dockControlId: outboundOrder.dockControlId,
+          orderVolumeQuantity: Object.keys(outboundOrder.outboundVolume).length,
+          createdUser: req.userId,
           updatedUser: req.userId,
-        },
-        { transaction }
-      );
-&nbsp;
-      await OutboundVolumesUpdate.updateQueryOutboundVolume(
-        { outboundOrderId },
-        {
-          status: 2,
-          updatedUser: req.userId,
-        },
-        { transaction }
-      );
-&nbsp;
-      const existOutboundOrders =
-        await OutboundOrdersInformation.getOutboundOrders(
+        });
+<span class="cstat-no" title="statement not covered" >      res.json({</span>
+        success: true,
+        data: dockVolumeRemoval,
+      });
+    } else {
+      await sequelize.transaction(async (transaction) =&gt; {
+        await OutboundOrdersUpdate.updateOutboundOrder(
+          outboundOrderId,
           {
-            dockControlId: outboundOrder.dockControlId,
+            dockControlId: null,
+            status:
+              outboundOrder.status &lt; 6 || outboundOrder.status === 12
+                ? outboundOrder.status
+                : 6,
+            updatedUser: req.userId,
           },
-          {},
           { transaction }
         );
 &nbsp;
-      if (!existOutboundOrders || !existOutboundOrders.length) {
-        await DockControlDelete.deleteDockControl(outboundOrder.dockControlId, {
-          transaction,
-        });
-      }
-    });
-    res.json({ success: true });
+        await OutboundVolumesUpdate.updateQueryOutboundVolume(
+          { outboundOrderId },
+          {
+            status: 2,
+            updatedUser: req.userId,
+          },
+          { transaction }
+        );
+&nbsp;
+        const existOutboundOrders =
+          await OutboundOrdersInformation.getOutboundOrders(
+            {
+              dockControlId: outboundOrder.dockControlId,
+            },
+            {},
+            { transaction }
+          );
+&nbsp;
+        if (!existOutboundOrders || !existOutboundOrders.length) {
+          await DockControlDelete.deleteDockControl(
+            outboundOrder.dockControlId,
+            {
+              transaction,
+            }
+          );
+        }
+      });
+&nbsp;
+      res.json({ success: true });
+    }
   } catch (err) {
     throw err;
   }
@@ -1156,7 +1228,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-14T19:36:08.829Z
+                at 2024-09-25T17:54:13.824Z
             </div>
         <script src="../prettify.js"></script>
         <script>

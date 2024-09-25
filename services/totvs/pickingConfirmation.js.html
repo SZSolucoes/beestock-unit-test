@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0.86% </span>
+                <span class="strong">0.87% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/115</span>
+                <span class='fraction'>1/114</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/112</span>
+                <span class='fraction'>0/108</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0.87% </span>
+                <span class="strong">0.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/114</span>
+                <span class='fraction'>1/113</span>
             </div>
         
             
@@ -540,12 +540,7 @@
 <a name='L475'></a><a href='#L475'>475</a>
 <a name='L476'></a><a href='#L476'>476</a>
 <a name='L477'></a><a href='#L477'>477</a>
-<a name='L478'></a><a href='#L478'>478</a>
-<a name='L479'></a><a href='#L479'>479</a>
-<a name='L480'></a><a href='#L480'>480</a>
-<a name='L481'></a><a href='#L481'>481</a>
-<a name='L482'></a><a href='#L482'>482</a>
-<a name='L483'></a><a href='#L483'>483</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L478'></a><a href='#L478'>478</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -634,17 +629,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1116,18 +1106,13 @@ async function <span class="fstat-no" title="function not covered" >sendConfirmP
         updatedUser: userId,
       });
 &nbsp;
-      let volumes;
-      let weight;
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      if (industry) {</span>
-<span class="cstat-no" title="statement not covered" >        volumes = await OutboundVolumeInformation.getOutboundVolumes({</span>
-          outboundOrderId: outboundOrder.id,
-        });
-<span class="cstat-no" title="statement not covered" >        weight = volumes.reduce(<span class="fstat-no" title="function not covered" >(t</span>otal, vol) =&gt; {</span>
-          const volTotal = <span class="cstat-no" title="statement not covered" >total + parseFloat(vol.grossWeight);</span>
-<span class="cstat-no" title="statement not covered" >          return volTotal;</span>
-        }, 0);
-      }
+      const volumes = <span class="cstat-no" title="statement not covered" >await OutboundVolumeInformation.getOutboundVolumes({</span>
+        outboundOrderId: outboundOrder.id,
+      });
+      const weight = <span class="cstat-no" title="statement not covered" >volumes.reduce(<span class="fstat-no" title="function not covered" >(t</span>otal, vol) =&gt; {</span>
+        const volTotal = <span class="cstat-no" title="statement not covered" >total + parseFloat(vol.grossWeight);</span>
+<span class="cstat-no" title="statement not covered" >        return volTotal;</span>
+      }, 0);
 &nbsp;
       const products = <span class="cstat-no" title="statement not covered" >[];</span>
       let grossWeight = <span class="cstat-no" title="statement not covered" >0;</span>
@@ -1204,9 +1189,9 @@ async function <span class="fstat-no" title="function not covered" >sendConfirmP
             orderNumber: outboundOrder.orderNumber,
             orderType: outboundOrder.orderType,
             customerOrderCode: outboundOrder.customerOrderCode,
-            grossWeight: industry ? weight : grossWeight,
-            netWeight: industry ? weight : netWeight,
-            volumes: industry ? volumes.length : outboundOrder.products.length,
+            grossWeight: grossWeight || weight,
+            netWeight: netWeight || weight,
+            volumes: volumes.length,
             products,
             ...(industry ? { serialGroups } : {}),
           },
@@ -1516,7 +1501,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-14T19:36:08.829Z
+                at 2024-09-25T17:54:13.824Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

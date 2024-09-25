@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">21.1% </span>
+                <span class="strong">20.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>23/109</span>
+                <span class='fraction'>23/111</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/22</span>
+                <span class='fraction'>0/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">23.46% </span>
+                <span class="strong">23% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/98</span>
+                <span class='fraction'>23/100</span>
             </div>
         
             
@@ -316,7 +316,9 @@
 <a name='L251'></a><a href='#L251'>251</a>
 <a name='L252'></a><a href='#L252'>252</a>
 <a name='L253'></a><a href='#L253'>253</a>
-<a name='L254'></a><a href='#L254'>254</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -361,12 +363,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -405,9 +407,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -614,12 +618,12 @@ const jobs = [
   {
     name: 'pendingQueues',
     timeout: false,
-    description: I18n.t('BEE3225' /* Integração de Fila de Integração */),
+    description: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >I18n.t('BEE3225' /* Integração de Fila de Integração */),</span>
   },
   {
     name: 'getStockBalanceErp',
     timeout: false,
-    description: I18n.t('BEE3226' /* Busca Saldo de Estoque no ERP */),
+    description: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >I18n.t('BEE3226' /* Busca Saldo de Estoque no ERP */),</span>
   },
   {
     name: 'generateResupply',
@@ -645,8 +649,9 @@ const WinstonLoggerJobs = winston.createLogger({
         winston.format.printf(<span class="fstat-no" title="function not covered" >(i</span>nfo) =&gt; {
           const { timestamp, level, message = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> stack } = <span class="cstat-no" title="statement not covered" >info;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          return `${timestamp} ${level}: ${message.trim()} ${stack ? `\n${stack}` : ''</span>
-            }`;
+<span class="cstat-no" title="statement not covered" >          return `${timestamp} ${level}: ${message.trim()} ${</span>
+            stack ? `\n${stack}` : ''
+          }`;
         }),
         winston.format.colorize({ all: true })
       ),
@@ -660,8 +665,9 @@ const WinstonLoggerJobs = winston.createLogger({
         winston.format.printf(<span class="fstat-no" title="function not covered" >(i</span>nfo) =&gt; {
           const { timestamp, level, message = <span class="branch-0 cbranch-no" title="branch not covered" >'',</span> stack } = <span class="cstat-no" title="statement not covered" >info;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          return `${timestamp} ${level}: ${message.trim()} ${stack ? `\n${stack}` : ''</span>
-            }`;
+<span class="cstat-no" title="statement not covered" >          return `${timestamp} ${level}: ${message.trim()} ${</span>
+            stack ? `\n${stack}` : ''
+          }`;
         })
       ),
     }),
@@ -773,13 +779,13 @@ const workerMessage = <span class="fstat-no" title="function not covered" >(w</s
         `Worker [${workerMessageParam.name}]: ${workerMessageParam.message}`
       );
     }
-  } catch (e) { }
+  } catch (e) {}
 };
 const removeJobs = <span class="fstat-no" title="function not covered" >()</span> =&gt;
 <span class="cstat-no" title="statement not covered" >  jobsDefined.forEach(<span class="fstat-no" title="function not covered" >(i</span>t) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
 <span class="cstat-no" title="statement not covered" >      if (bree) <span class="cstat-no" title="statement not covered" >bree.remove(it.name);</span></span>
-    } catch (e) { }
+    } catch (e) {}
   });
 const reloadJobs = <span class="fstat-no" title="function not covered" >(m</span>odels) =&gt; <span class="cstat-no" title="statement not covered" >initJobs(models);</span>
 const getJobs = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >jobs;</span>
@@ -789,7 +795,7 @@ const runJob = <span class="fstat-no" title="function not covered" >as</span>ync
 <span class="cstat-no" title="statement not covered" >  if (jobFinded &amp;&amp; bree) {</span>
 <span class="cstat-no" title="statement not covered" >    try {</span>
 <span class="cstat-no" title="statement not covered" >      await bree.stop(name);</span>
-    } catch (e) { }
+    } catch (e) {}
 <span class="cstat-no" title="statement not covered" >    bree.run(name);</span>
   }
 };
@@ -829,7 +835,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-14T19:36:08.829Z
+                at 2024-09-25T17:54:13.824Z
             </div>
         <script src="../prettify.js"></script>
         <script>

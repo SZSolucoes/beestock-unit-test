@@ -129,7 +129,15 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -151,8 +159,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,18 +193,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,7 +212,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import APIError from '../helpers/error';
-import I18n from '../helpers/i18n';
+import { t } from '../helpers/i18n';
 import UserFunctionInformation from '../source/userFunctions/information';
 &nbsp;
 async function validUserFunctionId(req) {
@@ -210,24 +226,29 @@ async function validUserFunctionId(req) {
     });
 &nbsp;
     if (!existUserFunction) {
-      throw new APIError('NOT_EXIST_USER_FUNCTION_ID', I18n.t('BEE1251', {0:userFunctionId} /* Função %{0} não localizada! */));
+      throw new APIError(
+        'NOT_EXIST_USER_FUNCTION_ID',
+        t('BEE1251', { 0: userFunctionId } /* Função %{0} não localizada! */)
+      );
     }
   }
-&nbsp;
 }
 &nbsp;
 async function validCode(req) {
   const code = req.body.code || req.query.code;
 &nbsp;
   if (!code) {
-    throw new APIError('INVALID_USER_FUNCTION_CODE');
+    throw new APIError('INVALID_CODE');
   } else {
     const existUserFunction = await UserFunctionInformation.getUserFunction({
       code,
     });
 &nbsp;
     if (existUserFunction) {
-      throw new APIError('EXIST_USER_FUNCTION_CODE', I18n.t('BEE1173', {0:code} /* Codigo %{0} já cadastrado  */));
+      throw new APIError(
+        'EXIST_USER_FUNCTION_CODE',
+        t('BEE1173', { 0: code } /* Codigo %{0} já cadastrado  */)
+      );
     }
   }
 }
@@ -242,7 +263,10 @@ async function validExistingCode(req) {
     });
 &nbsp;
     if (!existUserFunction) {
-      throw new APIError('NOT_EXIST_USER_FUNCTION_CODE', I18n.t('BEE1192', {0:code} /* Código %{0} não cadastrado */));
+      throw new APIError(
+        'NOT_EXIST_USER_FUNCTION_CODE',
+        t('BEE1192', { 0: code } /* Código %{0} não cadastrado */)
+      );
     }
   }
 }
@@ -251,7 +275,7 @@ function validName(req) {
   const name = req.body.name || req.query.name;
 &nbsp;
   if (!name) {
-    throw new APIError('INVALID_USER_FUNCTION_NAME');
+    throw new APIError('INVALID_NAME');
   }
 }
 &nbsp;
@@ -268,7 +292,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-14T19:36:08.829Z
+                at 2024-09-25T17:54:13.824Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/72</span>
+                <span class='fraction'>0/74</span>
             </div>
         
             
@@ -459,14 +459,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -489,6 +482,15 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -551,9 +553,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -773,12 +773,6 @@ async function <span class="fstat-no" title="function not covered" >validBilling
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!outboundOrder.orderType) {</span>
-<span class="cstat-no" title="statement not covered" >    isValid = false;</span>
-<span class="cstat-no" title="statement not covered" >    code = 9004;</span>
-<span class="cstat-no" title="statement not covered" >    message = t('BEE1311' /* Tipo do documento deve ser informado */);</span>
-  }
-&nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!outboundOrder.orderNumber) {</span>
 <span class="cstat-no" title="statement not covered" >    isValid = false;</span>
 <span class="cstat-no" title="statement not covered" >    code = 9005;</span>
@@ -788,7 +782,6 @@ async function <span class="fstat-no" title="function not covered" >validBilling
       branchCode: outboundOrder.branchCode,
       customerCode: outboundOrder.customerCode,
       orderNumber: outboundOrder.orderNumber,
-      orderType: outboundOrder.orderType,
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!existOrder) {</span>
@@ -807,6 +800,15 @@ async function <span class="fstat-no" title="function not covered" >validBilling
 <span class="cstat-no" title="statement not covered" >        code = 9013;</span>
 <span class="cstat-no" title="statement not covered" >        message = t(</span>
           'BEE2603' /* Documento com status Devolvido não permite confirmação de faturamento */
+        );
+      } else <span class="cstat-no" title="statement not covered" >if (</span>
+        existOrder.invoiceNumber &amp;&amp;
+        existOrder.invoiceNumber.trim() !== ''
+      ) {
+<span class="cstat-no" title="statement not covered" >        isValid = false;</span>
+<span class="cstat-no" title="statement not covered" >        code = 9014;</span>
+<span class="cstat-no" title="statement not covered" >        message = t(</span>
+          'BEE3932' /* Documento já faturado. Não é possível faturar novamente. */
         );
       }
     }
@@ -864,7 +866,6 @@ async function <span class="fstat-no" title="function not covered" >importBillin
           branchCode: outboundOrder.branchCode,
           customerCode: outboundOrder.customerCode,
           orderNumber: outboundOrder.orderNumber,
-          orderType: outboundOrder.orderType,
         },
         error: valid.code,
         message: valid.message,
@@ -875,7 +876,6 @@ async function <span class="fstat-no" title="function not covered" >importBillin
           branchCode: outboundOrder.branchCode,
           customerCode: outboundOrder.customerCode,
           orderNumber: outboundOrder.orderNumber,
-          orderType: outboundOrder.orderType,
         });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      if (outboundOrder.status === 'OK') {</span>
@@ -1027,7 +1027,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-26T12:12:29.013Z
+                at 2024-11-05T21:04:23.461Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

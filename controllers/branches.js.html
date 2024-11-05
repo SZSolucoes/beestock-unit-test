@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">96.07% </span>
+                <span class="strong">70.9% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>49/51</span>
+                <span class='fraction'>39/55</span>
             </div>
         
             
@@ -730,7 +730,18 @@
 <a name='L665'></a><a href='#L665'>665</a>
 <a name='L666'></a><a href='#L666'>666</a>
 <a name='L667'></a><a href='#L667'>667</a>
-<a name='L668'></a><a href='#L668'>668</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L668'></a><a href='#L668'>668</a>
+<a name='L669'></a><a href='#L669'>669</a>
+<a name='L670'></a><a href='#L670'>670</a>
+<a name='L671'></a><a href='#L671'>671</a>
+<a name='L672'></a><a href='#L672'>672</a>
+<a name='L673'></a><a href='#L673'>673</a>
+<a name='L674'></a><a href='#L674'>674</a>
+<a name='L675'></a><a href='#L675'>675</a>
+<a name='L676'></a><a href='#L676'>676</a>
+<a name='L677'></a><a href='#L677'>677</a>
+<a name='L678'></a><a href='#L678'>678</a>
+<a name='L679'></a><a href='#L679'>679</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -857,6 +868,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -878,8 +891,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -957,6 +975,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1089,6 +1108,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -1176,10 +1196,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1243,7 +1265,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">122x</span>
+<span class="cline-any cline-yes">124x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -1421,7 +1443,7 @@ async function getBranch(req, res) {
       mandatoryComplementAddress: branch.mandatoryComplementAddress,
       companyName: branch.company
         ? `${branch.company.code}-${branch.company.companyName}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       email: branch.email,
       phone: branch.phone,
       cnpj: branch.cnpj,
@@ -1446,23 +1468,23 @@ async function getBranch(req, res) {
       preReceiptDeposit: branch.preReceiptDeposit,
       preReceiptName: branch.depPreReceipt
         ? `${branch.depPreReceipt.code} - ${branch.depPreReceipt.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       inboundDeposit: branch.inboundDeposit,
       inboundName: branch.depInbound
         ? `${branch.depInbound.code} - ${branch.depInbound.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       resaleDeposit: branch.resaleDeposit,
       resaleName: branch.depResale
         ? `${branch.depResale.code} - ${branch.depResale.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       inventoryDeposit: branch.inventoryDeposit,
       inventoryName: branch.depInventory
         ? `${branch.depInventory.code} - ${branch.depInventory.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       divergenceDeposit: branch.divergenceDeposit,
       divergenceName: branch.depDivergence
         ? `${branch.depDivergence.code} - ${branch.depDivergence.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       separationDivergenceDeposit: branch.separationDivergenceDeposit,
       separationDivergenceName: branch.depSeparationDivergence
         ? <span class="branch-0 cbranch-no" title="branch not covered" >`${branch.depSeparationDivergence.code} - ${branch.depSeparationDivergence.name}`</span>
@@ -1470,31 +1492,31 @@ async function getBranch(req, res) {
       damageDeposit: branch.damageDeposit,
       damageName: branch.depDamage
         ? `${branch.depDamage.code} - ${branch.depDamage.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       rejectedDeposit: branch.rejectedDeposit,
       rejectedName: branch.depRejected
         ? `${branch.depRejected.code} - ${branch.depRejected.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       qualityDeposit: branch.qualityDeposit,
       qualityName: branch.depQuality
         ? `${branch.depQuality.code} - ${branch.depQuality.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       spareDeposit: branch.spareDeposit,
       spareName: branch.depSpare
         ? `${branch.depSpare.code} - ${branch.depSpare.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       withdrawUser: branch.withdrawUser,
       withdrawName: branch.userWithdraw
         ? `${branch.userWithdraw.login} - ${branch.userWithdraw.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       intermediaryDeposit: branch.intermediaryDeposit,
       intermediaryName: branch.depIntermediary
         ? `${branch.depIntermediary.code} - ${branch.depIntermediary.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       factoryDeposit: branch.factoryDeposit,
       factoryName: branch.depFactory
         ? `${branch.depFactory.code} - ${branch.depFactory.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       branchInInventory: branch.branchInInventory,
       usesCableCuttingPlan: branch.usesCableCuttingPlan,
       usesCarrierSchedule: branch.usesCarrierSchedule,
@@ -1509,7 +1531,7 @@ async function getBranch(req, res) {
       package: branch.packageCode,
       packageName: branch.package
         ? `${branch.package.code} - ${branch.package.name}`
-        : '',
+        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       requestResupplyQuantity: branch.requestResupplyQuantity,
       prioritySuggestResupply: branch.prioritySuggestResupply,
       restrictionPicking: branch.restrictionPicking,
@@ -1522,6 +1544,8 @@ async function getBranch(req, res) {
       generateInventoryForSeparationDiscrepancy:
         branch.generateInventoryForSeparationDiscrepancy,
       autoFinalizeNoDivergence: branch.autoFinalizeNoDivergence,
+      productAddressBranchCapacity:
+        branch.productAddressBranchCapacity || false,
     };
 &nbsp;
     const response = {
@@ -1541,9 +1565,12 @@ async function getBranch(req, res) {
 &nbsp;
 async function getAllBranches(req, res) {
   try {
-    const branches = await BranchInformation.getAllBranches({
-      userBranches: req.userBranches,
-    });
+    const branches = await BranchInformation.getAllBranches(
+      {},
+      {
+        userBranches: req.userBranches,
+      }
+    );
 &nbsp;
     const data = branches.map((branch) =&gt; {
       return {
@@ -1609,6 +1636,8 @@ async function getAllBranches(req, res) {
         generateInventoryForSeparationDiscrepancy:
           branch.generateInventoryForSeparationDiscrepancy,
         autoFinalizeNoDivergence: branch.autoFinalizeNoDivergence,
+        productAddressBranchCapacity:
+          branch.productAddressBranchCapacity || false,
       };
     });
 &nbsp;
@@ -1689,6 +1718,7 @@ async function createBranch(req, res) {
     generateInventoryForSeparationDiscrepancy,
     autoFinalizeNoDivergence,
     restrictSearchSepDoc,
+    productAddressBranchCapacity,
   } = req.body;
 &nbsp;
   const branch = {
@@ -1752,6 +1782,7 @@ async function createBranch(req, res) {
     generateInventoryForSeparationDiscrepancy,
     autoFinalizeNoDivergence,
     restrictSearchSepDoc,
+    productAddressBranchCapacity,
     createdUser: req.userId || req.body.createdUser,
     updatedUser: req.userId || req.body.updatedUser,
   };
@@ -1843,6 +1874,7 @@ async function updateBranch(req, res) {
     generateInventoryForSeparationDiscrepancy,
     autoFinalizeNoDivergence,
     restrictSearchSepDoc,
+    productAddressBranchCapacity,
   } = req.body;
 &nbsp;
   const branch = {
@@ -1906,6 +1938,7 @@ async function updateBranch(req, res) {
     generateInventoryForSeparationDiscrepancy,
     autoFinalizeNoDivergence,
     restrictSearchSepDoc,
+    productAddressBranchCapacity,
     updatedUser: req.userId,
   };
 &nbsp;
@@ -2071,7 +2104,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-09-26T12:12:29.013Z
+                at 2024-11-05T21:04:23.461Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -1,0 +1,322 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for helpers/labels/zpl.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">helpers/labels</a> zpl.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>19/19</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>19/19</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable no-template-curly-in-string */
+const address =
+  "~CT~~CD,~CC^~CT~\n  ^XA\n  ~TA000\n  ~JSN\n  ^LT0\n  ^MNW\n  ^MTT\n  ^PON\n  ^PMN\n  ^LH0,0\n  ^JMA\n  ^PR8,8\n  ~SD20\n  ^JUS\n  ^LRN\n  ^CI27\n  ^PA0,1,1,0\n  ^XZ\n  ^XA\n  ^MMT\n  ^PW799\n  ^LL200\n  ^LS0\n  ^BY3,3,80^FT100,138^BCN,,N,N\n  ^FH\\\\^FD${address.code}^FS\n  ^FT100,44^A0N,28,28^FH\\\\^CI28^FD${address.branch.name.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '')}^FS^CI27\n  ^FT100,185^A0N,45,45^FH\\\\^CI28^FD${address.name}^FS^CI27\n  ^PQ1,0,1\n  ^XZ";
+&nbsp;
+const baptism =
+  "~CT~~CD,~CC^~CT~\n  ^XA\n  ~TA000\n  ~JSN\n  ^LT0\n  ^MNW\n  ^MTT\n  ^PON\n  ^PMN\n  ^LH0,0\n  ^JMA\n  ^PR8,8\n  ~SD15\n  ^JUS\n  ^LRN\n  ^CI27\n  ^PA0,1,1,0\n  ^XZ\n  ^XA\n  ^MMT\n  ^PW827\n  ^LL567\n  ^LS0\n  ${baptism.type === 2 ? '^FO300,129^GB 320,50,50^FS' : ''}\n  ^FT320,170^A0N,40,40^${baptism.type === 2 ? 'FR' : 'FH'}\\\\^CI28^FD${typeTranslation(baptism.type)}^FS^CI27\n  ^BY2,3,122^FT326,355^BCN,,Y,Y\n  ^FH\\\\^FD${baptism.code}^FS\n  ^PQ1,0,1,Y\n  ^XZ";
+&nbsp;
+const cableCut =
+  "~CT~~CD,~CC^~CT~\n^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ\n^XA\n^MMT\n^PW400\n^LL0176\n^LS0\n^BY1,3,29^FT164,162^BCN,,N,N\n^FD${cableCut.productCode}^FS\n^FT10,33^A0N,20,19^FH\\^FDItem: ${cableCut.productCode}^FS\n^FT254,33^A0N,20,19^FH\\^FDQtd: ${cableCut.quantity.split(',')[0]} Mts^FS\n^FT10,61^A0N,20,19^FH\\^FD${cableCut.productName.slice(0, 39)}^FS\n^FT10,85^A0N,20,19^FH\\^FD${cableCut.productName.slice(39, 78)}^FS\n^FT10,113^A0N,20,19^FH\\^FDLote: ${cableCut.lotNumber}^FS\n^PQ1,0,1,Y^XZ";
+&nbsp;
+const cableCutKardex =
+  "~CT~~CD,~CC^~CT~\n  ^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ\n  ^XA\n  ^MMT\n  ^PW400\n  ^LL0176\n  ^LS0\n  ^FO160,96^GFA,00768,00768,00012,:Z64:\n  eJxjYBgioP4/GDwYzuxRQHcAANL/i5w=:2894\n  ^BY1,3,29^FT164,162^BCN,,N,N\n  ^FD${cableCut.productCode}^FS\n  ^FT10,33^A0N,20,19^FH\\^FDItem: ${cableCut.productCode}^FS\n  ^FT254,33^A0N,20,19^FH\\^FDQtd: ${cableCut.quantity.split(',')[0]} Mts^FS\n  ^FT10,59^A0N,20,19^FH\\^FD${cableCut.productName.slice(0, 39)}^FS\n  ^FT10,83^A0N,20,19^FH\\^FD${cableCut.productName.slice(39, 78)}^FS\n  ^FT10,108^A0N,20,19^FH\\^FDLote: ${cableCut.lotNumber}^FS\n  ^FT179,126^A0N,14,14^FH\\^FDKardex^FS\n  ^PQ1,0,1,Y^XZ";
+&nbsp;
+const conferenceVolume =
+  '~CT~~CD,~CC^~CT~\n^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR8,8\n~SD15\n^JUS\n^LRN\n^CI27\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW831\n^LL569\n^LS0\n^FT23,75^A0N,28,28^FH\\^CI28^FDOrdem:^FS^CI27\n^FO0,142^GB830,0,4^FS\n^FT23,218^A0N,23,23^FH\\^CI28^FDCliente Destino:^FS^CI27\n^FT179,217^A0N,28,30^FH\\^CI28^FD${conferenceVolume.customerName}^FS^CI27\n^FT179,272^A0N,28,28^FH\\^CI28^FD${conferenceVolume.carrierName}^FS^CI27\n^FT23,387^A0N,23,23^FH\\^CI28^FDVolume:^FS^CI27\n^FT110,386^A0N,28,28^FH\\^CI28^FD${conferenceVolume.sequence}^FS^CI27\n^FT575,387^A0N,23,23^FH\\^CI28^FDData:^FS^CI27\n^FT626,389^A0N,25,25^FH\\^CI28^FD${conferenceVolume.printDate}^FS^CI27\n^BY2,3,62^FT326,510^BCN,,Y,N\n^FH\\^FD${conferenceVolume.outboundVolumeId}^FS\n^FO590,17${companyLogo}\n^FT23,129^A0N,28,28^FH\\^CI28^FDPedido:^FS^CI27\n^FT131,79^A0N,39,41^FH\\^CI28^FD${conferenceVolume.orderNumber}^FS^CI27\n^FT131,133^A0N,39,41^FH\\^CI28^FD${conferenceVolume.customerOrderCode}^FS^CI27\n^FT351,334^A0N,23,23^FH\\^CI28^FDCidade:^FS^CI27\n^FT425,333^A0N,28,28^FH\\^CI28^FD${conferenceVolume.shipToState}-${conferenceVolume.shipToCity}^FS^CI27\n^FT23,328^A0N,23,23^FH\\^CI28^FDTipo:^FS^CI27\n^FT79,330^A0N,28,30^FH\\^CI28^FD${conferenceVolume.deliveryType}^FS^CI27\n^FT23,273^A0N,23,23^FH\\^CI28^FDTransportadora:^FS^CI27\n^PQ1,0,1,Y\n^XZ';
+&nbsp;
+const conferenceVolumeIndividual =
+  '~CT~~CD,~CC^~CT~\n^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR8,8\n~SD15\n^JUS\n^LRN\n^CI27\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW839\n^LL575\n^LS0\n^FT23,53^A0N,28,28^FH\\^CI28^FDOrdem:^FS^CI27\n^FO0,109^GB830,0,4^FS\n^FT23,151^A0N,23,23^FH\\^CI28^FDCliente Destino:^FS^CI27\n^FT179,150^A0N,28,30^FH\\^CI28^FD${conferenceVolume.customerName}^FS^CI27\n^FT23,468^A0N,23,23^FH\\^CI28^FDProduto^FS^CI27\n^FT179,193^A0N,28,28^FH\\^CI28^FD${conferenceVolume.carrierName}^FS^CI27\n^FT23,287^A0N,23,23^FH\\^CI28^FDVolume:^FS^CI27\n^FT110,286^A0N,28,28^FH\\^CI28^FD${conferenceVolume.sequence}^FS^CI27\n^FT575,287^A0N,23,23^FH\\^CI28^FDData:^FS^CI27\n^FT626,289^A0N,25,25^FH\\^CI28^FD${conferenceVolume.printDate}^FS^CI27\n^BY2,3,62^FT318,357^BCN,,Y,N\n^FH\\^FD${conferenceVolume.outboundVolumeId}^FS\n^FO590,17${companyLogo}\n^FT23,95^A0N,28,28^FH\\^CI28^FDPedido:^FS^CI27\n^FT131,56^A0N,39,41^FH\\^CI28^FD${conferenceVolume.orderNumber}^FS^CI27\n^FT131,100^A0N,39,41^FH\\^CI28^FD${conferenceVolume.customerOrderCode}^FS^CI27\n^FT351,245^A0N,23,23^FH\\^CI28^FDCidade:^FS^CI27\n^FT425,244^A0N,28,28^FH\\^CI28^FD${conferenceVolume.shipToState}-${conferenceVolume.shipToCity}^FS^CI27\n^FT23,239^A0N,23,23^FH\\^CI28^FDTipo:^FS^CI27\n^FT79,241^A0N,28,30^FH\\^CI28^FD${conferenceVolume.deliveryType}^FS^CI27\n^FO0,387^GB830,0,4^FS\n^FT23,433^A0N,39,41^FH\\^CI28^FDCHECK LIST^FS^CI27\n^FT23,194^A0N,23,23^FH\\^CI28^FDTransportadora:^FS^CI27\n^FT122,468^A0N,23,23^FH\\^CI28^FDCod. Cliente^FS^CI27\n^FT245,468^A0N,23,23^FH\\^CI28^FDDescrição^FS^CI27\n^FT744,468^A0N,23,23^FH\\^CI28^FDQtde.^FS^CI27\n^FT23,504^A0N,23,25^FH\\^CI28^FD${volumeCheckList.productCode}^FS^CI27\n^FT122,504^A0N,23,25^FH\\^CI28^FD${volumeCheckList.customerProductCode}^FS^CI27\n^FT245,504^A0N,23,25^FH\\^CI28^FD${volumeCheckList.productName.slice(0, 37)}^FS^CI27\n^FT744,501^A0N,23,25^FH\\^CI28^FD${volumeCheckList.quantity}^FS^CI27\n^FT245,534^A0N,23,25^FH\\^CI28^FD${volumeCheckList.productName.slice(37, 74)}^FS^CI27\n^PQ1,0,1,Y\n^XZ';
+&nbsp;
+const consolidation =
+  "~CT~~CD,~CC^~CT~\n^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR8,8\n~SD15\n^MD15\n^JUS\n^LRN\n^CI27\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW827\n^LL567\n^LS0\n^FT50,80^A0N,34,33^FH\\\\^CI28^FDNF: ${dataConsolidation.invoiceNumber}-${dataConsolidation.invoiceSerie}^FS^CI27\n^FT50,123^A0N,25,25^FH\\\\^CI28^FDDocumento: ${dataConsolidation.orderNumber}^FS^CI27\n^FT50,154^A0N,25,25^FH\\\\^CI28^FDPedido Cliente: ${dataConsolidation.customerOrderCode}^FS^CI27\n^FT50,185^A0N,25,25^FH\\\\^CI28^FDPedido ERP: ${dataConsolidation.erpOrderCode}^FS^CI27\n^FT50,233^A0N,23,23^FH\\\\^CI28^FDTransportadora: ${dataConsolidation.carrierName}^FS^CI27\n^FT50,310^A0N,23,23^FH\\\\^CI28^FDCliente Destino: ${dataConsolidation.customerName}^FS^CI27\n^FT50,388^A0N,23,23^FH\\\\^CI28^FDEndereço:^FS^CI27\n^FT150,388^A0N,23,23^FH\\\\^CI28^FD${dataConsolidation.street} - ${dataConsolidation.district}^FS^CI27\n^FT150,417^A0N,23,23^FH\\\\^CI28^FD${dataConsolidation.city}/${dataConsolidation.state}^FS^CI27\n^BY2,3,100^FT50,548^BCN,,Y,N\n^FH\\\\^FD${dataConsolidation.barCode.toString().padStart(15, '0')}^FS\n^FT620,168^A0N,39,38^FH\\\\^CI28^FDVolume:${dataConsolidation.sequence}/${dataConsolidation.totalValue}^FS^CI27\n^FT620,198^A0N,20,20^FH\\\\^CI28^FDData: ${dataConsolidation.printDate}^FS^CI27\n^FT700,465^A0N,20,20^FH\\\\^CI28^FDPeso Volume:^FS^CI27\n^FT730,490^A0N,20,20^FH^CI28^FD${weightCorrectedConsolidation} KG^FS^CI27\n^FO560,20${companyLogo}\n^PQ1,0,1,Y\n^XZ";
+&nbsp;
+const customerProduct =
+  'CT~~CD,~CC^~CT~\n^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR8,8\n~SD15\n^JUS\n^LRN\n^CI27\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW827\n^LL567\n^LS0\n^BY2,2,96^FT297,494^BCN,,Y,N\n^FH\\\\^FD${element.customerProductCode}^FS\n^FT240,377^A0N,28,28^FB347,1,7,C^FH\\^CI28^FDCOD Produto Cliente^FS^CI27\n^FT20,80^A0N,28,28^FH\\\\^CI28^FDCOD Produto Sonepar:^FS^CI27\n^FT280,80^A0N,28,28^FH\\\\^CI28^FD${element.productCode}^FS^CI27\n^FT20,163^A0N,28,28^FH\\\\^CI28^FD${element.productName.slice(0, 60)}^FS^CI27\n^FT20,192^A0N,28,28^FH\\\\^CI28^FD${element.productName.slice(60, 120)}^FS^CI27\n^FO560,20${companyLogo}\n^PQ1,0,1,Y\n^XZ';
+&nbsp;
+const ean =
+  '~CT~~CD,~CC^~CT~\n^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR6,6\n~SD20\n^JUS\n^LRN\n^CI0\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW400\n^LL0176\n^LS0\n^BY2,3,46^FT25,141^BCN,,Y,N\n^FH\\\\^FD${prodEan.ean}^FS\n^FT10,30^A0N,20,20^FH\\\\^CI28^FD${description.slice(0, 35)}^FS^CI27\n^FT10,55^A0N,20,20^FH\\\\^CI28^FD${description.slice(35, 70)}^FS^CI27\n^PQ1,,,Y\n^XZ';
+&nbsp;
+const lot =
+  '~CT~~CD,~CC^~CT~\n^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR6,6\n~SD20\n^JUS\n^LRN\n^CI0\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW394\n^LL173\n^LS0\n^BY2,3,80^FT89,126^BCN,,Y,N\n^FD${lot}^FS\n^PQ1,,,Y\n^XZ';
+&nbsp;
+const preConferenceDocument =
+  '^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR8,8\n~SD15\n^JUS\n^LRN\n^CI27\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW827\n^LL567\n^LS0\n^FT16,83^A0N,40,40^FH^CI28\n^FD${inboundOrder.orderNumber}^FS^CI27\n^BY2,3,162^FT280,398^BCN,,Y,Y\n^FH^FD${inboundOrder.orderNumber}^FS\n^FT641,537^A0N,25,25^FH^CI28^FD${printDate}^FS^CI27\n^FT250,74^A0N,28,28^FB565,1,6,R^FH^CI28^FD${inboundOrder.supplier.name.slice(0, 35)}^FS^CI27\n^FT250,105^A0N,28,28^FB565,1,6,R^FH^CI28^FD${inboundOrder.supplier.name.slice(35, 70)}^FS^CI27\n^PQ1,0,1,Y\n^XZ';
+&nbsp;
+const preConferenceProduct =
+  '&lt;0x10&gt;CT~~CD,~CC^~CT~\n^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR8,8\n~SD15\n^JUS\n^LRN\n^CI27\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW827\n^LL567s\n^LS0\n^FT33,83^A0N,34,33^FH\\\\^CI28^FD${InboundOrderProduct.description.slice(0, 44)}^FS^CI27\n^FT33,126^A0N,34,33^FH\\\\^CI28^FD${InboundOrderProduct.description.slice(44, 88)}^FS^CI27\n^FT33,228^A0N,34,33^FH\\\\^CI28^FDCurva: ${InboundOrderProduct.curve}^FS^CI27\n^BY2,3,114^FT200,471^BCN,,Y,Y\n^FH\\\\^FD${InboundOrderProduct.ean}^FS\n^FT725,228^A0N,34,33^FH\\\\^CI28^FD${InboundOrderProduct.rangeCode}^FS^CI27\n^PQ1,0,1,Y\n^XZ';
+&nbsp;
+const preConferenceProductII =
+  "^XA\n^MMT\n^PW799\n^LL0400\n^LS0\n^FO9,8^GB782,383,2^FS\n^FT16,50^A0N,39,38^FH^FD${InboundOrderProduct.productCode +' - '+InboundOrderProduct.description.slice(0, 14)}^FS\n^FT16,100^A0N,39,38^FH^FD${InboundOrderProduct.description.slice(14, 46)}^FS\n^FO16,160^GB632,0,4^FS\n^FT16,152^A0N,39,38^FH^FDOC:${InboundOrderProduct.purchaseOrder}^FS\n^FO16,110^GB632,0,4^FS\n^FT16,200^A0N,34,33^FH^FD${InboundOrderProduct.fullName.slice(0, 46)}^FS\n^FT16,245^A0N,34,33^FH^FD${InboundOrderProduct.fullName.slice(46, 91)}^FS\n^FT16,290^A0N,34,33^FH^FD${InboundOrderProduct.fullName.slice(91, 138)}^FS\n^FT16,335^A0N,34,33^FH^FD${InboundOrderProduct.fullName.slice(138, 182)}^FS\n^FT16,380^A0N,34,33^FH^FD${InboundOrderProduct.fullName.slice(182, 228)}^FS\n^FT656,160^BQN,2,6\n^FH^FDLA,${InboundOrderProduct.productCode}^FS\n^PQ1,0,1,Y\n^XZ";
+&nbsp;
+const resupplyWave =
+  "CT~~CD,~CC^~CT~\n^XA~TA000~JSN^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR5,5~SD15^JUS^LRN^CI0^XZ\n^XA\n^MMT\n^PW480\n^LL0320\n^LS0\n^BY3,3,85^FT105,202^BCN,,Y,N\n^FD&gt;:${waveNumber}^FS\n^FO0,42^GB550,64,64^FS\n^FT32,88^A0N,39,38^FR^FH\\^FD${t(\n    'BEE2840' /* Ressuprimento Kanban */\n  ).toUpperCase()}^FS\n^PQ1,0,1,Y^XZ";
+&nbsp;
+const serialHorizontal =
+  "^XA\n^MMT\n^PW759\n^LL0400\n^LS0\n^FO10,10^GB740,380,1^FS\n^FT520,270^BQN,2,10^FH\\^FDLA,${serial.code}^FS\n^FT540,262^A0N,24,26^FD${serial.code}^FS\n^FT20,120^A0N,120,${110 + 10 * (9 - serial.productCode.length)}^FD${serial.productCode}^FS\n^FT20,170^A0N,28,30^FD${Desc1}^FS\n^FT20,210^A0N,28,30^FD${Desc2}^FS\n^FT20,250^A0N,28,30^FD${Desc3}^FS\n^FT20,290^A0N,28,28^FDCAIXA C/ ${QuantityPackage} UNID PESO BRUTO: ${grossWeight} KG^FS\n^FT65,360^BY2,3,60 ^BCN,60,Y,N,N ^FD${EAN}^FS\n${serial.productionOrder ? `^FT560,300^A0N,30,30^FDOP: ${serial.productionOrder.code}^FS` : ''}\n${serial.lotNumber ? `^FT560,340^A0N,30,30^FDL: ${serial.lotNumber}^FS` : ''}\n${serial.expirationDate ? `^FT560,380^A0N,30,30^FDV: ${moment(serial.expirationDate).format('DD/MM/YYYY')}^FS` : ''}\n^PQ1,0,1,Y^XZ";
+&nbsp;
+const serialVertical =
+  "^XA~TA000~JSN^LT0^MNW^MTD^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ\n^XA\n^MMT\n^PW400\n^LL0759\n^LS0\n^FO10,10^GB380,740,1^FS\n^FT110,730^A0B,107,${110 + 10 * (9 - serial.productCode.length)}^FH\\^FD${serial.productCode}^FS\n^FT30,270^BQN,2,10\n^FH\\^FDLA,${serial.code}^FS\n^FT262,220^A0B,24,26^FH\\^FD${serial.code}^FS\n^FT160,730^A0B,28,30^FH\\^FD${Desc1}^FS\n^FT200,730^A0B,28,30^FH\\^FD${Desc2}^FS\n^FT240,730^A0B,28,30^FH\\^FD${Desc3}^FS\n^FT290,730^A0B,28,28^FH\\^FDCAIXA C/ ${QuantityPackage} UNID PESO BRUTO: ${grossWeight} KG^FS\n^BY2,3,62^FT360,693^BCB,,Y,N\n^FD${EAN}^FS\n${serial.productionOrder ? `^FT300,200^A0B,28,28^FH\\^FDOP: ${serial.productionOrder.code}^FS` : ''}\n${serial.lotNumber ? `^FT340,200^A0B,28,28^FH\\^FDL: ${serial.lotNumber}^FS` : ''}\n${serial.expirationDate ? `^FT380,200^A0B,28,28^FH\\^FDV: ${moment(serial.expirationDate).format('DD/MM/YYYY')}^FS` : ''}\n^PQ1,0,1,Y^XZ";
+&nbsp;
+const serialGroup =
+  "^XA~TA000~JSN^LT0^MNW^MTD^PON^PMN^LH0,0^JMA^PR4,4~SD15^JUS^LRN^CI0^XZ\n^XA\n^MMT\n^PW799\n^LL0799\n^LS0\n^FO15,15^GB765,765,3^FS\n^FT30,175^A0N,162,${175 + 10 * (9 - serialGroup.productCode.length)}^FD${serialGroup.productCode}^FS\n^FT30,245^A0N,48,48^FH\\^FD${Desc1}^FS\n^FT30,305^A0N,48,48^FH\\^FD${Desc2}^FS\n^FT30,365^A0N,48,48^FH\\^FD${Desc3}^FS\n^FT30,465^A0N,80,77^FH\\^FDPALLET C/ ${parseFloat(serialGroup.quantity)} UNID^FS\n${serialGroup.productionOrder ? `^FT30,565^A0N,79,79^FH\\^FDOP: ${serialGroup.productionOrder.code}^FS` : ''}\n${serialGroup.lotNumber ? `^FT30,655^A0N,79,79^FH\\^FDL: ${serialGroup.lotNumber}^FS` : ''}\n${serialGroup.expirationDate ? `^FT30,755^A0N,79,79^FH\\^FDV: ${moment(serialGroup.expirationDate).format('DD/MM/YYYY')}^FS` : ''}\n^FT543,767^BQN,2,10\n^FH\\^FDLA,${serialGroup.code}^FS\n^FT544,762^A0N,28,30^FH\\^FD${serialGroup.code}^FS\n^PQ1,0,1,Y^XZ";
+&nbsp;
+const volumeCheckList =
+  '^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR8,8\n~SD15\n^JUS\n^LRN\n^CI27\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW827\n^LL567\n^LS0\n^FO634,24${companyLogo}\n^FT24,78^A0N,39,38^FH\\^CI28^FDCHECK LIST^FS^CI27\n^FO1,122^GB830,50,50^FS\n^FT24,154^A0N,20,20^FR^CI28^FDProduto^FS^CI27\n^FT141,154^A0N,20,20^FR^CI28^FDCod Cliente^FS^CI27\n^FT284,154^A0N,20,20^FR^CI28^FDDescrição^FS^CI27\n^FT769,154^A0N,20,20^FR^CI28^FDQtde^FS^CI27\n${volumeCheckList.map((element)=&gt;{\nlet ZPL = `^FT24,${value1}^A0N,23,23^FH\\^CI28^FD${\n      element.productCode\n    }^FS^CI27\n    ^FT141,${value1}^A0N,23,23^FH\\^CI28^FD${\n      element.customerProductCode\n    }^FS^CI27\n    ^FT284,${value3}^A0N,20,20^FH\\^CI28^FD${element.productName.slice(\n      0,\n      44\n    )}^FS^CI27\n    ^FT284,${value4}^A0N,20,20^FH\\^CI28^FD${element.productName.slice(\n      44,\n      88\n    )}^FS^CI27\n    ^FT769,${value1}^A0N,23,23^FH\\^CI28^FD${element.quantity}^FS^CI27\n    ^FO1,${value2}^GB830,8,8^FS`\n\n value1 += 63;\n value2 += 63;\n value3 += 62;\n value4 += 62;\n\nreturn ZPL \n})}\n^PQ1,0,1,Y\n^XZ';
+&nbsp;
+const vale =
+  "~~CD,~CC^~CT~\n^XA\n~TA000\n~JSN\n^LT0\n^MNW\n^MTT\n^PON\n^PMN\n^LH0,0\n^JMA\n^PR8,8\n~SD15\n^JUS\n^LRN\n^CI27\n^PA0,1,1,0\n^XZ\n^XA\n^MMT\n^PW780\n^LL799\n^LS-60\n^FO10,10^GB710,525,4^FS\n^FO280,10^GB4,134,4^FS\n^FO280,75^GB436,4,4^FS\n^FO15,140^GB700,4,4^FS\n^FO400,10^GB4,65,4^FS\n^FO600,10^GB4,130,4^FS\n^FO470,142^GB4,390,4^FS\n^FO15,205^GB700,4,4^FS\n^FO15,270^GB700,4,4^FS\n^FO15,400^GB455,4,4^FS\n^FO15,465^GB455,4,4^FS\n^FO15,335^GB455,4,4^FS\n^FT290,40^A0N,23,24^FH^FDCentro^FS\n^FT410,40^A0N,23,24^FH^FDDeposito^FS\n^FT610,40^A0N,23,24^FH^FDN. Dep^FS\n^FO280,205^GB4,130,4^FS\n^FT295,70^A0N,23,24^FH^FD${dataConsolidation.deliveryAddressExternalId}^FS\n^FT415,70^A0N,23,24^FH^FD${dataConsolidation.deposit}^FS\n^FT615,70^A0N,23,24^FH^FD${dataConsolidation.depositNumber}^FS^FO55,40\n${companyLogo}\n^FT290,130^A0N,50,51^FH^FDNF^FS\n^FT610,105^A0N,23,24^FH^FDSerie NF^FS\n^FT370,130^A0N,50,51^FH^FD${dataConsolidation.invoiceNumber}^FS\n^FT615,135^A0N,23,24^FH^FD${dataConsolidation.invoiceSerie}^FS\n^FT25,170^A0N,23,24^FH^FDRazao Social Fornecedor^FS\n^FT30,200^A0N,23,24^FH^FD${dataConsolidation.corporateName.slice(0, 34)}^FS\n^FT480,170^A0N,23,24^FH^FDPeso Estimado Volume^FS\n^FT485,200^A0N,23,24^FH^FD${dataConsolidation.grossWeight}^FS\n^FT25,235^A0N,23,24^FH^FDOM^FS\n^FT30,265^A0N,23,24^FH^FD${dataConsolidation.maintenanceOrder}^FS\n^FT290,235^A0N,23,24^FH^FDEquipamento^FS\n^FT295,265^A0N,23,24^FH^FD${dataConsolidation.equipment}^FS\n^FT25,300^A0N,23,24^FH^FDTipo de Material^FS\n^FT30,330^A0N,23,24^FH^FD${dataConsolidation.typeMaterial}^FS\n^FT290,300^A0N,23,24^FH^FDPedido de Compra^FS\n^FT295,330^A0N,23,24^FH^FD${dataConsolidation.representativeOrderCode}^FS\n^FT25,365^A0N,23,24^FH^FDPonto de Descarga^FS\n^FT30,395^A0N,23,24^FH^FD${dataConsolidation.unloadingPoint}^FS\n^FT25,430^A0N,23,24^FH^FDRecebedor^FS\n^FT30,460^A0N,23,24^FH^FD${dataConsolidation.requesterName}^FS\n^BY1,3,30^FT25,508^BCN,,Y,N\n^FH\\^FD${dataConsolidation.barCode.toString().padStart(15, '0')}^FS\n^FT510,470^BQN,2,4\n^FH^FDLA,&lt;Nota&gt;\n&lt;Pedido&gt;${dataConsolidation.representativeOrderCode}&lt;/Pedido&gt;\n&lt;DocMaterial&gt;${dataConsolidation.materialDocument}&lt;/DocMaterial&gt;\n&lt;ChaveNF&gt;${dataConsolidation.accessKey}&lt;/ChaveNF&gt;\n&lt;Etiquetas&gt;${dataConsolidation.volumesLabel}&lt;/Etiquetas&gt;\n&lt;/Nota&gt;^FS\n^FB200,3,,,\n^FT505,525^A0N,23,24^FH^FDPedido, Num. Doc., Chave de Acesso NF, N Etiquetas^FS\n^FT480,235^A0N,23,24^FH^FDN Volumes^FS\n^FT485,265^A0N,23,24^FH^FD${dataConsolidation.volumesLabel}^FS\n^FT380,559^A0N,20,20^FH^FDImpresso em^FS\n^FT495,560^A0N,23,24^FH^FD${dataConsolidation.printDate}^FS\n^PQ1,0,1,Y\n^XZ";
+&nbsp;
+export {
+  address,
+  baptism,
+  cableCut,
+  cableCutKardex,
+  conferenceVolume,
+  conferenceVolumeIndividual,
+  consolidation,
+  customerProduct,
+  ean,
+  lot,
+  preConferenceDocument,
+  preConferenceProduct,
+  preConferenceProductII,
+  resupplyWave,
+  serialGroup,
+  serialHorizontal,
+  serialVertical,
+  vale,
+  volumeCheckList,
+};
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2024-11-05T21:04:23.461Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    

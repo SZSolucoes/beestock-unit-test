@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.8% </span>
+                <span class="strong">97.56% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>36/41</span>
+                <span class='fraction'>40/41</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.72% </span>
+                <span class="strong">95.45% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>16/22</span>
+                <span class='fraction'>21/22</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.8% </span>
+                <span class="strong">97.56% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>36/41</span>
+                <span class='fraction'>40/41</span>
             </div>
         
             
@@ -185,35 +185,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">83x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -274,23 +274,23 @@ const msToMonthsDaysHoursMinutesAndSeconds = (ms, useSeconds) =&gt; {
   }
 &nbsp;
   const days = duration.days();
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (days &gt; 0) {
-<span class="cstat-no" title="statement not covered" >    res += `${days}d `;</span>
+  if (days &gt; 0) {
+    res += `${days}d `;
   }
 &nbsp;
   const hours = duration.hours();
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (hours &gt; 0) {
-<span class="cstat-no" title="statement not covered" >    res += `${hours}h `;</span>
+  if (hours &gt; 0) {
+    res += `${hours}h `;
   }
 &nbsp;
   const minutes = duration.minutes();
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (minutes &gt; 0) {
-<span class="cstat-no" title="statement not covered" >    res += `${minutes}m `;</span>
+  if (minutes &gt; 0) {
+    res += `${minutes}m `;
   }
 &nbsp;
   const seconds = duration.seconds();
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (useSeconds &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >seconds &gt; 0)</span> {
-<span class="cstat-no" title="statement not covered" >    res += `${seconds}s`;</span>
+  if (useSeconds &amp;&amp; seconds &gt; 0) {
+    res += `${seconds}s`;
   }
 &nbsp;
   return res;
@@ -310,7 +310,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-05T21:04:23.461Z
+                at 2024-11-05T22:09:50.151Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

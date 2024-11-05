@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,46 +121,46 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,44 +179,44 @@
 &nbsp;
 const { OrderTypeConfig } = db;
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >findOrderTypeConfig(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return OrderTypeConfig.findOne({</span>
+async function findOrderTypeConfig(query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  return OrderTypeConfig.findOne({
     where: query,
     ...opts,
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >findOrderTypeConfigs(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return OrderTypeConfig.findAll({</span>
+async function findOrderTypeConfigs(query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  return OrderTypeConfig.findAll({
     where: query,
     ...opts,
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >findAndCountOrderTypeConfigs(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return OrderTypeConfig.findAndCountAll({</span>
+async function findAndCountOrderTypeConfigs(query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  return OrderTypeConfig.findAndCountAll({
     where: query,
     ...opts,
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >createOrderTypeConfigs(</span>orderTypeConfigs, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return OrderTypeConfig.bulkCreate(orderTypeConfigs, opts);</span>
+async function createOrderTypeConfigs(orderTypeConfigs, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  return OrderTypeConfig.bulkCreate(orderTypeConfigs, opts);
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >createOrderTypeConfig(</span>orderTypeConfig, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return OrderTypeConfig.create(orderTypeConfig, opts);</span>
+async function createOrderTypeConfig(orderTypeConfig, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  return OrderTypeConfig.create(orderTypeConfig, opts);
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >updateOrderTypeConfig(</span>query, queryUpd, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return OrderTypeConfig.update(queryUpd, {</span>
+async function updateOrderTypeConfig(query, queryUpd, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  return OrderTypeConfig.update(queryUpd, {
     where: query,
     ...opts,
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >deleteOrderTypeConfig(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return OrderTypeConfig.destroy({</span>
+async function deleteOrderTypeConfig(query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  return OrderTypeConfig.destroy({
     where: query,
     ...opts,
   });
@@ -238,7 +238,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-05T21:04:23.461Z
+                at 2024-11-05T22:09:50.151Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

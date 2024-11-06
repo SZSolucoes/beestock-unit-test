@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">26.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>4/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">76.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>13/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -114,33 +114,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -157,17 +157,17 @@ import { t } from '../../helpers/i18n';
 import SettingsInformation from '../../source/settings/information';
 import config from '../../../config/config';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >fetchTranslates(</span>updatedAt = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span> {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const dbUrl = <span class="cstat-no" title="statement not covered" >await SettingsInformation.getSettingCode('beetranslateHost');</span>
-    const url = <span class="cstat-no" title="statement not covered" >dbUrl || config.beetranslateHost;</span>
+async function fetchTranslates(updatedAt = <span class="branch-0 cbranch-no" title="branch not covered" >'')</span> {
+  try {
+    const dbUrl = await SettingsInformation.getSettingCode('beetranslateHost');
+    const url = dbUrl || config.beetranslateHost;
 &nbsp;
-    const params = <span class="cstat-no" title="statement not covered" >new URLSearchParams();</span>
-<span class="cstat-no" title="statement not covered" >    params.append('updatedAt', updatedAt);</span>
+    const params = new URLSearchParams();
+    params.append('updatedAt', updatedAt);
 &nbsp;
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(url, { params: { updatedAt } });</span>
+    const response = await axios.get(url, { params: { updatedAt } });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return response.data;</span>
+    return response.data;
   } catch (err) {
     const workplaceErr = <span class="cstat-no" title="statement not covered" >err.response &amp;&amp; err.response.data &amp;&amp; err.response.data;</span>
 <span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
@@ -177,14 +177,14 @@ async function <span class="fstat-no" title="function not covered" >fetchTransla
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getKey(</span>key) {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const dbUrl = <span class="cstat-no" title="statement not covered" >await SettingsInformation.getSettingCode('beetranslateHost');</span>
-    const url = <span class="cstat-no" title="statement not covered" >dbUrl || config.beetranslateHost;</span>
-    const urlApi = <span class="cstat-no" title="statement not covered" >`${url}/${key}`;</span>
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(urlApi);</span>
+async function getKey(key) {
+  try {
+    const dbUrl = await SettingsInformation.getSettingCode('beetranslateHost');
+    const url = dbUrl || config.beetranslateHost;
+    const urlApi = `${url}/${key}`;
+    const response = await axios.get(urlApi);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return response.data;</span>
+    return response.data;
   } catch (err) {
     const workplaceErr = <span class="cstat-no" title="statement not covered" >err.response &amp;&amp; err.response.data &amp;&amp; err.response.data;</span>
 <span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
@@ -202,7 +202,7 @@ export default { fetchTranslates, getKey };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-05T22:09:50.151Z
+                at 2024-11-06T01:58:59.282Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

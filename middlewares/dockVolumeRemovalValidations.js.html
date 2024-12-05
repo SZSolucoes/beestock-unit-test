@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -143,14 +143,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -172,8 +169,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -183,15 +183,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,12 +211,12 @@ import { models } from '../../config/database';
 import DockVolumeRemovalInformation from '../source/dockVolumeRemoval/information';
 import DockVolumeRemovalUpdate from '../source/dockVolumeRemoval/update';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validOutboundOrder(</span>req) {
-  const { outboundOrderId, outboundVolumeId } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-  const { userId } = <span class="cstat-no" title="statement not covered" >req;</span>
+async function validOutboundOrder(req) {
+  const { outboundOrderId, outboundVolumeId } = req.body;
+  const { userId } = req;
 &nbsp;
   const dockVolumeRemoval =
-<span class="cstat-no" title="statement not covered" >    await DockVolumeRemovalInformation.getDockVolumeRemoval(</span>
+    await DockVolumeRemovalInformation.getDockVolumeRemoval(
       {
         outboundOrderId,
         removalUser: {
@@ -241,8 +241,8 @@ async function <span class="fstat-no" title="function not covered" >validOutboun
       }
     );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!dockVolumeRemoval) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  if (!dockVolumeRemoval) {
+    throw new APIError(
       '',
       t(
         'BEE3785',
@@ -252,15 +252,15 @@ async function <span class="fstat-no" title="function not covered" >validOutboun
     );
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (dockVolumeRemoval.outboundVolume.status === 2) {</span>
-<span class="cstat-no" title="statement not covered" >    throw new APIError(</span>
+  if (dockVolumeRemoval.outboundVolume.status === 2) {
+    throw new APIError(
       '',
       t('BEE3784', { 0: outboundVolumeId } /* O volume já foi removido. */)
     );
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!dockVolumeRemoval.removalUser) {</span>
-<span class="cstat-no" title="statement not covered" >    await DockVolumeRemovalUpdate.updateDockVolumeRemoval(</span>
+  if (!dockVolumeRemoval.removalUser) {
+    await DockVolumeRemovalUpdate.updateDockVolumeRemoval(
       dockVolumeRemoval.id,
       { removalUser: userId }
     );
@@ -277,7 +277,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-06T19:16:02.614Z
+                at 2024-12-05T21:52:07.135Z
             </div>
         <script src="../prettify.js"></script>
         <script>

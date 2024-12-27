@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.77% </span>
+                <span class="strong">82.09% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>126/162</span>
+                <span class='fraction'>133/162</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60.36% </span>
+                <span class="strong">66.46% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>99/164</span>
+                <span class='fraction'>109/164</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.3% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>12/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.77% </span>
+                <span class="strong">82.09% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>126/162</span>
+                <span class='fraction'>133/162</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -1243,22 +1243,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1281,8 +1279,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1889,21 +1889,21 @@ async function validDeallocateProduct(req) {
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validStorageAddressDivergence(</span>req) {
-  const { productRangeId, type, quantity = <span class="branch-0 cbranch-no" title="branch not covered" >0 </span>} = <span class="cstat-no" title="statement not covered" >req.body;</span>
+async function validStorageAddressDivergence(req) {
+  const { productRangeId, type, quantity = 0 } = req.body;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (type === 1 &amp;&amp; productRangeId) {</span>
-    const productRange = <span class="cstat-no" title="statement not covered" >await OutboundRangeInformation.getOutboundRangeProduct(</span>
+  if (type === 1 &amp;&amp; productRangeId) {
+    const productRange = await OutboundRangeInformation.getOutboundRangeProduct(
       {
         id: productRangeId,
       }
     );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (
       productRange &amp;&amp;
       parseFloat(productRange.quantity) - parseFloat(quantity) &gt; 0
     ) {
-      const storageAddress = <span class="cstat-no" title="statement not covered" >await StorageAddressInformation.getStorageAddress(</span>
+      const storageAddress = await StorageAddressInformation.getStorageAddress(
         {
           branchCode: productRange.outboundRange.branchCode,
         },
@@ -1928,8 +1928,8 @@ async function <span class="fstat-no" title="function not covered" >validStorage
         }
       );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!storageAddress) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new APIError(</span>
+      if (!storageAddress) {
+        throw new APIError(
           '',
           t(
             'BEE3585',
@@ -2011,7 +2011,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../prettify.js"></script>
         <script>

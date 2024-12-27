@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>34/34</span>
+                <span class='fraction'>36/36</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.08% </span>
+                <span class="strong">78% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>35/46</span>
+                <span class='fraction'>39/50</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>31/31</span>
+                <span class='fraction'>33/33</span>
             </div>
         
             
@@ -236,11 +236,7 @@
 <a name='L171'></a><a href='#L171'>171</a>
 <a name='L172'></a><a href='#L172'>172</a>
 <a name='L173'></a><a href='#L173'>173</a>
-<a name='L174'></a><a href='#L174'>174</a>
-<a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a>
-<a name='L177'></a><a href='#L177'>177</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -376,19 +372,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -411,13 +399,18 @@
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Op } from 'sequelize';
 import moment from 'moment-timezone';
-import NumberFormatter from '../../helpers/number/format';
 import stockBalanceDao from '../../database/dao/stockBalance';
 import { models, sequelize } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
@@ -551,22 +544,14 @@ export default async function generateData(
     it.unitMeasure =
       it.product &amp;&amp; it.product.unitMeasure ? it.product.unitMeasure : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
 &nbsp;
+    it.quantity = it.quantity ? it.quantity : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
     it.balance =
       it.product &amp;&amp;
       it.product.productBranch &amp;&amp;
       it.product.productBranch.length &gt; 0 &amp;&amp;
-      it.product.productBranch[0].averageCost &amp;&amp;
-      it.quantity
-        ? NumberFormatter.format(
-            it.quantity * it.product.productBranch[0].averageCost,
-            3,
-            false
-          )
-        : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-&nbsp;
-    it.quantity = it.quantity
-      ? NumberFormatter.format(it.quantity, 3, false)
-      : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+      it.product.productBranch[0].averageCost
+        ? it.quantity * it.product.productBranch[0].averageCost
+        : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
 &nbsp;
     it.curve = it.address &amp;&amp; it.address.curve ? it.address.curve : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
 &nbsp;
@@ -587,6 +572,12 @@ export default async function generateData(
       if (column === 'expirationDate' &amp;&amp; row[index]) {
         row[index] = moment(row[index]).format('l LTS');
       }
+      if (
+        (column === 'quantity' || column === 'balance') &amp;&amp;
+        row[index] !== null
+      ) {
+        row[index] = parseFloat(row[index]);
+      }
     }
     rows.push(row);
   });
@@ -598,7 +589,7 @@ export default async function generateData(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

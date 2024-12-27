@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/189</span>
+                <span class='fraction'>0/192</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/134</span>
+                <span class='fraction'>0/136</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/186</span>
+                <span class='fraction'>0/189</span>
             </div>
         
             
@@ -699,7 +699,24 @@
 <a name='L634'></a><a href='#L634'>634</a>
 <a name='L635'></a><a href='#L635'>635</a>
 <a name='L636'></a><a href='#L636'>636</a>
-<a name='L637'></a><a href='#L637'>637</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L637'></a><a href='#L637'>637</a>
+<a name='L638'></a><a href='#L638'>638</a>
+<a name='L639'></a><a href='#L639'>639</a>
+<a name='L640'></a><a href='#L640'>640</a>
+<a name='L641'></a><a href='#L641'>641</a>
+<a name='L642'></a><a href='#L642'>642</a>
+<a name='L643'></a><a href='#L643'>643</a>
+<a name='L644'></a><a href='#L644'>644</a>
+<a name='L645'></a><a href='#L645'>645</a>
+<a name='L646'></a><a href='#L646'>646</a>
+<a name='L647'></a><a href='#L647'>647</a>
+<a name='L648'></a><a href='#L648'>648</a>
+<a name='L649'></a><a href='#L649'>649</a>
+<a name='L650'></a><a href='#L650'>650</a>
+<a name='L651'></a><a href='#L651'>651</a>
+<a name='L652'></a><a href='#L652'>652</a>
+<a name='L653'></a><a href='#L653'>653</a>
+<a name='L654'></a><a href='#L654'>654</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -870,6 +887,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -1081,6 +1099,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1205,15 +1224,30 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1504,6 +1538,7 @@ async function <span class="fstat-no" title="function not covered" >validOutboun
       carrierCode: outboundOrder.carrierCode,
       deliveryType: outboundOrder.deliveryType === 'CIF' ? 1 : 2,
       stockGroupCode,
+      cfop: outboundOrder.cfop,
     });
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (orderTypeConfig) {</span>
@@ -1722,6 +1757,7 @@ async function <span class="fstat-no" title="function not covered" >importOutbou
         orderNumber: outboundOrder.orderNumber,
         orderType: typeOrder.type,
         depositCode: branch.resaleDeposit,
+        cfop: outboundOrder.cfop,
         urgent: outboundOrder.urgent ? outboundOrder.urgent : false,
         priorityCode: outboundOrder.priorityCode
           ? outboundOrder.priorityCode
@@ -1847,14 +1883,29 @@ async function <span class="fstat-no" title="function not covered" >finishOutbou
               { transaction }
             );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          if (outboundProduct.allocatedQuantity &gt; 0) {</span>
-            // Desaloca Produto
-<span class="cstat-no" title="statement not covered" >            await OutboundOrderAllocate.deallocateProduct(</span>
-              outboundProduct,
-              userId,
-              transaction,
-              true
-            );
+          const divergence =
+<span class="cstat-no" title="statement not covered" >            parseFloat(outboundProduct.allocatedQuantity) -</span>
+              parseFloat(outboundProduct.pickedQuantity) !==
+            0;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          if (parseFloat(outboundProduct.allocatedQuantity) &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            if (divergence) {</span>
+              // Desaloca Produto Divergente
+<span class="cstat-no" title="statement not covered" >              await OutboundOrderAllocate.deallocateDivergentProduct(</span>
+                outboundProduct,
+                userId,
+                transaction,
+                true
+              );
+            } else {
+              // Desaloca Produto
+<span class="cstat-no" title="statement not covered" >              await OutboundOrderAllocate.deallocateProduct(</span>
+                outboundProduct,
+                userId,
+                transaction,
+                true
+              );
+            }
           }
 &nbsp;
           // Atualiza o status Produto
@@ -1978,7 +2029,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

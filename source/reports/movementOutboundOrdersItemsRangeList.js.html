@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/57</span>
+                <span class='fraction'>0/59</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/54</span>
+                <span class='fraction'>0/62</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/55</span>
+                <span class='fraction'>0/57</span>
             </div>
         
             
@@ -309,7 +309,13 @@
 <a name='L244'></a><a href='#L244'>244</a>
 <a name='L245'></a><a href='#L245'>245</a>
 <a name='L246'></a><a href='#L246'>246</a>
-<a name='L247'></a><a href='#L247'>247</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -495,12 +501,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -551,6 +553,16 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -740,15 +752,11 @@ export default async function <span class="fstat-no" title="function not covered
 <span class="cstat-no" title="statement not covered" >    it.unitMeasure = it.outboundProduct.product.unitMeasure;</span>
 <span class="cstat-no" title="statement not covered" >    it.lotNumber =</span>
       it.allocation &amp;&amp; it.allocation.balance &amp;&amp; it.allocation.balance.lotNumber;
-<span class="cstat-no" title="statement not covered" >    it.mandatoryQuantity =</span>
-      it.outboundProduct.mandatoryQuantity &amp;&amp;
-      parseInt(it.outboundProduct.mandatoryQuantity, 10);
-<span class="cstat-no" title="statement not covered" >    it.quantity = it.quantity &amp;&amp; parseInt(it.quantity, 10);</span>
-<span class="cstat-no" title="statement not covered" >    it.allocatedQuantity =</span>
-      it.outboundProduct.allocatedQuantity &amp;&amp;
-      parseInt(it.outboundProduct.allocatedQuantity, 10);
-<span class="cstat-no" title="statement not covered" >    it.pickedQuantity = it.pickedQuantity &amp;&amp; parseInt(it.pickedQuantity, 10);</span>
-<span class="cstat-no" title="statement not covered" >    it.checkedQuantity = it.checkedQuantity &amp;&amp; parseInt(it.checkedQuantity, 10);</span>
+<span class="cstat-no" title="statement not covered" >    it.mandatoryQuantity = it.outboundProduct.mandatoryQuantity || 0;</span>
+<span class="cstat-no" title="statement not covered" >    it.quantity = it.quantity || 0;</span>
+<span class="cstat-no" title="statement not covered" >    it.allocatedQuantity = it.outboundProduct.allocatedQuantity || 0;</span>
+<span class="cstat-no" title="statement not covered" >    it.pickedQuantity = it.pickedQuantity || 0;</span>
+<span class="cstat-no" title="statement not covered" >    it.checkedQuantity = it.checkedQuantity || 0;</span>
 <span class="cstat-no" title="statement not covered" >    it.status = translateOutboundOrderHelpers.outboundOrderProductStatus(</span>
       it.outboundProduct.status
     );
@@ -797,6 +805,16 @@ export default async function <span class="fstat-no" title="function not covered
 <span class="cstat-no" title="statement not covered" >    for (let index = <span class="cstat-no" title="statement not covered" >0;</span> index &lt; headersValue.length; index += 1) {</span>
       const column = <span class="cstat-no" title="statement not covered" >headersValue[index];</span>
 <span class="cstat-no" title="statement not covered" >      row.push(it[column]);</span>
+<span class="cstat-no" title="statement not covered" >      if (</span>
+        (column === 'mandatoryQuantity' ||
+          column === 'quantity' ||
+          column === 'allocatedQuantity' ||
+          column === 'pickedQuantity' ||
+          column === 'checkedQuantity') &amp;&amp;
+        row[index] !== null
+      ) {
+<span class="cstat-no" title="statement not covered" >        row[index] = parseFloat(row[index]);</span>
+      }
     }
 <span class="cstat-no" title="statement not covered" >    rows.push(row);</span>
   });
@@ -808,7 +826,7 @@ export default async function <span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

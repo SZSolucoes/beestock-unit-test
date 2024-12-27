@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/45</span>
+                <span class='fraction'>47/47</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.88% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>43/59</span>
+                <span class='fraction'>45/60</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>42/42</span>
+                <span class='fraction'>44/44</span>
             </div>
         
             
@@ -243,13 +243,7 @@
 <a name='L178'></a><a href='#L178'>178</a>
 <a name='L179'></a><a href='#L179'>179</a>
 <a name='L180'></a><a href='#L180'>180</a>
-<a name='L181'></a><a href='#L181'>181</a>
-<a name='L182'></a><a href='#L182'>182</a>
-<a name='L183'></a><a href='#L183'>183</a>
-<a name='L184'></a><a href='#L184'>184</a>
-<a name='L185'></a><a href='#L185'>185</a>
-<a name='L186'></a><a href='#L186'>186</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L181'></a><a href='#L181'>181</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -370,22 +364,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -411,6 +392,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -436,7 +426,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Op } from 'sequelize';
 &nbsp;
 import moment from 'moment-timezone';
-import NumberFormatter from '../../helpers/number/format';
 import stockBalanceDao from '../../database/dao/stockBalance';
 import { models, sequelize } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
@@ -554,30 +543,17 @@ export default async function generateData(
     it.unitMeasure =
       it.product &amp;&amp; it.product.unitMeasure ? it.product.unitMeasure : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
 &nbsp;
-    it.balance =
-      it.reserved &amp;&amp; it.allocated &amp;&amp; it.reserved
-        ? NumberFormatter.format(
-            it.quantity - it.allocated - it.reserved,
-            3,
-            false
-          )
-        : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-    it.quantity = it.quantity
-      ? NumberFormatter.format(it.quantity, 3, false)
-      : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-    it.allocated = it.allocated
-      ? NumberFormatter.format(it.allocated, 3, false)
-      : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-    it.reserved = it.reserved
-      ? NumberFormatter.format(it.reserved, 3, false)
-      : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+    it.quantity = it.quantity ? it.quantity : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+    it.allocated = it.allocated ? it.allocated : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+    it.reserved = it.reserved ? it.reserved : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+    it.balance = it.quantity - it.allocated - it.reserved;
 &nbsp;
     it.lastEntranceUser =
       it.userLastEntrance &amp;&amp; it.userLastEntrance.login
         ? it.userLastEntrance.login
         : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
     it.lastCountUser =
-      it.userLastCount &amp;&amp; it.userLastCount.login ? it.userLastCount.login : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+      it.userLastCount &amp;&amp; it.userLastCount.login ? it.userLastCount.login : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
     it.curve = it.address &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >it.address.curve </span>? <span class="branch-0 cbranch-no" title="branch not covered" >it.address.curve </span>: '';
 &nbsp;
     const row = [];
@@ -596,6 +572,15 @@ export default async function generateData(
         row[index]
       ) {
         row[index] = moment(row[index]).format('l LTS');
+      }
+&nbsp;
+      if (
+        (column === 'balance' ||
+          column === 'quantity' ||
+          column === 'allocated') &amp;&amp;
+        row[index] !== null
+      ) {
+        row[index] = parseFloat(row[index]);
       }
     }
     rows.push(row);
@@ -625,7 +610,7 @@ function addInformation(headersValue) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

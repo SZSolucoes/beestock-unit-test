@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">94.73% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>18/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">71.42% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>10/14</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>16/17</span>
             </div>
         
             
@@ -104,7 +104,34 @@
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
 <a name='L41'></a><a href='#L41'>41</a>
-<a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,7 +156,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -142,8 +174,18 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import moment from 'moment-timezone';
 import PackageDao from '../../database/dao/package';
@@ -151,49 +193,70 @@ import { models } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 &nbsp;
 // Funcao criada para popular o array headers e rows enviados por parametro
-export default async function generateData(columns, filters, headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> opts = {}) {
+export default async function generateData(
+  columns,
+  filters,
+  headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+  rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+  opts = {}
+) {
   const where = mountWhereBasedFilter(filters);
-  const headersValue = columns.map(it =&gt; it.value);
+  const headersValue = columns.map((it) =&gt; it.value);
   const dados = await PackageDao.findPackages(where, {
     attributes: headersValue,
-    include: [{
-      required: false,
-      model: models.User,
-      as: 'userCreated',
-      attributes: ['login'],
-    }, {
-      required: false,
-      model: models.User,
-      as: 'userUpdated',
-      attributes: ['login'],
-    },],
-    ...opts
+    include: [
+      {
+        required: false,
+        model: models.User,
+        as: 'userCreated',
+        attributes: ['login'],
+      },
+      {
+        required: false,
+        model: models.User,
+        as: 'userUpdated',
+        attributes: ['login'],
+      },
+    ],
+    ...opts,
   });
 &nbsp;
-  columns.forEach(it =&gt; { headers.push(it.label); });
+  columns.forEach((it) =&gt; {
+    headers.push(it.label);
+  });
 &nbsp;
-  dados.forEach(it =&gt; {
-    it.createdUser = it.userCreated.dataValues.login
-    it.updatedUser = it.userUpdated.dataValues.login
+  dados.forEach((it) =&gt; {
+    it.createdUser = it.userCreated.dataValues.login;
+    it.updatedUser = it.userUpdated.dataValues.login;
     const row = [];
     for (let index = 0; index &lt; headersValue.length; index++) {
       const column = headersValue[index];
 &nbsp;
       row.push(it[column]);
       if (column === 'createdAt' || column === 'updatedAt') {
-        row[index] = moment(row[index]).format('l LTS')
+        row[index] = moment(row[index]).format('l LTS');
+      }
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (
+        (column === 'weight' ||
+          column === 'height' ||
+          column === 'width' ||
+          column === 'length') &amp;&amp;
+<span class="branch-4 cbranch-no" title="branch not covered" >        row[index] !== null</span>
+      ) {
+<span class="cstat-no" title="statement not covered" >        row[index] = parseFloat(row[index]);</span>
       }
     }
     rows.push(row);
   });
-};</pre></td></tr></table></pre>
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

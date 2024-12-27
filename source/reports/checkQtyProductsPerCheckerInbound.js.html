@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/27</span>
+                <span class='fraction'>29/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/11</span>
+                <span class='fraction'>9/15</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/22</span>
+                <span class='fraction'>26/26</span>
             </div>
         
             
@@ -126,7 +126,28 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,12 +185,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,6 +206,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -188,18 +219,24 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import moment from 'moment-timezone';
 import inboundOrderProductDao from '../../database/dao/inboundOrderProduct';
 import { models } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 &nbsp;
-&nbsp;
 // Função criada para popular o array headers e rows enviados por parametro
-export default async function generateData(columns, filters, headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+export default async function generateData(
+  columns,
+  filters,
+  headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+  rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+  opts = <span class="branch-0 cbranch-no" title="branch not covered" >{}</span>
+) {
   const where = mountWhereBasedFilter(filters);
-  const columnsValuesDefault = columns.map(column =&gt; column.value);
-  let columnsValuesToFind = columns.map(column =&gt; column.value);
+  const columnsValuesDefault = columns.map((column) =&gt; column.value);
+  const columnsValuesToFind = columns.map((column) =&gt; column.value);
   remove(columnsValuesToFind, 'branchName');
   remove(columnsValuesToFind, '_inboundOrderBranch');
   remove(columnsValuesToFind, '_nameUser');
@@ -207,59 +244,70 @@ export default async function generateData(columns, filters, headers = <span cla
   const dados = await inboundOrderProductDao.findInboundOrderProducts(where, {
     attributes: columnsValuesToFind,
     raw: true,
-    include: [{
-      required: false,
-      model: models.User,
-      as: 'checkUser',
-      attributes: ['login', 'name']
-    }, {
-      required: true,
-      model: models.InboundOrder,
-      as: 'inboundOrder',
-      attributes: ['id'],
-      include: [{
+    include: [
+      {
+        required: false,
+        model: models.User,
+        as: 'checkUser',
+        attributes: ['login', 'name'],
+      },
+      {
         required: true,
-        model: models.Branch,
-        as: 'branch',
-        attributes: ['code', 'name']
-      }]
-    }],
-    ...opts
+        model: models.InboundOrder,
+        as: 'inboundOrder',
+        attributes: ['id'],
+        include: [
+          {
+            required: true,
+            model: models.Branch,
+            as: 'branch',
+            attributes: ['code', 'name'],
+          },
+        ],
+      },
+    ],
+    ...opts,
   });
 &nbsp;
-  columns.forEach(it =&gt; { headers.push(it.label); });
+  columns.forEach((it) =&gt; {
+    headers.push(it.label);
+  });
 &nbsp;
-  dados.forEach(it =&gt; {
+  dados.forEach((it) =&gt; {
     it._inboundOrderBranch = it['inboundOrder.branch.code'];
     it.branchName = it['inboundOrder.branch.name'];
-    // it.checkProductUser = it['checkUser.login'];
     it._nameUser = it['checkUser.name'];
-    it.quantityCheck = parseFloat(it.quantityCheck || <span class="branch-1 cbranch-no" title="branch not covered" >'0')</span>;
+    it.quantityCheck = it.quantityCheck || <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
 &nbsp;
     const row = [];
     for (let index = 0; index &lt; columnsValuesDefault.length; index++) {
       const column = columnsValuesDefault[index];
 &nbsp;
       row.push(it[column]);
-      if (column === 'checkProductAt') row[index] = (row[index]) ? moment(row[index]).format('l') : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+      if (column === 'checkProductAt')
+        row[index] = row[index] ? moment(row[index]).format('l') : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+      if (column === 'quantityCheck' &amp;&amp; row[index] !== null) {
+        row[index] = parseFloat(row[index]);
+      }
     }
     rows.push(row);
   });
-};
+}
 &nbsp;
 function remove(headersValue, value) {
   const index = headersValue.indexOf(value);
   <span class="missing-if-branch" title="else path not taken" >E</span>if (index != -1) {
     headersValue.splice(index, 1);
   }
-};</pre></td></tr></table></pre>
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

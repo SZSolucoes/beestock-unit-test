@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>57/57</span>
+                <span class='fraction'>59/59</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.71% </span>
+                <span class="strong">77.46% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>53/70</span>
+                <span class='fraction'>55/71</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>53/53</span>
+                <span class='fraction'>55/55</span>
             </div>
         
             
@@ -278,13 +278,7 @@
 <a name='L213'></a><a href='#L213'>213</a>
 <a name='L214'></a><a href='#L214'>214</a>
 <a name='L215'></a><a href='#L215'>215</a>
-<a name='L216'></a><a href='#L216'>216</a>
-<a name='L217'></a><a href='#L217'>217</a>
-<a name='L218'></a><a href='#L218'>218</a>
-<a name='L219'></a><a href='#L219'>219</a>
-<a name='L220'></a><a href='#L220'>220</a>
-<a name='L221'></a><a href='#L221'>221</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L216'></a><a href='#L216'>216</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -328,21 +322,9 @@
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -371,6 +353,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -508,7 +498,6 @@ import { Op } from 'sequelize';
 &nbsp;
 import { models, sequelize } from '../../../config/database';
 import stockBalanceDao from '../../database/dao/stockBalance';
-import NumberFormatter from '../../helpers/number/format';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 &nbsp;
 function addInformation(headersValue) {
@@ -547,23 +536,11 @@ function printInformation(element, rows, columnsValuesToFind) {
       : '';
   tableData.name =
     element.product &amp;&amp; element.product.name ? element.product.name : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+  tableData.quantelementy = element.quantelementy || <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+  tableData.allocated = element.allocated || <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+  tableData.reserved = element.reserved || <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
   tableData.balance =
-    element.reserved &amp;&amp; element.allocated &amp;&amp; element.reserved
-      ? NumberFormatter.format(
-          element.quantelementy - element.allocated - element.reserved,
-          3,
-          false
-        )
-      : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-  tableData.quantelementy = element.quantelementy
-    ? NumberFormatter.format(element.quantelementy, 3, false)
-    : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-  tableData.allocated = element.allocated
-    ? NumberFormatter.format(element.allocated, 3, false)
-    : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-  tableData.reserved = element.reserved
-    ? NumberFormatter.format(element.reserved, 3, false)
-    : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+    element.quantelementy - element.allocated - element.reserved;
   tableData.lastEntranceUser =
     element.userLastEntrance &amp;&amp; element.userLastEntrance.login
       ? element.userLastEntrance.login
@@ -571,7 +548,7 @@ function printInformation(element, rows, columnsValuesToFind) {
   tableData.lastCountUser =
     element.userLastCount &amp;&amp; element.userLastCount.login
       ? element.userLastCount.login
-      : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+      : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
 &nbsp;
   const row = [];
   for (let index = 0; index &lt; columnsValuesToFind.length; index += 1) {
@@ -592,6 +569,14 @@ function printInformation(element, rows, columnsValuesToFind) {
 &nbsp;
     if (column === 'expirationDate') {
       row[index] = moment(row[index]).format('L');
+    }
+    if (
+      (column === 'balance' ||
+        column === 'quantity' ||
+        column === 'allocated') &amp;&amp;
+      row[index] !== null
+    ) {
+      row[index] = parseFloat(row[index]);
     }
   }
 &nbsp;
@@ -730,7 +715,7 @@ export default async function generateData(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

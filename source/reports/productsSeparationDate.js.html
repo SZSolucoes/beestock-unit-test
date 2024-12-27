@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.14% </span>
+                <span class="strong">78.12% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>23/28</span>
+                <span class='fraction'>25/32</span>
             </div>
         
             
@@ -186,8 +186,14 @@
 <a name='L121'></a><a href='#L121'>121</a>
 <a name='L122'></a><a href='#L122'>122</a>
 <a name='L123'></a><a href='#L123'>123</a>
-<a name='L124'></a><a href='#L124'>124</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,7 +217,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -309,11 +321,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import moment from 'moment-timezone';
 import { Op } from 'sequelize';
 &nbsp;
-import I18n from '../../helpers/i18n';
-import NumberFormatter from '../../helpers/number/format';
+import { t } from '../../helpers/i18n';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 import outboundRangeProductDao from '../../database/dao/outboundRangeProduct';
 import { models } from '../../../config/database';
@@ -328,15 +341,21 @@ export default async function generateData(
   const where = mountWhereBasedFilter(filters);
   where[Op.and] = { ...where[Op.and], picked: { [Op.eq]: 1 } };
 &nbsp;
-  headers.push(I18n.t('BEE145' /* Filial */, undefined, appLanguage));
-  headers.push(I18n.t('BEE1854' /* Setor */, undefined, appLanguage));
-  headers.push(
-    I18n.t('BEE378' /* Código do Produto */, undefined, appLanguage)
-  );
-  headers.push(I18n.t('BEE1092' /* Separador */, undefined, appLanguage));
-  headers.push(
-    I18n.t('BEE2290' /* Total de Produtos Separados */, undefined, appLanguage)
-  );
+  headers.push({ header: t('BEE145' /* Filial */, undefined, appLanguage) });
+  headers.push({ header: t('BEE1854' /* Setor */, undefined, appLanguage) });
+  headers.push({
+    header: t('BEE378' /* Código do Produto */, undefined, appLanguage),
+  });
+  headers.push({
+    header: t('BEE1092' /* Separador */, undefined, appLanguage),
+  });
+  headers.push({
+    header: t(
+      'BEE2290' /* Total de Produtos Separados */,
+      undefined,
+      appLanguage
+    ),
+  });
 &nbsp;
   const dados = await outboundRangeProductDao.findOutboundRangeProducts(where, {
     attributes: ['productCode', 'pickedQuantity', 'pickedAt', 'pickedUser'],
@@ -425,9 +444,11 @@ export default async function generateData(
       element.pickedUserObj &amp;&amp; element.pickedUserObj.login
         ? element.pickedUserObj.login
         : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
-      NumberFormatter.format(element.pickedQuantity, 3, false),
+      element.pickedQuantity ? parseFloat(element.pickedQuantity) : <span class="branch-1 cbranch-no" title="branch not covered" >0,</span>
       ...separationDates.map((elem) =&gt;
-        NumberFormatter.format(separationData[index][elem], 3, false)
+        separationData[index][elem]
+          ? parseFloat(separationData[index][elem])
+          : <span class="branch-1 cbranch-no" title="branch not covered" >0</span>
       ),
     ]);
   }
@@ -439,7 +460,7 @@ export default async function generateData(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-05T21:52:07.135Z
+                at 2024-12-27T01:19:08.292Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

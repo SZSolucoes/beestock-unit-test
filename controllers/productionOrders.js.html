@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -140,16 +140,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,33 +155,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -196,7 +196,7 @@
 import { Op } from 'sequelize';
 import ProductionOrderInformation from '../source/productionOrders/information';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllProductionOrders(</span>req, res) {
+async function getAllProductionOrders(req, res) {
   const {
     filterStartDate,
     filterEndDate,
@@ -204,13 +204,13 @@ async function <span class="fstat-no" title="function not covered" >getAllProduc
     sorted = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
     filtered,
     pageSize = <span class="branch-0 cbranch-no" title="branch not covered" >10,</span>
-  } = <span class="cstat-no" title="statement not covered" >req.body;</span>
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const startDateFormat = <span class="cstat-no" title="statement not covered" >moment(filterStartDate).startOf('day').format();</span>
-    const endDateFormat = <span class="cstat-no" title="statement not covered" >moment(filterEndDate).endOf('day').format();</span>
+  } = req.body;
+  try {
+    const startDateFormat = moment(filterStartDate).startOf('day').format();
+    const endDateFormat = moment(filterEndDate).endOf('day').format();
 &nbsp;
     const productionOrders =
-<span class="cstat-no" title="statement not covered" >      await ProductionOrderInformation.getAllProductionOrders(</span>
+      await ProductionOrderInformation.getAllProductionOrders(
         startDateFormat,
         endDateFormat,
         page,
@@ -222,17 +222,17 @@ async function <span class="fstat-no" title="function not covered" >getAllProduc
         }
       );
 &nbsp;
-    const query = <span class="cstat-no" title="statement not covered" >{</span>
+    const query = {
       [Op.and]: [
         { createdAt: { [Op.between]: [startDateFormat, endDateFormat] } },
       ],
     };
 &nbsp;
-    const count = <span class="cstat-no" title="statement not covered" >await ProductionOrderInformation.countProductionOrder(query, {</span>
+    const count = await ProductionOrderInformation.countProductionOrder(query, {
       userBranches: req.userBranches,
     });
 &nbsp;
-    const response = <span class="cstat-no" title="statement not covered" >{</span>
+    const response = {
       success: true,
       data: {
         rows: productionOrders.rows,
@@ -241,14 +241,14 @@ async function <span class="fstat-no" title="function not covered" >getAllProduc
       },
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    res.json(response);</span>
+    res.json(response);
   } catch (err) {
     // eslint-disable-next-line no-console
-<span class="cstat-no" title="statement not covered" >    console.log(err);</span>
-    const response = <span class="cstat-no" title="statement not covered" >{</span>
+    console.log(err);
+    const response = {
       success: false,
     };
-<span class="cstat-no" title="statement not covered" >    res.json(response);</span>
+    res.json(response);
   }
 }
 &nbsp;
@@ -262,7 +262,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-02T16:43:31.027Z
+                at 2025-01-02T20:28:59.421Z
             </div>
         <script src="../prettify.js"></script>
         <script>

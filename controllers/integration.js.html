@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>16/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">19.35% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/31</span>
+                <span class='fraction'>6/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/48</span>
+                <span class='fraction'>16/48</span>
             </div>
         
             
@@ -224,34 +224,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -263,14 +261,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -373,33 +373,33 @@ import IntegrationQueueErpInformation from '../source/integrationQueueErp/inform
 import InboundOrderImport from '../source/inboundOrders/import';
 import OutboundOrderImport from '../source/outboundOrders/import';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getListIntegrationQueue(</span>req, res) {
-  const { filterStartDate, filterEndDate, isBeeStock } = <span class="cstat-no" title="statement not covered" >req.query;</span>
-  const startDateFormat = <span class="cstat-no" title="statement not covered" >moment(filterStartDate).startOf('day').format();</span>
-  const endDateFormat = <span class="cstat-no" title="statement not covered" >moment(filterEndDate).endOf('day').format();</span>
-  const typeIntegration = <span class="cstat-no" title="statement not covered" >isBeeStock === 'true';</span>
+async function getListIntegrationQueue(req, res) {
+  const { filterStartDate, filterEndDate, isBeeStock } = req.query;
+  const startDateFormat = moment(filterStartDate).startOf('day').format();
+  const endDateFormat = moment(filterEndDate).endOf('day').format();
+  const typeIntegration = isBeeStock === 'true';
 &nbsp;
-  const query = <span class="cstat-no" title="statement not covered" >{</span>
+  const query = {
     createdAt: { [Op.between]: [startDateFormat, endDateFormat] },
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  try {</span>
+  try {
     let integrationQueue;
-<span class="cstat-no" title="statement not covered" >    if (typeIntegration) {</span>
-<span class="cstat-no" title="statement not covered" >      integrationQueue =</span>
+    if (typeIntegration) {
+      integrationQueue =
         await IntegrationQueueInformation.getAllIntegrationQueue(query, {
           userBranches: req.userBranches,
         });
     } else {
-<span class="cstat-no" title="statement not covered" >      integrationQueue =</span>
+      integrationQueue =
         await IntegrationQueueErpInformation.getAllIntegrationQueue(query, {
           userBranches: req.userBranches,
         });
     }
-    const data = <span class="cstat-no" title="statement not covered" >[];</span>
+    const data = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    for (const element of integrationQueue) {</span>
-<span class="cstat-no" title="statement not covered" >      data.push({</span>
+    for (const element of integrationQueue) {
+      data.push({
         idIntegrationQueue: element.id,
         integrationTable: element.code,
         tableKey: element.tableKey,
@@ -413,14 +413,14 @@ async function <span class="fstat-no" title="function not covered" >getListInteg
         response: element.response ? element.response : '',
       });
     }
-<span class="cstat-no" title="statement not covered" >    res.json({ success: true, data });</span>
+    res.json({ success: true, data });
   } catch (err) {
     // eslint-disable-next-line no-console
-<span class="cstat-no" title="statement not covered" >    console.log(err);</span>
-    const response = <span class="cstat-no" title="statement not covered" >{</span>
+    console.log(err);
+    const response = {
       success: false,
     };
-<span class="cstat-no" title="statement not covered" >    res.json(response);</span>
+    res.json(response);
   }
 }
 &nbsp;
@@ -520,7 +520,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-12-27T01:19:08.292Z
+                at 2025-01-02T16:43:31.027Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.83% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>283/546</span>
+                <span class='fraction'>273/546</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.42% </span>
+                <span class="strong">69.04% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>30/42</span>
+                <span class='fraction'>29/42</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.3% </span>
+                <span class="strong">49.44% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>275/536</span>
+                <span class='fraction'>265/536</span>
             </div>
         
             
@@ -3227,23 +3227,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3254,14 +3240,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -5285,12 +5285,12 @@ async function <span class="fstat-no" title="function not covered" >createInvent
   }
 }
 &nbsp;
-async function printInventoryList(req, res) {
-  const { grouperCode } = req.body;
+async function <span class="fstat-no" title="function not covered" >printInventoryList(</span>req, res) {
+  const { grouperCode } = <span class="cstat-no" title="statement not covered" >req.body;</span>
 &nbsp;
-  try {
+<span class="cstat-no" title="statement not covered" >  try {</span>
     // IMPRIMIR RELATORIO
-    const filters = {
+    const filters = <span class="cstat-no" title="statement not covered" >{</span>
       $grouperCode: {
         type: 'between',
         value: [grouperCode, grouperCode],
@@ -5299,10 +5299,10 @@ async function printInventoryList(req, res) {
       },
     };
 &nbsp;
-    const headers = [];
-    const rows = [];
+    const headers = <span class="cstat-no" title="statement not covered" >[];</span>
+    const rows = <span class="cstat-no" title="statement not covered" >[];</span>
 &nbsp;
-    await ReportsData.inventoryInventoryCheck(filters, headers, rows);
+<span class="cstat-no" title="statement not covered" >    await ReportsData.inventoryInventoryCheck(filters, headers, rows);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return ReportsHelper.writeExcelToResponse(</span>
       res,
@@ -5313,14 +5313,14 @@ async function printInventoryList(req, res) {
     );
   } catch (err) {
     // eslint-disable-next-line no-console
-    console.log(err);
-    const response = {
+<span class="cstat-no" title="statement not covered" >    console.log(err);</span>
+    const response = <span class="cstat-no" title="statement not covered" >{</span>
       success: false,
     };
-    res.json(response);
+<span class="cstat-no" title="statement not covered" >    res.json(response);</span>
   }
 &nbsp;
-  return null;
+<span class="cstat-no" title="statement not covered" >  return null;</span>
 }
 &nbsp;
 async function finalizeInventorySheets(req, res) {
@@ -6247,7 +6247,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-08T22:23:38.899Z
+                at 2025-01-24T16:58:18.602Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -2236,7 +2236,11 @@
 <a name='L2171'></a><a href='#L2171'>2171</a>
 <a name='L2172'></a><a href='#L2172'>2172</a>
 <a name='L2173'></a><a href='#L2173'>2173</a>
-<a name='L2174'></a><a href='#L2174'>2174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L2174'></a><a href='#L2174'>2174</a>
+<a name='L2175'></a><a href='#L2175'>2175</a>
+<a name='L2176'></a><a href='#L2176'>2176</a>
+<a name='L2177'></a><a href='#L2177'>2177</a>
+<a name='L2178'></a><a href='#L2178'>2178</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -4340,27 +4344,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -4374,8 +4364,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -6512,7 +6520,11 @@ async function <span class="fstat-no" title="function not covered" >printFractio
       const label = <span class="cstat-no" title="statement not covered" >createLabelData(data, dataLabelsToPrint, user, products);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; dataLabelsToPrint.qtdLabelsToPrint; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        zpl += await Labels.fractionalPackaging(label);</span>
+<span class="cstat-no" title="statement not covered" >        zpl += await Labels.fractionalPackaging(</span>
+          label,
+          undefined,
+          printer.languageCode
+        );
 <span class="cstat-no" title="statement not covered" >        nCount += 1;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (nCount &gt;= 100) {</span>
@@ -6545,10 +6557,10 @@ async function <span class="fstat-no" title="function not covered" >printFractio
       // eslint-disable-next-line no-console
 <span class="cstat-no" title="statement not covered" >      console.log(err);</span>
     }
-&nbsp;
 <span class="cstat-no" title="statement not covered" >    res.json({ success: true });</span>
+  } else {
+<span class="cstat-no" title="statement not covered" >    res.json({ success: false });</span>
   }
-<span class="cstat-no" title="statement not covered" >  res.json({ success: false });</span>
 }
 &nbsp;
 export default {
@@ -6589,7 +6601,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-24T18:53:14.722Z
+                at 2025-01-30T13:03:29.533Z
             </div>
         <script src="../prettify.js"></script>
         <script>

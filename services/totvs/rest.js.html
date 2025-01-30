@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">44.56% </span>
+                <span class="strong">37.93% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>41/92</span>
+                <span class='fraction'>33/87</span>
             </div>
         
             
@@ -356,12 +356,7 @@
 <a name='L291'></a><a href='#L291'>291</a>
 <a name='L292'></a><a href='#L292'>292</a>
 <a name='L293'></a><a href='#L293'>293</a>
-<a name='L294'></a><a href='#L294'>294</a>
-<a name='L295'></a><a href='#L295'>295</a>
-<a name='L296'></a><a href='#L296'>296</a>
-<a name='L297'></a><a href='#L297'>297</a>
-<a name='L298'></a><a href='#L298'>298</a>
-<a name='L299'></a><a href='#L299'>299</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L294'></a><a href='#L294'>294</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -404,7 +399,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -484,10 +478,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -552,10 +544,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -695,11 +685,10 @@ async function loginRest(branchCode) {
                   }`
                 : `${loginCookies[0].split(';')[0]}`
               : '',
-          ...(branchSettings.branchCodeErp &amp;&amp; {
-            tenantId: `${branchSettings['branch.companyCode'] || <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>,${
-              branchSettings.branchCodeErp
-            }`,
-          }),
+          ...(branchSettings.headerKey &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >            branchSettings.headerValue </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >{</span>
+              [branchSettings.headerKey]: branchSettings.headerValue,
+            }),
         },
       };
 &nbsp;
@@ -775,11 +764,10 @@ async function requestTotvsV1(
                     }`
                   : `${loginCookies[0].split(';')[0]}`
                 : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
-            ...(branchSettings.branchCodeErp &amp;&amp; {
-              tenantId: `${branchSettings['branch.companyCode'] || <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>,${
-                branchSettings.branchCodeErp
-              }`,
-            }),
+            ...(branchSettings.headerKey &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >              branchSettings.headerValue </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >{</span>
+                [branchSettings.headerKey]: branchSettings.headerValue,
+              }),
           },
           data: json,
         };
@@ -797,11 +785,10 @@ async function requestTotvsV1(
                     }`
                   : `${loginCookies[0].split(';')[0]}`
                 : '',
-            ...(branchSettings.branchCodeErp &amp;&amp; {
-              tenantId: `${branchSettings['branch.companyCode'] || ''},${
-                branchSettings.branchCodeErp
-              }`,
-            }),
+            ...(branchSettings.headerKey &amp;&amp;
+              branchSettings.headerValue &amp;&amp; {
+                [branchSettings.headerKey]: branchSettings.headerValue,
+              }),
           },
         };
       }
@@ -843,11 +830,10 @@ async function requestTotvsV2(
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Basic ${key}`,
-          ...(branchSettings.branchCodeErp &amp;&amp; {
-            tenantId: `${branchSettings['branch.companyCode'] || <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>,${
-              branchSettings.branchCodeErp
-            }`,
-          }),
+          ...(branchSettings.headerKey &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >            branchSettings.headerValue </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >{</span>
+              [branchSettings.headerKey]: branchSettings.headerValue,
+            }),
         },
         data: json,
       };
@@ -858,11 +844,10 @@ async function requestTotvsV2(
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Basic ${key}`,
-          ...(branchSettings.branchCodeErp &amp;&amp; {
-            tenantId: `${branchSettings['branch.companyCode'] || <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>,${
-              branchSettings.branchCodeErp
-            }`,
-          }),
+          ...(branchSettings.headerKey &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >            branchSettings.headerValue </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >{</span>
+              [branchSettings.headerKey]: branchSettings.headerValue,
+            }),
         },
       };
     }
@@ -964,7 +949,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-24T18:53:14.722Z
+                at 2025-01-30T13:03:29.533Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

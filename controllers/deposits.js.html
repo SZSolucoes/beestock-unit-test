@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.41% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>70/81</span>
+                <span class='fraction'>81/81</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.81% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>69/80</span>
+                <span class='fraction'>80/80</span>
             </div>
         
             
@@ -639,18 +639,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -658,25 +655,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -963,16 +963,16 @@ async function getOptionsDeposits(req, res) {
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getOptionsDepositERP(</span>req, res) {
-  const { filterDeposits } = <span class="cstat-no" title="statement not covered" >req.query;</span>
+async function getOptionsDepositERP(req, res) {
+  const { filterDeposits } = req.query;
 &nbsp;
   const where =
-<span class="cstat-no" title="statement not covered" >    filterDeposits === 1 || filterDeposits === '1'</span>
+    filterDeposits === 1 || filterDeposits === '1'
       ? { inventory: false, inbound: false }
       : {};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const deposits = <span class="cstat-no" title="statement not covered" >await DepositInformation.getOptionsDeposits(</span>
+  try {
+    const deposits = await DepositInformation.getOptionsDeposits(
       { ...where, codeErp: { [Op.ne]: '' } },
       {
         attributes: ['codeErp', 'nameErp'],
@@ -983,25 +983,25 @@ async function <span class="fstat-no" title="function not covered" >getOptionsDe
       }
     );
 &nbsp;
-    const data = <span class="cstat-no" title="statement not covered" >deposits.map(<span class="fstat-no" title="function not covered" >(d</span>eposit) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      return {</span>
+    const data = deposits.map((deposit) =&gt; {
+      return {
         value: deposit.codeErp,
         label: `${deposit.codeErp} - ${deposit.nameErp}`,
       };
     });
 &nbsp;
-    const response = <span class="cstat-no" title="statement not covered" >{</span>
+    const response = {
       success: true,
       data,
     };
-<span class="cstat-no" title="statement not covered" >    res.json(response);</span>
+    res.json(response);
   } catch (err) {
     // eslint-disable-next-line no-console
-<span class="cstat-no" title="statement not covered" >    console.log(err);</span>
-    const response = <span class="cstat-no" title="statement not covered" >{</span>
+    console.log(err);
+    const response = {
       success: false,
     };
-<span class="cstat-no" title="statement not covered" >    res.json(response);</span>
+    res.json(response);
   }
 }
 &nbsp;
@@ -1045,7 +1045,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-30T13:03:29.533Z
+                at 2025-03-06T22:41:43.715Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.72% </span>
+                <span class="strong">83.49% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>172/203</span>
+                <span class='fraction'>172/206</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.96% </span>
+                <span class="strong">46.26% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>62/132</span>
+                <span class='fraction'>62/134</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.13% </span>
+                <span class="strong">86.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>52/59</span>
+                <span class='fraction'>52/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.72% </span>
+                <span class="strong">83.49% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>172/203</span>
+                <span class='fraction'>172/206</span>
             </div>
         
             
@@ -741,7 +741,20 @@
 <a name='L676'></a><a href='#L676'>676</a>
 <a name='L677'></a><a href='#L677'>677</a>
 <a name='L678'></a><a href='#L678'>678</a>
-<a name='L679'></a><a href='#L679'>679</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L679'></a><a href='#L679'>679</a>
+<a name='L680'></a><a href='#L680'>680</a>
+<a name='L681'></a><a href='#L681'>681</a>
+<a name='L682'></a><a href='#L682'>682</a>
+<a name='L683'></a><a href='#L683'>683</a>
+<a name='L684'></a><a href='#L684'>684</a>
+<a name='L685'></a><a href='#L685'>685</a>
+<a name='L686'></a><a href='#L686'>686</a>
+<a name='L687'></a><a href='#L687'>687</a>
+<a name='L688'></a><a href='#L688'>688</a>
+<a name='L689'></a><a href='#L689'>689</a>
+<a name='L690'></a><a href='#L690'>690</a>
+<a name='L691'></a><a href='#L691'>691</a>
+<a name='L692'></a><a href='#L692'>692</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1196,6 +1209,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -1874,6 +1900,19 @@ async function generate(req, res) {
             ...opts,
           });
         break;
+<span class="branch-50 cbranch-no" title="branch not covered" >      case ROUTES.REPORT_STOCK_PRODUCTS_WITHOUT_MOVEMENT:</span>
+<span class="cstat-no" title="statement not covered" >        rowsCallback = <span class="fstat-no" title="function not covered" >(o</span>pts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt;</span>
+<span class="cstat-no" title="statement not covered" >          ReportsData.stockProductsWithoutMovement(</span>
+            filters,
+            headers,
+            rows,
+            {
+              userBranches: req.userBranches,
+              ...opts,
+            },
+            req.appLanguage
+          );
+<span class="cstat-no" title="statement not covered" >        break;</span>
       case ROUTES.REPORT_KPIS_CHECKQTYPRODUCTSPERCHECKER_INBOUND:
         rowsCallback = (opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt;
           ReportsData.checkQtyProductsPerCheckerInbound(
@@ -1976,7 +2015,7 @@ async function generate(req, res) {
       case ROUTES.WAYBILL_MONITOR:
         await ReportsData.waybillPDF(filters, rows);
         break;
-<span class="branch-60 cbranch-no" title="branch not covered" >      case ROUTES.REPORT_RESUPPLY_PICKING:</span>
+<span class="branch-61 cbranch-no" title="branch not covered" >      case ROUTES.REPORT_RESUPPLY_PICKING:</span>
 <span class="cstat-no" title="statement not covered" >        rowsCallback = <span class="fstat-no" title="function not covered" >(o</span>pts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt;</span>
 <span class="cstat-no" title="statement not covered" >          ReportsData.resupply.generateData(</span>
             columns,
@@ -2003,7 +2042,7 @@ async function generate(req, res) {
             }
           );
         break;
-<span class="branch-62 cbranch-no" title="branch not covered" >      case ROUTES.REPORT_MOVEMENT_INVENTORY_MONITOR_SERIAL_LOG:</span>
+<span class="branch-63 cbranch-no" title="branch not covered" >      case ROUTES.REPORT_MOVEMENT_INVENTORY_MONITOR_SERIAL_LOG:</span>
 <span class="cstat-no" title="statement not covered" >        rowsCallback = <span class="fstat-no" title="function not covered" >(o</span>pts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt;</span>
 <span class="cstat-no" title="statement not covered" >          ReportsData.inventoryMonitorSheetLogs(</span>
             columns,
@@ -2017,7 +2056,7 @@ async function generate(req, res) {
             req.appLanguage
           );
 <span class="cstat-no" title="statement not covered" >        break;</span>
-<span class="branch-63 cbranch-no" title="branch not covered" >      case ROUTES.REPORT_MOVEMENT_EXPEDITION_OUTBOUND_ORDERS_ITEMS_RANGE_LIST:</span>
+<span class="branch-64 cbranch-no" title="branch not covered" >      case ROUTES.REPORT_MOVEMENT_EXPEDITION_OUTBOUND_ORDERS_ITEMS_RANGE_LIST:</span>
 <span class="cstat-no" title="statement not covered" >        rowsCallback = <span class="fstat-no" title="function not covered" >(o</span>pts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> =&gt;</span>
 <span class="cstat-no" title="statement not covered" >          ReportsData.movementOutboundOrdersItemsRangeList(</span>
             columns,
@@ -2029,7 +2068,7 @@ async function generate(req, res) {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        break;</span>
 &nbsp;
-<span class="branch-64 cbranch-no" title="branch not covered" >      default:</span>
+<span class="branch-65 cbranch-no" title="branch not covered" >      default:</span>
     }
 &nbsp;
     if (typeDoc === 'xlsx') {
@@ -2104,7 +2143,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-01-30T13:03:29.533Z
+                at 2025-03-06T22:41:43.715Z
             </div>
         <script src="../prettify.js"></script>
         <script>

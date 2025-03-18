@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>45/48</span>
+                <span class='fraction'>48/48</span>
             </div>
         
             
@@ -288,13 +288,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -302,7 +300,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -399,26 +399,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -487,7 +487,7 @@ async function validQuantityProductWave(req) {
     { userBranches: req.userBranches }
   );
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (outboundWave &amp;&amp; outboundWave.outboundRanges.length &gt; 0) {
+  if (outboundWave &amp;&amp; outboundWave.outboundRanges.length &gt; 0) {
     const totalProduct = outboundWave.outboundRanges.reduce((accum, range) =&gt; {
       accum += range.products.length;
       return accum;
@@ -592,7 +592,7 @@ async function validOutboundWaveIdOutboundRangeId(req) {
         outboundWaveId,
         status: { [Op.gt]: 2 },
       });
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (outboundRanges &amp;&amp; outboundRanges.length)
+    if (outboundRanges &amp;&amp; outboundRanges.length)
       throw new APIError(
         '',
         t('BEE1893' /* Existem documentos já finalizados */)
@@ -603,7 +603,7 @@ async function validOutboundWaveIdOutboundRangeId(req) {
         id: outboundRangeId,
         status: { [Op.gt]: 2 },
       });
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (outboundRanges &amp;&amp; outboundRanges.length)
+    if (outboundRanges &amp;&amp; outboundRanges.length)
       throw new APIError('', t('BEE1894' /* Este documento já foi separado */));
   } else {
     throw new APIError('', t('BEE1895' /* Erro dados não localizados */));
@@ -625,7 +625,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-06T22:41:43.715Z
+                at 2025-03-18T12:26:59.151Z
             </div>
         <script src="../prettify.js"></script>
         <script>

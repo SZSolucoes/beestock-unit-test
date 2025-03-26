@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -113,27 +113,25 @@
 <a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,14 +140,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,26 +159,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import PriorityDao from '../../database/dao/priority';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getPriority(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return PriorityDao.findPriority(query, {</span>
+async function getPriority(query, opts = {}) {
+  return PriorityDao.findPriority(query, {
     attributes: ['id', 'code', 'name', 'sequence', 'status', 'note'],
     ...opts,
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllPriorities(</span>opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const prioritiesQuery = <span class="cstat-no" title="statement not covered" >{};</span>
+async function getAllPriorities(opts = {}) {
+  const prioritiesQuery = {};
 &nbsp;
-  const priorities = <span class="cstat-no" title="statement not covered" >await PriorityDao.findPriorities(prioritiesQuery, {</span>
+  const priorities = await PriorityDao.findPriorities(prioritiesQuery, {
     attributes: ['id', 'code', 'name', 'sequence', 'status', 'note'],
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return priorities;</span>
+  return priorities;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getOptionsPriorities(</span>opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const priorities = <span class="cstat-no" title="statement not covered" >await PriorityDao.findPriorities(</span>
+async function getOptionsPriorities(opts = {}) {
+  const priorities = await PriorityDao.findPriorities(
     {
       status: 1,
     },
@@ -189,14 +189,14 @@ async function <span class="fstat-no" title="function not covered" >getOptionsPr
     }
   );
 &nbsp;
-  const result = <span class="cstat-no" title="statement not covered" >priorities.map(<span class="fstat-no" title="function not covered" >(p</span>riority) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
+  const result = priorities.map((priority) =&gt; {
+    return {
       value: priority.code,
       label: `${priority.code}-${priority.name}`,
     };
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return result;</span>
+  return result;
 }
 &nbsp;
 export default {
@@ -211,7 +211,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-21T13:04:07.759Z
+                at 2025-03-26T12:08:44.201Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

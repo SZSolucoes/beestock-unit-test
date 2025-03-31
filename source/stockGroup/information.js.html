@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,7 +107,7 @@
 <a name='L42'></a><a href='#L42'>42</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,29 +115,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,38 +147,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import StockGroupDao from '../../database/dao/stockGroup';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getStockGroup(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return StockGroupDao.findStockGroup(query, {</span>
+async function getStockGroup(query, opts = {}) {
+  return StockGroupDao.findStockGroup(query, {
     raw: true,
     attributes: ['id', 'code', 'name', 'note'],
     ...opts,
   });
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAllStockGroups(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const stockGroups = <span class="cstat-no" title="statement not covered" >await StockGroupDao.findStockGroups(query, {</span>
+async function getAllStockGroups(query, opts = {}) {
+  const stockGroups = await StockGroupDao.findStockGroups(query, {
     attributes: ['id', 'code', 'name', 'note'],
     ...opts,
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return stockGroups;</span>
+  return stockGroups;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getOptionsStockGroups(</span>query, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-  const stockGroups = <span class="cstat-no" title="statement not covered" >await StockGroupDao.findStockGroups(query, {</span>
+async function getOptionsStockGroups(query, opts = {}) {
+  const stockGroups = await StockGroupDao.findStockGroups(query, {
     attributes: ['id', 'code', 'name'],
     raw: true,
     ...opts,
   });
 &nbsp;
-  const result = <span class="cstat-no" title="statement not covered" >stockGroups.map(<span class="fstat-no" title="function not covered" >(s</span>tockGroup) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    return {</span>
+  const result = stockGroups.map((stockGroup) =&gt; {
+    return {
       value: stockGroup.code,
       label: stockGroup.name,
     };
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return result;</span>
+  return result;
 }
 &nbsp;
 export default {
@@ -193,7 +193,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-26T12:08:44.201Z
+                at 2025-03-31T17:36:10.528Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

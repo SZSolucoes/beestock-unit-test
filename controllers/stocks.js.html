@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.49% </span>
+                <span class="strong">96.54% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>389/399</span>
+                <span class='fraction'>391/405</span>
             </div>
         
             
@@ -1417,7 +1417,17 @@
 <a name='L1352'></a><a href='#L1352'>1352</a>
 <a name='L1353'></a><a href='#L1353'>1353</a>
 <a name='L1354'></a><a href='#L1354'>1354</a>
-<a name='L1355'></a><a href='#L1355'>1355</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L1355'></a><a href='#L1355'>1355</a>
+<a name='L1356'></a><a href='#L1356'>1356</a>
+<a name='L1357'></a><a href='#L1357'>1357</a>
+<a name='L1358'></a><a href='#L1358'>1358</a>
+<a name='L1359'></a><a href='#L1359'>1359</a>
+<a name='L1360'></a><a href='#L1360'>1360</a>
+<a name='L1361'></a><a href='#L1361'>1361</a>
+<a name='L1362'></a><a href='#L1362'>1362</a>
+<a name='L1363'></a><a href='#L1363'>1363</a>
+<a name='L1364'></a><a href='#L1364'>1364</a>
+<a name='L1365'></a><a href='#L1365'>1365</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2360,8 +2370,9 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -2448,6 +2459,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2550,6 +2563,12 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -2580,6 +2599,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3714,9 +3734,10 @@ async function getProductsStockBalanceByEan(req, res) {
     const organizedStockBalanceProducts = [];
 &nbsp;
     productsStockBalance.forEach((element) =&gt; {
-      const available =
+      const available = (
         parseFloat(element.quantity) -
-        (parseFloat(element.allocated) + parseFloat(element.reserved));
+        (parseFloat(element.allocated) + parseFloat(element.reserved))
+      ).toFixed(4);
 &nbsp;
       organizedStockBalanceProducts.push({
         productCode: element.productCode,
@@ -3787,8 +3808,10 @@ async function getProductsStockBalanceByAddress(req, res) {
           balance:
             parseFloat(element.reserved) + parseFloat(element.allocated) &lt;
             parseFloat(element.quantity)
-              ? parseFloat(element.quantity) -
-                (parseFloat(element.reserved) + parseFloat(element.allocated))
+              ? (
+                  parseFloat(element.quantity) -
+                  (parseFloat(element.reserved) + parseFloat(element.allocated))
+                ).toFixed(4)
               : 0,
           quantity: element.quantity ? parseFloat(element.quantity) : 0,
           lotNumber: element.lotNumber || '',
@@ -3901,9 +3924,15 @@ async function getProductStockBalanceByAddresAndEan(req, res) {
 }
 &nbsp;
 async function getInformation(req, res) {
-  const { addressCode, productCode } = req.query;
+  const { addressCode, productCode, lotNumber, expirationDate } = req.query;
   try {
-    const query = { branchCode: req.userMainBranch, addressCode, productCode };
+    const query = {
+      branchCode: req.userMainBranch,
+      addressCode,
+      productCode,
+      ...(lotNumber &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >{ lotNumber })</span>,
+      ...(expirationDate &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >{ expirationDate: new Date(expirationDate) })</span>,
+    };
 &nbsp;
     const stockBalance = await StockInformation.getStockBalance(query);
     if (stockBalance) {
@@ -3931,13 +3960,14 @@ async function getInformation(req, res) {
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >getProductStockBalances(</span>req, res) {
-  const { productCode, depositCode, lotNumber } = <span class="cstat-no" title="statement not covered" >req.query;</span>
+  const { productCode, depositCode, lotNumber, expirationDate } = <span class="cstat-no" title="statement not covered" >req.query;</span>
 <span class="cstat-no" title="statement not covered" >  try {</span>
     const query = <span class="cstat-no" title="statement not covered" >{</span>
       branchCode: req.userMainBranch,
       productCode,
       depositCode,
       ...(lotNumber &amp;&amp; { lotNumber }),
+      ...(expirationDate &amp;&amp; { expirationDate: new Date(expirationDate) }),
     };
 &nbsp;
     const stockBalances = <span class="cstat-no" title="statement not covered" >await StockInformation.getAvailableBalances(query);</span>
@@ -4132,7 +4162,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-31T17:36:10.528Z
+                at 2025-04-01T19:18:42.785Z
             </div>
         <script src="../prettify.js"></script>
         <script>

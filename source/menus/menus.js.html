@@ -8022,6 +8022,20 @@ const getMenus = (
                 force
               ),
               Permissions.returnByPermission(
+                encodeUniqKey(ROUTES.INBOUND_ORDER_ADD),
+                userPermissions,
+                {
+                  uniqKey: encodeUniqKey(ROUTES.INBOUND_ORDER_ADD),
+                  path: ROUTES.INBOUND_ORDER_ADD,
+                  title: t(
+                    'BEE3771' /* Documento de Entrada - Manual */,
+                    undefined,
+                    appLanguage
+                  ),
+                },
+                force
+              ),
+              Permissions.returnByPermission(
                 encodeUniqKey(ROUTES.INBOUND_ORDER_PANEL),
                 userPermissions,
                 {
@@ -8114,20 +8128,6 @@ const getMenus = (
                   uniqKey: encodeUniqKey(ROUTES.INBOUND_STORAGE),
                   path: ROUTES.INBOUND_STORAGE,
                   title: t('BEE38' /* Armazenamento */, undefined, appLanguage),
-                },
-                force
-              ),
-              Permissions.returnByPermission(
-                encodeUniqKey(ROUTES.INBOUND_ORDER_ADD),
-                userPermissions,
-                {
-                  uniqKey: encodeUniqKey(ROUTES.INBOUND_ORDER_ADD),
-                  path: ROUTES.INBOUND_ORDER_ADD,
-                  title: t(
-                    'BEE3771' /* Documento de Entrada - Manual */,
-                    undefined,
-                    appLanguage
-                  ),
                 },
                 force
               ),
@@ -8509,6 +8509,160 @@ const getMenus = (
           },
           force
         ),
+        // Industria
+        Permissions.returnByPermission(
+          encodeUniqKey(ROUTES.INDUSTRY),
+          userPermissions,
+          {
+            uniqKey: encodeUniqKey(ROUTES.INDUSTRY),
+            path: ROUTES.INDUSTRY,
+            icon: 'fa fa-industry',
+            title: t('BEE2771' /* Industria */, undefined, appLanguage),
+            children: [
+              Permissions.returnByPermission(
+                encodeUniqKey(ROUTES.OUTBOUND_INDUSTRY_ORDER_LIST),
+                userPermissions,
+                {
+                  uniqKey: encodeUniqKey(ROUTES.OUTBOUND_INDUSTRY_ORDER_LIST),
+                  path: ROUTES.OUTBOUND_INDUSTRY_ORDER_LIST,
+                  title: t(
+                    'BEE2829' /* Documento de Saída - Indústria */,
+                    undefined,
+                    appLanguage
+                  ),
+                  hasBlockPermission: true,
+                  children: [
+                    {
+                      uniqKey: encodeUniqKey(
+                        'PERMISSION_CANCEL_OUTBOUND_INDUSTRY_ORDER'
+                      ),
+                      showCheckbox: false,
+                      isLabelBlock: true,
+                      icon: 'fa fa-ban red',
+                      title: t(
+                        'BEE26' /* Permissões */,
+                        undefined,
+                        appLanguage
+                      ),
+                    },
+                    // ###################################################
+                    {
+                      uniqKey: encodeUniqKey(
+                        ROUTES.P_CANCEL_OUTBOUND_INDUSTRY_ORDER
+                      ),
+                      icon: 'fa fa-lock blue',
+                      title: t(
+                        'BEE2941' /* Acesso à exclusão dos Documentos de Saída - Indústria */,
+                        undefined,
+                        appLanguage
+                      ),
+                    },
+                  ],
+                },
+                force
+              ),
+              Permissions.returnByPermission(
+                encodeUniqKey(ROUTES.INDUSTRY_LABEL_SERIAL),
+                userPermissions,
+                {
+                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_LABEL_SERIAL),
+                  path: ROUTES.INDUSTRY_LABEL_SERIAL,
+                  title: t(
+                    'BEE2760' /* Etiqueta Seriada */,
+                    undefined,
+                    appLanguage
+                  ),
+                },
+                force
+              ),
+              Permissions.returnByPermission(
+                encodeUniqKey(ROUTES.INDUSTRY_GENERATE_LABEL_SERIAL),
+                userPermissions,
+                {
+                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_GENERATE_LABEL_SERIAL),
+                  path: ROUTES.INDUSTRY_GENERATE_LABEL_SERIAL,
+                  title: t(
+                    'BEE2784' /* Gerar Etiquetas Seriadas */,
+                    undefined,
+                    appLanguage
+                  ),
+                },
+                force
+              ),
+              Permissions.returnByPermission(
+                encodeUniqKey(ROUTES.INDUSTRY_MANUAL_REQUEST),
+                userPermissions,
+                {
+                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_MANUAL_REQUEST),
+                  path: ROUTES.INDUSTRY_MANUAL_REQUEST,
+                  title: t(
+                    'BEE2842' /* Gerar Requisição Manual */,
+                    undefined,
+                    appLanguage
+                  ),
+                },
+                force
+              ),
+              Permissions.returnByPermission(
+                encodeUniqKey(ROUTES.INDUSTRY_PRINT_SERIAL_GROUP),
+                userPermissions,
+                {
+                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_PRINT_SERIAL_GROUP),
+                  path: ROUTES.INDUSTRY_PRINT_SERIAL_GROUP,
+                  title: t(
+                    'BEE3255' /* Impressão Etiquetas Agrupadoras */,
+                    undefined,
+                    appLanguage
+                  ),
+                  hasBlockPermission: true,
+                  children: [
+                    {
+                      uniqKey: encodeUniqKey(
+                        'PERMISSION_INDUSTRY_PRINT_SERIAL_GROUP'
+                      ),
+                      showCheckbox: false,
+                      isLabelBlock: true,
+                      icon: 'fa fa-ban red',
+                      title: t(
+                        'BEE26' /* Permissões */,
+                        undefined,
+                        appLanguage
+                      ),
+                    },
+                    // ###################################################
+                    {
+                      uniqKey: encodeUniqKey(
+                        ROUTES.P_INDUSTRY_REPRINT_SERIAL_GROUP
+                      ),
+                      icon: 'fa fa-lock blue',
+                      title: t(
+                        'BEE3276' /* Reimpressão de etiquetas agrupadoras */,
+                        undefined,
+                        appLanguage
+                      ),
+                    },
+                  ],
+                },
+                force
+              ),
+              Permissions.returnByPermission(
+                encodeUniqKey(ROUTES.INDUSTRY_PRODUCTION_ORDER),
+                userPermissions,
+                {
+                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_PRODUCTION_ORDER),
+                  path: ROUTES.INDUSTRY_PRODUCTION_ORDER,
+                  title: t(
+                    'BEE2770' /* Ordem de Produção */,
+                    undefined,
+                    appLanguage
+                  ),
+                },
+                force
+              ),
+            ],
+          },
+          force
+        ),
         // ESTOQUE
         Permissions.returnByPermission(
           encodeUniqKey(ROUTES.MOVEMENT_STOCK),
@@ -8788,6 +8942,20 @@ const getMenus = (
                 force
               ),
               Permissions.returnByPermission(
+                encodeUniqKey(ROUTES.TRANSFER_BAPTISM),
+                userPermissions,
+                {
+                  uniqKey: encodeUniqKey(ROUTES.TRANSFER_BAPTISM),
+                  path: ROUTES.TRANSFER_BAPTISM,
+                  title: t(
+                    'BEE2572' /* Etiqueta Batismo Transferência */,
+                    undefined,
+                    appLanguage
+                  ),
+                },
+                force
+              ),
+              Permissions.returnByPermission(
                 encodeUniqKey(ROUTES.MOVEMENT_LABEL_EAN),
                 userPermissions,
                 {
@@ -8888,20 +9056,6 @@ const getMenus = (
                 force
               ),
               Permissions.returnByPermission(
-                encodeUniqKey(ROUTES.TRANSFER_BAPTISM),
-                userPermissions,
-                {
-                  uniqKey: encodeUniqKey(ROUTES.TRANSFER_BAPTISM),
-                  path: ROUTES.TRANSFER_BAPTISM,
-                  title: t(
-                    'BEE2572' /* Etiqueta Batismo Transferência */,
-                    undefined,
-                    appLanguage
-                  ),
-                },
-                force
-              ),
-              Permissions.returnByPermission(
                 encodeUniqKey(ROUTES.MOVEMENT_LABEL_VOLUME),
                 userPermissions,
                 {
@@ -8951,160 +9105,6 @@ const getMenus = (
                   path: ROUTES.INTEGRATION_MONITOR_ERP,
                   title: t(
                     'BEE2926' /* Monitor de Integração ERP */,
-                    undefined,
-                    appLanguage
-                  ),
-                },
-                force
-              ),
-            ],
-          },
-          force
-        ),
-        // Industria
-        Permissions.returnByPermission(
-          encodeUniqKey(ROUTES.INDUSTRY),
-          userPermissions,
-          {
-            uniqKey: encodeUniqKey(ROUTES.INDUSTRY),
-            path: ROUTES.INDUSTRY,
-            icon: 'fa fa-industry',
-            title: t('BEE2771' /* Industria */, undefined, appLanguage),
-            children: [
-              Permissions.returnByPermission(
-                encodeUniqKey(ROUTES.OUTBOUND_INDUSTRY_ORDER_LIST),
-                userPermissions,
-                {
-                  uniqKey: encodeUniqKey(ROUTES.OUTBOUND_INDUSTRY_ORDER_LIST),
-                  path: ROUTES.OUTBOUND_INDUSTRY_ORDER_LIST,
-                  title: t(
-                    'BEE2829' /* Documento de Saída - Indústria */,
-                    undefined,
-                    appLanguage
-                  ),
-                  hasBlockPermission: true,
-                  children: [
-                    {
-                      uniqKey: encodeUniqKey(
-                        'PERMISSION_CANCEL_OUTBOUND_INDUSTRY_ORDER'
-                      ),
-                      showCheckbox: false,
-                      isLabelBlock: true,
-                      icon: 'fa fa-ban red',
-                      title: t(
-                        'BEE26' /* Permissões */,
-                        undefined,
-                        appLanguage
-                      ),
-                    },
-                    // ###################################################
-                    {
-                      uniqKey: encodeUniqKey(
-                        ROUTES.P_CANCEL_OUTBOUND_INDUSTRY_ORDER
-                      ),
-                      icon: 'fa fa-lock blue',
-                      title: t(
-                        'BEE2941' /* Acesso à exclusão dos Documentos de Saída - Indústria */,
-                        undefined,
-                        appLanguage
-                      ),
-                    },
-                  ],
-                },
-                force
-              ),
-              Permissions.returnByPermission(
-                encodeUniqKey(ROUTES.INDUSTRY_LABEL_SERIAL),
-                userPermissions,
-                {
-                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_LABEL_SERIAL),
-                  path: ROUTES.INDUSTRY_LABEL_SERIAL,
-                  title: t(
-                    'BEE2760' /* Etiqueta Seriada */,
-                    undefined,
-                    appLanguage
-                  ),
-                },
-                force
-              ),
-              Permissions.returnByPermission(
-                encodeUniqKey(ROUTES.INDUSTRY_GENERATE_LABEL_SERIAL),
-                userPermissions,
-                {
-                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_GENERATE_LABEL_SERIAL),
-                  path: ROUTES.INDUSTRY_GENERATE_LABEL_SERIAL,
-                  title: t(
-                    'BEE2784' /* Gerar Etiquetas Seriadas */,
-                    undefined,
-                    appLanguage
-                  ),
-                },
-                force
-              ),
-              Permissions.returnByPermission(
-                encodeUniqKey(ROUTES.INDUSTRY_MANUAL_REQUEST),
-                userPermissions,
-                {
-                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_MANUAL_REQUEST),
-                  path: ROUTES.INDUSTRY_MANUAL_REQUEST,
-                  title: t(
-                    'BEE2842' /* Gerar Requisição Manual */,
-                    undefined,
-                    appLanguage
-                  ),
-                },
-                force
-              ),
-              Permissions.returnByPermission(
-                encodeUniqKey(ROUTES.INDUSTRY_PRINT_SERIAL_GROUP),
-                userPermissions,
-                {
-                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_PRINT_SERIAL_GROUP),
-                  path: ROUTES.INDUSTRY_PRINT_SERIAL_GROUP,
-                  title: t(
-                    'BEE3255' /* Impressão Etiquetas Agrupadoras */,
-                    undefined,
-                    appLanguage
-                  ),
-                  hasBlockPermission: true,
-                  children: [
-                    {
-                      uniqKey: encodeUniqKey(
-                        'PERMISSION_INDUSTRY_PRINT_SERIAL_GROUP'
-                      ),
-                      showCheckbox: false,
-                      isLabelBlock: true,
-                      icon: 'fa fa-ban red',
-                      title: t(
-                        'BEE26' /* Permissões */,
-                        undefined,
-                        appLanguage
-                      ),
-                    },
-                    // ###################################################
-                    {
-                      uniqKey: encodeUniqKey(
-                        ROUTES.P_INDUSTRY_REPRINT_SERIAL_GROUP
-                      ),
-                      icon: 'fa fa-lock blue',
-                      title: t(
-                        'BEE3276' /* Reimpressão de etiquetas agrupadoras */,
-                        undefined,
-                        appLanguage
-                      ),
-                    },
-                  ],
-                },
-                force
-              ),
-              Permissions.returnByPermission(
-                encodeUniqKey(ROUTES.INDUSTRY_PRODUCTION_ORDER),
-                userPermissions,
-                {
-                  uniqKey: encodeUniqKey(ROUTES.INDUSTRY_PRODUCTION_ORDER),
-                  path: ROUTES.INDUSTRY_PRODUCTION_ORDER,
-                  title: t(
-                    'BEE2770' /* Ordem de Produção */,
                     undefined,
                     appLanguage
                   ),
@@ -10792,7 +10792,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-31T17:36:10.528Z
+                at 2025-04-01T19:18:42.785Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

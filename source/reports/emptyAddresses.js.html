@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">78.94% </span>
+                <span class="strong">79.24% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>45/57</span>
+                <span class='fraction'>42/53</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">58.2% </span>
+                <span class="strong">58.73% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>39/67</span>
+                <span class='fraction'>37/63</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.35% </span>
+                <span class="strong">81.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>42/51</span>
+                <span class='fraction'>39/48</span>
             </div>
         
             
@@ -229,10 +229,7 @@
 <a name='L164'></a><a href='#L164'>164</a>
 <a name='L165'></a><a href='#L165'>165</a>
 <a name='L166'></a><a href='#L166'>166</a>
-<a name='L167'></a><a href='#L167'>167</a>
-<a name='L168'></a><a href='#L168'>168</a>
-<a name='L169'></a><a href='#L169'>169</a>
-<a name='L170'></a><a href='#L170'>170</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L167'></a><a href='#L167'>167</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -315,6 +312,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -342,13 +344,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -400,12 +395,11 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Op } from 'sequelize';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { literal, Op } from 'sequelize';
 import moment from 'moment-timezone';
 import { t } from '../../helpers/i18n';
 import StorageAddressDao from '../../database/dao/storageAddress';
-import { models } from '../../../config/database';
+import { models, sequelize } from '../../../config/database';
 import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 import NumberFormatter from '../../helpers/number/format';
 &nbsp;
@@ -428,21 +422,22 @@ export default async function generateData(
 &nbsp;
   const columnsValues = columns.map((it) =&gt; it.value);
   let dados = await StorageAddressDao.findStorageAddresses(where, {
-    attributes: columnsValues,
+    attributes: [
+      ...columnsValues,
+      [sequelize.fn('SUM', sequelize.col('`balances`.`flo_quantity`')), 'soma'],
+    ],
     order: ['code'],
     include: [
       {
-        separate: true,
         model: models.StockBalance,
         as: 'balances',
         required: false,
+        attributes: ['id', 'branchCode', 'addressCode', 'quantity'],
         where: {
           branchCode: {
-            [Op.eq]: `${models.StorageAddress.name}.${models.StorageAddress.rawAttributes.branchCode.field}`,
+            [Op.eq]: sequelize.col('StorageAddresses.str_branch_code'),
           },
-          quantity: { [Op.gt]: 0 },
         },
-        attributes: ['id'],
       },
       {
         required: false,
@@ -481,11 +476,15 @@ export default async function generateData(
         attributes: ['login'],
       },
     ],
+    group: ['code', 'branchCode', ...columnsValues],
+    having: {
+      [Op.or]: [literal('`soma` IS NULL'), literal('`soma` = 0')],
+    },
     ...opts,
   });
 &nbsp;
   const filteredData = dados.filter((item) =&gt; {
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (item.column !== '') {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (item.column) {
       const value = <span class="cstat-no" title="statement not covered" >parseInt(</span>
         item.column.replace(item.column.substr(0, 1), ''),
         10
@@ -510,64 +509,56 @@ export default async function generateData(
   });
 &nbsp;
   for (const address of dados) {
-    let isEmpty = true;
+    address.createdUser = address.userCreated ? address.userCreated.login : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+    address.updatedUser = address.userUpdated.login;
+    address.blocked = address.blocked
+      ? t('BEE172' /* Sim */, undefined, appLanguage)
+      : <span class="branch-1 cbranch-no" title="branch not covered" >t('BEE173' /* Não */, undefined, appLanguage);</span>
+    address.shareAddress = address.shareAddress
+      ? <span class="branch-0 cbranch-no" title="branch not covered" >t('BEE172' /* Sim */, undefined, appLanguage)</span>
+      : t('BEE173' /* Não */, undefined, appLanguage);
+    address.branchCode = address.branch
+      ? `${address.branch.code} - ${address.branch.name}`
+      : <span class="branch-1 cbranch-no" title="branch not covered" >address.branchCode;</span>
+    address.rangeCode = address.range
+      ? `${address.range.code} - ${address.range.name}`
+      : <span class="branch-1 cbranch-no" title="branch not covered" >address.rangeCode;</span>
 &nbsp;
-    <span class="missing-if-branch" title="if path not taken" >I</span>if (address.balances.length &gt; 0) <span class="cstat-no" title="statement not covered" >isEmpty = false;</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (address.type === 0) <span class="cstat-no" title="statement not covered" >address.type = '';</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (address.type === 1)
+      address.type = `${address.addressType.id} - ${address.addressType.name}`;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (address.type === 2)
+<span class="cstat-no" title="statement not covered" >      address.type = `${address.addressType.id} - ${address.addressType.name}`;</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (address.type === 3)
+<span class="cstat-no" title="statement not covered" >      address.type = `${address.addressType.id} - ${address.addressType.name}`;</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (address.type === 4)
+<span class="cstat-no" title="statement not covered" >      address.type = `${address.addressType.id} - ${address.addressType.name}`;</span>
 &nbsp;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (isEmpty) {
-      address.createdUser = address.userCreated
-        ? address.userCreated.login
-        : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
-      address.updatedUser = address.userUpdated.login;
-      address.blocked = address.blocked
-        ? t('BEE172' /* Sim */, undefined, appLanguage)
-        : <span class="branch-1 cbranch-no" title="branch not covered" >t('BEE173' /* Não */, undefined, appLanguage);</span>
-      address.shareAddress = address.shareAddress
-        ? <span class="branch-0 cbranch-no" title="branch not covered" >t('BEE172' /* Sim */, undefined, appLanguage)</span>
-        : t('BEE173' /* Não */, undefined, appLanguage);
-      address.branchCode = address.branch
-        ? `${address.branch.code} - ${address.branch.name}`
-        : <span class="branch-1 cbranch-no" title="branch not covered" >address.branchCode;</span>
-      address.rangeCode = address.range
-        ? `${address.range.code} - ${address.range.name}`
-        : <span class="branch-1 cbranch-no" title="branch not covered" >address.rangeCode;</span>
+    address.height = address.height || 0;
+    address.width = address.width || 0;
+    address.length = address.length || 0;
+    address.capacityVolume = address.capacityVolume || 0;
+    address.capacityWeight = address.capacityWeight || 0;
 &nbsp;
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (address.type === 0) <span class="cstat-no" title="statement not covered" >address.type = '';</span>
-      <span class="missing-if-branch" title="else path not taken" >E</span>if (address.type === 1)
-        address.type = `${address.addressType.id} - ${address.addressType.name}`;
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (address.type === 2)
-<span class="cstat-no" title="statement not covered" >        address.type = `${address.addressType.id} - ${address.addressType.name}`;</span>
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (address.type === 3)
-<span class="cstat-no" title="statement not covered" >        address.type = `${address.addressType.id} - ${address.addressType.name}`;</span>
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (address.type === 4)
-<span class="cstat-no" title="statement not covered" >        address.type = `${address.addressType.id} - ${address.addressType.name}`;</span>
-&nbsp;
-      address.height = address.height || 0;
-      address.width = address.width || 0;
-      address.length = address.length || 0;
-      address.capacityVolume = address.capacityVolume || 0;
-      address.capacityWeight = address.capacityWeight || 0;
-&nbsp;
-      const row = [];
-      for (let index = 0; index &lt; columnsValues.length; index++) {
-        const column = columnsValues[index];
-        row.push(address[column]);
-        if ((column === 'createdAt' || column === 'updatedAt') &amp;&amp; row[index]) {
-          row[index] = moment(row[index]).format('l LTS');
-        }
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (
-          (column === 'height' ||
-            column === 'width' ||
-            column === 'length' ||
-            column === 'capacityVolume' ||
-            column === 'capacityWeight') &amp;&amp;
-<span class="branch-5 cbranch-no" title="branch not covered" >          row[index] !== null</span>
-        ) {
-<span class="cstat-no" title="statement not covered" >          row[index] = NumberFormatter.format(row[index], 3);</span>
-        }
+    const row = [];
+    for (let index = 0; index &lt; columnsValues.length; index++) {
+      const column = columnsValues[index];
+      row.push(address[column]);
+      if ((column === 'createdAt' || column === 'updatedAt') &amp;&amp; row[index]) {
+        row[index] = moment(row[index]).format('l LTS');
       }
-      rows.push(row);
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (
+        (column === 'height' ||
+          column === 'width' ||
+          column === 'length' ||
+          column === 'capacityVolume' ||
+          column === 'capacityWeight') &amp;&amp;
+<span class="branch-5 cbranch-no" title="branch not covered" >        row[index] !== null</span>
+      ) {
+<span class="cstat-no" title="statement not covered" >        row[index] = NumberFormatter.format(row[index], 3);</span>
+      }
     }
+    rows.push(row);
   }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -577,7 +568,7 @@ export default async function generateData(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-01T20:01:00.281Z
+                at 2025-05-16T14:48:58.869Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

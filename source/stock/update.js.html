@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -152,31 +152,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -208,26 +208,26 @@ async function updateStockBalance(stockBalanceId, stockBalance, opts = {}) {
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >updateStockBalanceControlExpirationDate(</span>
+async function updateStockBalanceControlExpirationDate(
   stockBalanceId,
   stockBalance,
-  opts = <span class="branch-0 cbranch-no" title="branch not covered" >{}</span>
+  opts = {}
 ) {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const updBalances = <span class="cstat-no" title="statement not covered" >await StockBalanceDao.updateStockBalance(</span>
+  try {
+    const updBalances = await StockBalanceDao.updateStockBalance(
       { id: stockBalanceId },
       { ...stockBalance, updatedAt: moment().format() },
       { ...opts }
     );
-<span class="cstat-no" title="statement not covered" >    return updBalances;</span>
+    return updBalances;
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', error);</span>
+    throw new APIError('', error);
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >updateLotNumberStockBalance(</span>query, stockBalance, opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const updStockBalance = <span class="cstat-no" title="statement not covered" >await StockBalanceDao.updateStockBalance(</span>
+async function updateLotNumberStockBalance(query, stockBalance, opts = {}) {
+  try {
+    const updStockBalance = await StockBalanceDao.updateStockBalance(
       query,
       {
         lotNumber: stockBalance.lotNumber,
@@ -235,9 +235,9 @@ async function <span class="fstat-no" title="function not covered" >updateLotNum
       },
       { ...opts }
     );
-<span class="cstat-no" title="statement not covered" >    return updStockBalance;</span>
+    return updStockBalance;
   } catch (error) {
-<span class="cstat-no" title="statement not covered" >    throw new APIError('', error);</span>
+    throw new APIError('', error);
   }
 }
 &nbsp;
@@ -253,7 +253,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-01T20:01:00.281Z
+                at 2025-05-16T14:48:58.869Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

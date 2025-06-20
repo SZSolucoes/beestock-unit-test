@@ -588,7 +588,22 @@
 <a name='L523'></a><a href='#L523'>523</a>
 <a name='L524'></a><a href='#L524'>524</a>
 <a name='L525'></a><a href='#L525'>525</a>
-<a name='L526'></a><a href='#L526'>526</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L526'></a><a href='#L526'>526</a>
+<a name='L527'></a><a href='#L527'>527</a>
+<a name='L528'></a><a href='#L528'>528</a>
+<a name='L529'></a><a href='#L529'>529</a>
+<a name='L530'></a><a href='#L530'>530</a>
+<a name='L531'></a><a href='#L531'>531</a>
+<a name='L532'></a><a href='#L532'>532</a>
+<a name='L533'></a><a href='#L533'>533</a>
+<a name='L534'></a><a href='#L534'>534</a>
+<a name='L535'></a><a href='#L535'>535</a>
+<a name='L536'></a><a href='#L536'>536</a>
+<a name='L537'></a><a href='#L537'>537</a>
+<a name='L538'></a><a href='#L538'>538</a>
+<a name='L539'></a><a href='#L539'>539</a>
+<a name='L540'></a><a href='#L540'>540</a>
+<a name='L541'></a><a href='#L541'>541</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -774,7 +789,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -905,6 +933,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -964,6 +993,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1160,6 +1190,7 @@ async function getBranch(query, opts = {}) {
       'spareDeposit',
       'intermediaryDeposit',
       'factoryDeposit',
+      'crossdockingDeposit',
       'withdrawUser',
       'branchInInventory',
       'usesCableCuttingPlan',
@@ -1187,6 +1218,10 @@ async function getBranch(query, opts = {}) {
       'yellowLightValue',
       'greenLightValue',
       'enableStockMirror',
+      'trackingDashboardRefreshTime',
+      'trackingDashboardActivateSound',
+      'trackingDashboardColumnSequence',
+      'trackingDashboardOrderTypes',
     ],
     include: [
       {
@@ -1199,6 +1234,7 @@ async function getBranch(query, opts = {}) {
           'daysOfPasswordValidity',
           'passwordHistoryLimit',
           'imageHubHostAddress',
+          'fractionalQuantity',
         ],
         include: [
           {
@@ -1283,6 +1319,12 @@ async function getBranch(query, opts = {}) {
       },
       {
         required: false,
+        model: models.Deposit,
+        as: 'depCrossdocking',
+        attributes: ['code', 'name'],
+      },
+      {
+        required: false,
         model: models.User,
         as: 'userWithdraw',
         attributes: ['name', 'login', 'email'],
@@ -1337,6 +1379,7 @@ async function getBranches(query, opts = {}) {
       'spareDeposit',
       'intermediaryDeposit',
       'factoryDeposit',
+      'crossdockingDeposit',
       'withdrawUser',
       'branchInInventory',
       'usesCableCuttingPlan',
@@ -1404,6 +1447,7 @@ async function getAllBranches(query = {}, opts = {}) {
       'spareDeposit',
       'intermediaryDeposit',
       'factoryDeposit',
+      'crossdockingDeposit',
       'withdrawUser',
       'branchInInventory',
       'usesCableCuttingPlan',
@@ -1516,6 +1560,7 @@ async function getBranchSettings(query, opts = {}) {
       'automaticSeparationAfterCuttingCables',
       'limitProductsWave',
       'factoryDeposit',
+      'crossdockingDeposit',
       'serialControlDeposit',
       'prefix',
       'notConfirmProductWaveTransfer',
@@ -1645,7 +1690,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-28T00:11:17.882Z
+                at 2025-06-20T12:56:01.755Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

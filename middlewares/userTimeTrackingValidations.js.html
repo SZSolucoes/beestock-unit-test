@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.3% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>55/63</span>
+                <span class='fraction'>63/63</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.9% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>60/66</span>
+                <span class='fraction'>66/66</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.9% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.3% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>55/63</span>
+                <span class='fraction'>63/63</span>
             </div>
         
             
@@ -580,8 +580,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -596,25 +596,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -868,9 +868,9 @@ function validType(req) {
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validStartUserTimeTracking(</span>req) {
-  const { userId } = <span class="cstat-no" title="statement not covered" >req;</span>
-  const user = <span class="cstat-no" title="statement not covered" >await UsersInfo.getUser(</span>
+async function validStartUserTimeTracking(req) {
+  const { userId } = req;
+  const user = await UsersInfo.getUser(
     { id: userId },
     {
       attributes: ['id', 'login', 'workShift'],
@@ -885,25 +885,25 @@ async function <span class="fstat-no" title="function not covered" >validStartUs
     }
   );
 &nbsp;
-  const startedAt = <span class="cstat-no" title="statement not covered" >new Date();</span>
+  const startedAt = new Date();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (user.workShiftUser) {</span>
-    const breakStartTimeDate = <span class="cstat-no" title="statement not covered" >parse(</span>
+  if (user.workShiftUser) {
+    const breakStartTimeDate = parse(
       user.workShiftUser.breakStartTime,
       'HH:mm:ss',
       startedAt
     );
-    const breakEndTimeDate = <span class="cstat-no" title="statement not covered" >parse(</span>
+    const breakEndTimeDate = parse(
       user.workShiftUser.breakEndTime,
       'HH:mm:ss',
       startedAt
     );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (</span>
+    if (
       isAfter(startedAt, breakStartTimeDate) &amp;&amp;
       isBefore(startedAt, breakEndTimeDate)
     ) {
-<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+      throw new APIError(
         '',
         t(
           'BEE4344',
@@ -937,7 +937,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-20T12:56:01.755Z
+                at 2025-06-24T12:18:07.458Z
             </div>
         <script src="../prettify.js"></script>
         <script>

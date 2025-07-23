@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">99.41% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>168/168</span>
+                <span class='fraction'>171/172</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">96.36% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>53/53</span>
+                <span class='fraction'>53/55</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">99.41% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>167/167</span>
+                <span class='fraction'>170/171</span>
             </div>
         
             
@@ -662,7 +662,22 @@
 <a name='L597'></a><a href='#L597'>597</a>
 <a name='L598'></a><a href='#L598'>598</a>
 <a name='L599'></a><a href='#L599'>599</a>
-<a name='L600'></a><a href='#L600'>600</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L600'></a><a href='#L600'>600</a>
+<a name='L601'></a><a href='#L601'>601</a>
+<a name='L602'></a><a href='#L602'>602</a>
+<a name='L603'></a><a href='#L603'>603</a>
+<a name='L604'></a><a href='#L604'>604</a>
+<a name='L605'></a><a href='#L605'>605</a>
+<a name='L606'></a><a href='#L606'>606</a>
+<a name='L607'></a><a href='#L607'>607</a>
+<a name='L608'></a><a href='#L608'>608</a>
+<a name='L609'></a><a href='#L609'>609</a>
+<a name='L610'></a><a href='#L610'>610</a>
+<a name='L611'></a><a href='#L611'>611</a>
+<a name='L612'></a><a href='#L612'>612</a>
+<a name='L613'></a><a href='#L613'>613</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -941,6 +956,16 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1211,6 +1236,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1282,6 +1308,8 @@ import BranchInformation from '../source/branches/information';
 import PrinterInformation from '../source/printers/information';
 import UsersRangesInformation from '../source/usersRanges/information';
 import PasswordHistoryCreate from '../source/passwordHistory/create';
+&nbsp;
+import UsersRangesDelete from '../source/usersRanges/delete';
 &nbsp;
 async function getUser(req, res) {
   const { userId } = req.query;
@@ -1537,7 +1565,17 @@ async function updateStatus(req, res) {
       id,
     });
 &nbsp;
-    const updUser = await UserUpdate.updateStatus(id, !user.status, req.userId);
+    let updUser = {};
+&nbsp;
+    await sequelize.transaction(async (transaction) =&gt; {
+      updUser = await UserUpdate.updateStatus(id, !user.status, req.userId, {
+        transaction,
+      });
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (user.status === true) {
+<span class="cstat-no" title="statement not covered" >        await UsersRangesDelete.deleteUsersRangesByUserId(id, { transaction });</span>
+      }
+    });
 &nbsp;
     if (updUser) {
       const response = {
@@ -1584,7 +1622,7 @@ async function updatePassword(req, res) {
     const updUser = await UserUpdate.updatePassword(
       userId || user.id,
       password,
-      req.userId || user.id,
+      req.userId || <span class="branch-1 cbranch-no" title="branch not covered" >user.id,</span>
       passValid
     );
 &nbsp;
@@ -1813,6 +1851,7 @@ async function getListUsersPicking(req, res) {
     [Op.and]: [
       sequelize.where(sequelize.col('user.str_main_branch_code'), branchCode),
       { rangeCode },
+      sequelize.where(sequelize.col('user.bol_status'), 1),
     ],
   };
 &nbsp;
@@ -1867,7 +1906,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-26T13:54:58.918Z
+                at 2025-07-23T15:19:40.651Z
             </div>
         <script src="../prettify.js"></script>
         <script>

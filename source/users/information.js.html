@@ -466,7 +466,16 @@
 <a name='L401'></a><a href='#L401'>401</a>
 <a name='L402'></a><a href='#L402'>402</a>
 <a name='L403'></a><a href='#L403'>403</a>
-<a name='L404'></a><a href='#L404'>404</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L404'></a><a href='#L404'>404</a>
+<a name='L405'></a><a href='#L405'>405</a>
+<a name='L406'></a><a href='#L406'>406</a>
+<a name='L407'></a><a href='#L407'>407</a>
+<a name='L408'></a><a href='#L408'>408</a>
+<a name='L409'></a><a href='#L409'>409</a>
+<a name='L410'></a><a href='#L410'>410</a>
+<a name='L411'></a><a href='#L411'>411</a>
+<a name='L412'></a><a href='#L412'>412</a>
+<a name='L413'></a><a href='#L413'>413</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -725,6 +734,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -756,7 +775,6 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -990,73 +1008,73 @@ async function getUser(query, opts = {}, includeDeps = false) {
           },
           ...(includeDeps
             ? [
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depPreReceipt',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depInbound',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depResale',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depInventory',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depDivergence',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depDamage',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depRejected',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depQuality',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depSpare',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depIntermediary',
-                  attributes: ['serialLabel'],
-                },
-                {
-                  required: false,
-                  model: models.Deposit,
-                  as: 'depFactory',
-                  attributes: ['serialLabel'],
-                },
-              ]
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depPreReceipt',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depInbound',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depResale',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depInventory',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depDivergence',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depDamage',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depRejected',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depQuality',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depSpare',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depIntermediary',
+                attributes: ['serialLabel'],
+              },
+              {
+                required: false,
+                model: models.Deposit,
+                as: 'depFactory',
+                attributes: ['serialLabel'],
+              },
+            ]
             : []),
         ],
       },
@@ -1125,6 +1143,16 @@ async function getAllUsers(query = {}, opts = {}) {
         as: 'accessProfileUser',
         attributes: ['code', 'name'],
       },
+      {
+        required: false,
+        model: models.UsersRanges,
+        as: 'usersRanges',
+      },
+      {
+        required: false,
+        model: models.UserIndirectTask,
+        as: 'userIndirectTasks',
+      },
     ],
     ...opts,
   });
@@ -1142,56 +1170,55 @@ async function getUsersList(
   const usersQuery = {
     ...(filtered.length
       ? filtered.reduce(
-          (acum, it) =&gt; {
-            try {
-              switch (it.id) {
-                case 'departmentUser.name':
-                  departmentRequuired = true;
-                  acum[Op.and].push(
-                    Sequelize.where(
-                      Sequelize.cast(
-                        Sequelize.col('departmentUser.str_name'),
-                        'char'
+        (acum, it) =&gt; {
+          try {
+            switch (it.id) {
+              case 'departmentUser.name':
+                departmentRequuired = true;
+                acum[Op.and].push(
+                  Sequelize.where(
+                    Sequelize.cast(
+                      Sequelize.col('departmentUser.str_name'),
+                      'char'
+                    ),
+                    { [Op.like]: `%${it.value}%` }
+                  )
+                );
+                break;
+              default:
+                acum[Op.and].push(
+                  Sequelize.where(
+                    Sequelize.cast(
+                      Sequelize.col(
+                        `${models.User.name}.${models.User.rawAttributes[it.id].field
+                        }`
                       ),
-                      { [Op.like]: `%${it.value}%` }
-                    )
-                  );
-                  break;
-                default:
-                  acum[Op.and].push(
-                    Sequelize.where(
-                      Sequelize.cast(
-                        Sequelize.col(
-                          `${models.User.name}.${
-                            models.User.rawAttributes[it.id].field
-                          }`
-                        ),
-                        'char'
-                      ),
-                      { [Op.like]: `%${it.value}%` }
-                    )
-                  );
-<span class="cstat-no" title="statement not covered" >                  break;</span>
-              }
-            } catch (e) {}
-            return acum;
-          },
-          { [Op.and]: [] }
-        )
+                      'char'
+                    ),
+                    { [Op.like]: `%${it.value}%` }
+                  )
+                );
+<span class="cstat-no" title="statement not covered" >                break;</span>
+            }
+          } catch (e) { }
+          return acum;
+        },
+        { [Op.and]: [] }
+      )
       : {}),
   };
 &nbsp;
   const sortParams = sorted.length
     ? {
-        order: sorted.map((it) =&gt; {
-          switch (it.id) {
-            case 'departmentUser.name':
-              return [Sequelize.col('department'), it.desc ? 'DESC' : 'ASC'];
-            default:
-              return [it.id, it.desc ? 'DESC' : 'ASC'];
-          }
-        }),
-      }
+      order: sorted.map((it) =&gt; {
+        switch (it.id) {
+          case 'departmentUser.name':
+            return [Sequelize.col('department'), it.desc ? 'DESC' : 'ASC'];
+          default:
+            return [it.id, it.desc ? 'DESC' : 'ASC'];
+        }
+      }),
+    }
     : {};
 &nbsp;
   const users = await UserDao.findAndCountUsers(usersQuery, {
@@ -1279,7 +1306,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-26T13:54:58.918Z
+                at 2025-07-23T15:19:40.651Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

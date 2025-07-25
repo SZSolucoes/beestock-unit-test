@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -228,7 +228,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -251,11 +251,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -327,11 +327,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -375,7 +375,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -387,8 +387,8 @@
 import SerialGroupDao from '../../database/dao/serialGroup';
 import { models, sequelize } from '../../../config/database';
 &nbsp;
-async function getAllSerialGroups(query = {}, opts = {}) {
-  const serialLabel = await SerialGroupDao.findAndCountAllSerialGroup(query, {
+async function <span class="fstat-no" title="function not covered" >getAllSerialGroups(</span>query = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  const serialLabel = <span class="cstat-no" title="statement not covered" >await SerialGroupDao.findAndCountAllSerialGroup(query, {</span>
     include: [
       {
         required: true,
@@ -411,11 +411,11 @@ async function getAllSerialGroups(query = {}, opts = {}) {
     ],
     ...opts,
   });
-  return serialLabel;
+<span class="cstat-no" title="statement not covered" >  return serialLabel;</span>
 }
 &nbsp;
-async function getSerialGroup(query = {}, opts = {}) {
-  const serialLabel = await SerialGroupDao.findSerialGroup(query, {
+async function <span class="fstat-no" title="function not covered" >getSerialGroup(</span>query = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  const serialLabel = <span class="cstat-no" title="statement not covered" >await SerialGroupDao.findSerialGroup(query, {</span>
     include: [
       {
         required: true,
@@ -487,11 +487,11 @@ async function getSerialGroup(query = {}, opts = {}) {
     subQuery: false,
     ...opts,
   });
-  return serialLabel;
+<span class="cstat-no" title="statement not covered" >  return serialLabel;</span>
 }
 &nbsp;
-async function getSerialGroupShipmentDocRelationship(query = {}, opts = {}) {
-  const serialLabel = await SerialGroupDao.findSerialGroup(query, {
+async function <span class="fstat-no" title="function not covered" >getSerialGroupShipmentDocRelationship(</span>query = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  const serialLabel = <span class="cstat-no" title="statement not covered" >await SerialGroupDao.findSerialGroup(query, {</span>
     attributes: ['code', 'quantity'],
     include: [
       {
@@ -535,7 +535,7 @@ async function getSerialGroupShipmentDocRelationship(query = {}, opts = {}) {
     subQuery: false,
     ...opts,
   });
-  return serialLabel;
+<span class="cstat-no" title="statement not covered" >  return serialLabel;</span>
 }
 &nbsp;
 export default {
@@ -550,7 +550,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-23T15:19:40.651Z
+                at 2025-07-25T20:35:05.162Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

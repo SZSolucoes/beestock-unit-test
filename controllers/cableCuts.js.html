@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">99.15% </span>
+                <span class="strong">86.07% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>235/237</span>
+                <span class='fraction'>204/237</span>
             </div>
         
             
@@ -1118,7 +1118,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
@@ -1843,28 +1843,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2199,7 +2199,7 @@ async function cutsMonitoList(req, res) {
         branchName:
           cutsMonito.branchCode &amp;&amp; cutsMonito.branch &amp;&amp; cutsMonito.branch.name
             ? `${cutsMonito.branchCode} - ${cutsMonito.branch.name}`
-            : '',
+            : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         addressCode: cutsMonito.addressCode,
         code: cutsMonito.code,
         createdAt: moment(cutsMonito.createdAt).format('DD/MM/YYYY HH:mm'),
@@ -2208,28 +2208,28 @@ async function cutsMonitoList(req, res) {
           cutsMonito.userCreated &amp;&amp;
           cutsMonito.userCreated.login
             ? cutsMonito.userCreated.login
-            : '',
+            : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         finishCableCutAt: cutsMonito.finishCableCutAt
-          ? moment(cutsMonito.finishCableCutAt).format('DD/MM/YYYY HH:mm')
+          ? <span class="branch-0 cbranch-no" title="branch not covered" >moment(cutsMonito.finishCableCutAt).format('DD/MM/YYYY HH:mm')</span>
           : '',
         finishCableCutUserName:
           cutsMonito.finishCableCutUser &amp;&amp;
-          cutsMonito.userFinishCut &amp;&amp;
-          cutsMonito.userFinishCut.login
-            ? cutsMonito.userFinishCut.login
+<span class="branch-1 cbranch-no" title="branch not covered" >          cutsMonito.userFinishCut </span>&amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >          cutsMonito.userFinishCut.login</span>
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >cutsMonito.userFinishCut.login</span>
             : '',
         finishCableCutUserId:
           cutsMonito.finishCableCutUser &amp;&amp;
-          cutsMonito.userFinishCut &amp;&amp;
-          cutsMonito.userFinishCut.id
-            ? cutsMonito.userFinishCut.id
+<span class="branch-1 cbranch-no" title="branch not covered" >          cutsMonito.userFinishCut </span>&amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >          cutsMonito.userFinishCut.id</span>
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >cutsMonito.userFinishCut.id</span>
             : null,
-        status: cutsMonito.status ? cutsMonito.status : '',
-        productCode: cutsMonito.productCode ? cutsMonito.productCode : '',
+        status: cutsMonito.status ? cutsMonito.status : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        productCode: cutsMonito.productCode ? cutsMonito.productCode : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         productName:
           cutsMonito.product &amp;&amp; cutsMonito.product.name
             ? cutsMonito.product.name
-            : '',
+            : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
       });
     }
     const response = {
@@ -2261,70 +2261,70 @@ async function getCableCutProductList(req, res) {
     );
     const productList = products.map((element) =&gt; {
       return {
-        id: element.id ? element.id : '',
-        cableCutPlanId: element.cableCutPlanId ? element.cableCutPlanId : '',
+        id: element.id ? element.id : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        cableCutPlanId: element.cableCutPlanId ? element.cableCutPlanId : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         code:
           element.cableCutPlan &amp;&amp; element.cableCutPlan.code
             ? element.cableCutPlan.code
-            : '',
+            : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         mandatoryQuantity: element.mandatoryQuantity
           ? element.mandatoryQuantity
-          : '',
-        minimumQuantity: element.minimumQuantity ? element.minimumQuantity : '',
+          : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        minimumQuantity: element.minimumQuantity ? <span class="branch-0 cbranch-no" title="branch not covered" >element.minimumQuantity </span>: '',
         finishCableCutUser:
           element.userFinishCut &amp;&amp; element.userFinishCut.login
             ? element.userFinishCut.login
             : '',
         finishCableCutAt: element.finishCableCutAt
-          ? moment(element.finishCableCutAt).format('DD/MM/YYYY HH:mm')
+          ? <span class="branch-0 cbranch-no" title="branch not covered" >moment(element.finishCableCutAt).format('DD/MM/YYYY HH:mm')</span>
           : '',
         createdUser:
-          element.userCreated &amp;&amp; element.userCreated.login
-            ? element.userCreated.login
+          element.userCreated &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >element.userCreated.login</span>
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >element.userCreated.login</span>
             : '',
         createdAt: element.createdAt
-          ? moment(element.createdAt).format('DD/MM/YYYY HH:mm')
+          ? <span class="branch-0 cbranch-no" title="branch not covered" >moment(element.createdAt).format('DD/MM/YYYY HH:mm')</span>
           : '',
-        status: element.status ? element.status : '',
+        status: element.status ? <span class="branch-0 cbranch-no" title="branch not covered" >element.status </span>: '',
         lineNumber: element.lineNumber,
         lotNumber: element.lotNumber ? element.lotNumber : '',
-        quantity: element.quantity ? element.quantity : '',
+        quantity: element.quantity ? element.quantity : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         productName:
           element.product &amp;&amp;
           element.product.productCode &amp;&amp;
           element.product.fullName
             ? `${element.product.productCode} - ${element.product.fullName}`
-            : '',
+            : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         document:
           element.outboundOrder &amp;&amp; element.outboundOrder.orderNumber
             ? element.outboundOrder.orderNumber
-            : '',
+            : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         customerOrderCode:
           element.outboundOrder &amp;&amp; element.outboundOrder.customerOrderCode
-            ? element.outboundOrder.customerOrderCode
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >element.outboundOrder.customerOrderCode</span>
             : '',
         priorityCode:
           element.outboundOrder &amp;&amp; element.outboundOrder.priorityCode
-            ? element.outboundOrder.priorityCode
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >element.outboundOrder.priorityCode</span>
             : '',
         carrierCode:
           element.outboundOrder &amp;&amp; element.outboundOrder.carrierCode
-            ? element.outboundOrder.carrierCode
+            ? <span class="branch-0 cbranch-no" title="branch not covered" >element.outboundOrder.carrierCode</span>
             : '',
         orderNumber:
           element.outboundOrder &amp;&amp; element.outboundOrder.orderNumber
             ? element.outboundOrder.orderNumber
-            : '',
+            : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         customerName:
           element.outboundOrder &amp;&amp;
           element.outboundOrder.customer &amp;&amp;
           element.outboundOrder.customer.name
             ? `${element.outboundOrder.customerCode} - ${element.outboundOrder.customer.name}`
-            : '',
+            : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         automaticSeparationAfterCuttingCables: element.outboundOrder.typeOrders
           ? element.outboundOrder.typeOrders
               .automaticSeparationAfterCuttingCables
-          : element.cableCutPlan.branch.automaticSeparationAfterCuttingCables,
+          : <span class="branch-1 cbranch-no" title="branch not covered" >element.cableCutPlan.branch.automaticSeparationAfterCuttingCables,</span>
         printedCableCutLabel: element.printedCableCutLabel,
       };
     });
@@ -3133,7 +3133,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-23T15:19:40.651Z
+                at 2025-07-25T20:35:05.162Z
             </div>
         <script src="../prettify.js"></script>
         <script>

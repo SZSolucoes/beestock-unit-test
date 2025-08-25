@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>18/18</span>
+                <span class='fraction'>9/18</span>
             </div>
         
             
@@ -197,23 +197,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -278,28 +278,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -328,8 +328,8 @@ async function getLotInfo(req, res) {
   try {
     const user = await UserInformation.getUser({ id: req.userId });
 &nbsp;
-    const branchCode = user.branchUser ? user.branchUser.code : '';
-    const branchName = user.branchUser ? user.branchUser.name : '';
+    const branchCode = user.branchUser ? user.branchUser.code : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+    const branchName = user.branchUser ? user.branchUser.name : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
 &nbsp;
     const userPrinter = user.printer;
 &nbsp;
@@ -339,14 +339,14 @@ async function getLotInfo(req, res) {
 &nbsp;
     const lastLot = user.branchUser
       ? await LotInformation.getLastLot(branchCode)
-      : await LotInformation.getLastLotWithoutBranchCode();
+      : <span class="branch-1 cbranch-no" title="branch not covered" >await LotInformation.getLastLotWithoutBranchCode();</span>
 &nbsp;
     res.json({
       success: true,
       data: {
         branchCode,
         branchName,
-        lastLot: lastLot || 0,
+        lastLot: lastLot || <span class="branch-1 cbranch-no" title="branch not covered" >0,</span>
         userPrinter,
         printerOptions,
       },
@@ -363,7 +363,7 @@ async function getLotInfo(req, res) {
 &nbsp;
 async function getLots(req, res) {
   try {
-    const branchCode = req.body.branchCode || req.query.branchCode;
+    const branchCode = req.body.branchCode || <span class="branch-1 cbranch-no" title="branch not covered" >req.query.branchCode;</span>
 &nbsp;
     const lots = await LotInformation.getLots({
       branchCode,
@@ -386,7 +386,7 @@ async function getLots(req, res) {
 &nbsp;
 async function getOptionsLots(req, res) {
   try {
-    const branchCode = req.body.branchCode || req.query.branchCode;
+    const branchCode = req.body.branchCode || <span class="branch-1 cbranch-no" title="branch not covered" >req.query.branchCode;</span>
 &nbsp;
     const lots = await LotInformation.getOptionsLots({ branchCode });
 &nbsp;
@@ -407,12 +407,12 @@ async function getOptionsLots(req, res) {
 &nbsp;
 async function createLot(req, res) {
   try {
-    const { branchCode, quantity, initial } = req.body || req.query;
+    const { branchCode, quantity, initial } = req.body || <span class="branch-1 cbranch-no" title="branch not covered" >req.query;</span>
 &nbsp;
     const lastLot = await LotInformation.getLastLot(branchCode);
 &nbsp;
-    const firstNew = lastLot ? lastLot + 1 : 1;
-    const lastNew = lastLot ? lastLot + quantity : quantity;
+    const firstNew = lastLot ? lastLot + 1 : <span class="branch-1 cbranch-no" title="branch not covered" >1;</span>
+    const lastNew = lastLot ? lastLot + quantity : <span class="branch-1 cbranch-no" title="branch not covered" >quantity;</span>
     const lots = [];
 &nbsp;
     for (let index = firstNew; index &lt;= lastNew; index++) {
@@ -454,7 +454,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-07-25T20:35:05.162Z
+                at 2025-08-25T19:38:16.023Z
             </div>
         <script src="../prettify.js"></script>
         <script>

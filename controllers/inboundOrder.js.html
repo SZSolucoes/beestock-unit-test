@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.49% </span>
+                <span class="strong">92.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>382/413</span>
+                <span class='fraction'>381/412</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.76% </span>
+                <span class="strong">67.07% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>221/331</span>
+                <span class='fraction'>218/325</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.23% </span>
+                <span class="strong">92.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>368/399</span>
+                <span class='fraction'>367/398</span>
             </div>
         
             
@@ -2298,7 +2298,10 @@
 <a name='L2233'></a><a href='#L2233'>2233</a>
 <a name='L2234'></a><a href='#L2234'>2234</a>
 <a name='L2235'></a><a href='#L2235'>2235</a>
-<a name='L2236'></a><a href='#L2236'>2236</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L2236'></a><a href='#L2236'>2236</a>
+<a name='L2237'></a><a href='#L2237'>2237</a>
+<a name='L2238'></a><a href='#L2238'>2238</a>
+<a name='L2239'></a><a href='#L2239'>2239</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -2324,7 +2327,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -3545,6 +3548,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -3697,7 +3703,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -4564,7 +4570,7 @@ function filterByStatus(data, status) {
 &nbsp;
 function groupByArray(data, key) {
   return data.reduce((previousValue, elem) =&gt; {
-    const keyValue = moment(elem[key]).format('YYYY MM DD');
+    const keyValue = moment(elem[key]).format('L');
     const el = previousValue.find((r) =&gt; r &amp;&amp; r.key === keyValue);
 &nbsp;
     if (el) {
@@ -5357,7 +5363,7 @@ async function listingByDateInboundOrderProducts(req, res) {
           pending:
             element.quantityCheck || <span class="branch-1 cbranch-no" title="branch not covered" >element.quantityStorage</span>
               ? parseFloat(element.quantityCheck) -
-              parseFloat(element.quantityStorage)
+                parseFloat(element.quantityStorage)
               : <span class="branch-1 cbranch-no" title="branch not covered" >0,</span>
           quantityStorage: element.quantityStorage
             ? element.quantityStorage
@@ -5594,9 +5600,9 @@ async function getListInboundOrderProducts(req, res) {
 &nbsp;
     const isPrintFractionalPackagingLabel =
       inboundOrderProductData[0] &amp;&amp;
-        inboundOrderProductData[0].inboundOrder.typeOrder
+      inboundOrderProductData[0].inboundOrder.typeOrder
         ? inboundOrderProductData[0].inboundOrder.typeOrder
-          .printInboundFractionalPackagingLabel
+            .printInboundFractionalPackagingLabel
         : <span class="branch-1 cbranch-no" title="branch not covered" >false;</span>
 &nbsp;
     const data = [];
@@ -5619,9 +5625,9 @@ async function getListInboundOrderProducts(req, res) {
         quantityCheck: element.quantityCheck,
         pending:
           parseFloat(element.quantityStorage) &gt;= 0 &amp;&amp;
-            parseFloat(element.quantityCheck) &gt;= 0
+          parseFloat(element.quantityCheck) &gt;= 0
             ? parseFloat(element.quantityCheck) -
-            parseFloat(element.quantityStorage)
+              parseFloat(element.quantityStorage)
             : <span class="branch-1 cbranch-no" title="branch not covered" >0,</span>
         quantityStorage: element.quantityStorage,
         quantityDamage: element.quantityDamage,
@@ -5691,8 +5697,8 @@ async function getListInboundOrderProductPartial(req, res) {
             : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         productName:
           element.inboundOrderProduct &amp;&amp;
-            element.inboundOrderProduct.product &amp;&amp;
-            element.inboundOrderProduct.product.name
+          element.inboundOrderProduct.product &amp;&amp;
+          element.inboundOrderProduct.product.name
             ? element.inboundOrderProduct.product.name
             : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
         baptismLabel: element.baptismLabel,
@@ -5766,7 +5772,7 @@ function inboundOrderProgress(products = <span class="branch-0 cbranch-no" title
 async function getInfoCheckedCharts(inboundCheckedOrdersProducts, appLanguage) {
   const checkedProductList = groupByArray(
     inboundCheckedOrdersProducts,
-    'createdAt'
+    'checkProductAt'
   );
   const checkedProductsDates = [];
   const checkedProductsValues = [];
@@ -5777,18 +5783,21 @@ async function getInfoCheckedCharts(inboundCheckedOrdersProducts, appLanguage) {
   }
 &nbsp;
   const ascendentSortDate = checkedValues.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {
-<span class="cstat-no" title="statement not covered" >    return new Date(a.date) - new Date(b.date);</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+      moment(a.date, 'DD/MM/YYYY').toDate() -
+      moment(b.date, 'DD/MM/YYYY').toDate()
+    );
   });
 &nbsp;
   for (const element of ascendentSortDate) {
-    checkedProductsDates.push(moment(element.date).format('L'));
+    checkedProductsDates.push(element.date);
     checkedProductsValues.push(element.value);
   }
 &nbsp;
   const sumCheckedValues = checkedProductsValues.length
     ? checkedProductsValues.reduce(<span class="fstat-no" title="function not covered" >(a</span>ccumulator, value) =&gt; {
-<span class="cstat-no" title="statement not covered" >      return accumulator + value;</span>
-    })
+<span class="cstat-no" title="statement not covered" >        return accumulator + value;</span>
+      })
     : 0;
 &nbsp;
   const averageLineCheckedValues =
@@ -5804,42 +5813,42 @@ async function getInfoCheckedCharts(inboundCheckedOrdersProducts, appLanguage) {
     options: {
       ...(averageLineCheckedValues
         ? {
-          annotations: {
-            yaxis: [
-              {
-                y: averageLineCheckedValues.toFixed(1),
-                borderColor: '#ffb900',
-                label: {
-                  offsetY: 7,
+            annotations: {
+              yaxis: [
+                {
+                  y: averageLineCheckedValues.toFixed(1),
                   borderColor: '#ffb900',
-                  style: {
-                    color: '#fff',
-                    background: '#ffb900',
-                    fontSize: '10px',
+                  label: {
+                    offsetY: 7,
+                    borderColor: '#ffb900',
+                    style: {
+                      color: '#fff',
+                      background: '#ffb900',
+                      fontSize: '10px',
+                    },
                   },
                 },
-              },
-            ],
-          },
-        }
+              ],
+            },
+          }
         : {
-          annotations: {
-            yaxis: [
-              {
-                floating: true,
-                axisTicks: {
-                  show: false,
+            annotations: {
+              yaxis: [
+                {
+                  floating: true,
+                  axisTicks: {
+                    show: false,
+                  },
+                  axisBorder: {
+                    show: false,
+                  },
+                  labels: {
+                    show: false,
+                  },
                 },
-                axisBorder: {
-                  show: false,
-                },
-                labels: {
-                  show: false,
-                },
-              },
-            ],
-          },
-        }),
+              ],
+            },
+          }),
       chart: {
         type: 'line',
         shadow: {
@@ -5932,7 +5941,7 @@ async function getAllInfoCharts(inboundOrdersProducts, appLanguage) {
   const pendingQtd = filterByStatus(allProductsFilter, 1);
   const checkedQtd = filterByStatus(allProductsFilter, 2);
   const partialStoredQtd = filterByStatus(allProductsFilter, 3);
-  const storedQtd = filterByStatus(allProductsFilter, 4);
+  // const storedQtd = filterByStatus(allProductsFilter, 4);
   const blockedQtd = filterByStatus(allProductsFilter, 5);
   const canceledQtd = filterByStatus(allProductsFilter, 6);
 &nbsp;
@@ -5941,7 +5950,7 @@ async function getAllInfoCharts(inboundOrdersProducts, appLanguage) {
       ...(pendingQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >[pendingQtd] </span>: []),
       ...(checkedQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >[checkedQtd] </span>: []),
       ...(partialStoredQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >[partialStoredQtd] </span>: []),
-      ...(storedQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >[storedQtd] </span>: []),
+      // ...(storedQtd ? [storedQtd] : []),
       ...(blockedQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >[blockedQtd] </span>: []),
       ...(canceledQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >[canceledQtd] </span>: []),
     ],
@@ -5953,13 +5962,13 @@ async function getAllInfoCharts(inboundOrdersProducts, appLanguage) {
         ...(pendingQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >['#3333FF'] </span>: []),
         ...(checkedQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >['#22CC00'] </span>: []),
         ...(partialStoredQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >['#26E500'] </span>: []),
-        ...(storedQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >['#01004A'] </span>: []),
+        // ...(storedQtd ? ['#01004A'] : []),
         ...(blockedQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >['#067493'] </span>: []),
         ...(canceledQtd ? <span class="branch-0 cbranch-no" title="branch not covered" >['#1dc8f7'] </span>: []),
       ],
       labels: [
         ...(pendingQtd
-          ? <span class="branch-0 cbranch-no" title="branch not covered" >[t('BEE470' /* Pendente */, undefined, appLanguage)]</span>
+          ? <span class="branch-0 cbranch-no" title="branch not covered" >[t('BEE1948' /* Pendente Conferência */, undefined, appLanguage)]</span>
           : []),
         ...(checkedQtd
           ? <span class="branch-0 cbranch-no" title="branch not covered" >[t('BEE445' /* Conferido */, undefined, appLanguage)]</span>
@@ -5967,9 +5976,9 @@ async function getAllInfoCharts(inboundOrdersProducts, appLanguage) {
         ...(partialStoredQtd
           ? <span class="branch-0 cbranch-no" title="branch not covered" >[t('BEE2318' /* Armazenamento Parcial */, undefined, appLanguage)]</span>
           : []),
-        ...(storedQtd
-          ? <span class="branch-0 cbranch-no" title="branch not covered" >[t('BEE427' /* Armazenado */, undefined, appLanguage)]</span>
-          : []),
+        // ...(storedQtd
+        //   ? [t('BEE427' /* Armazenado */, undefined, appLanguage)]
+        //   : []),
         ...(blockedQtd
           ? <span class="branch-0 cbranch-no" title="branch not covered" >[t('BEE207' /* Bloqueado */, undefined, appLanguage)]</span>
           : []),
@@ -6044,7 +6053,7 @@ async function getInboundOrdersDashboardInfo(req, res) {
       const inboundCheckedOrdersProducts =
         await InboundOrderProduct.findInboundOrderProducts(
           {
-            createdAt: {
+            checkProductAt: {
               [Op.between]: [
                 moment(startDate).startOf('day').format(),
                 moment(endDate).endOf('day').format(),
@@ -6052,7 +6061,7 @@ async function getInboundOrdersDashboardInfo(req, res) {
             },
           },
           {
-            attributes: ['status', 'createdAt'],
+            attributes: ['status', 'checkProductAt'],
             userBranches: selectedBranches || <span class="branch-1 cbranch-no" title="branch not covered" >req.userBranches,</span>
           }
         );
@@ -6215,31 +6224,31 @@ async function averageTimeBarChart(data, appLanguage) {
     series: [
       ...(untilConferenceTimeAverageTime &gt; 0
         ? [
-          {
-            name: t(
-              'BEE2277' /* Pendente de Conferência */,
-              undefined,
-              appLanguage
-            ),
-            data: [untilConferenceTimeAverageTime],
-          },
-        ]
+            {
+              name: t(
+                'BEE2277' /* Pendente de Conferência */,
+                undefined,
+                appLanguage
+              ),
+              data: [untilConferenceTimeAverageTime],
+            },
+          ]
         : []),
       ...(inConferenceTimesAverageTime &gt; 0
         ? [
-          {
-            name: t('BEE1768' /* Em Conferência */, undefined, appLanguage),
-            data: [inConferenceTimesAverageTime],
-          },
-        ]
+            {
+              name: t('BEE1768' /* Em Conferência */, undefined, appLanguage),
+              data: [inConferenceTimesAverageTime],
+            },
+          ]
         : []),
       ...(inStorageTimesAverageTime &gt; 0
         ? [
-          {
-            name: t('BEE475' /* Em armazenagem */, undefined, appLanguage),
-            data: [inStorageTimesAverageTime],
-          },
-        ]
+            {
+              name: t('BEE475' /* Em armazenagem */, undefined, appLanguage),
+              data: [inStorageTimesAverageTime],
+            },
+          ]
         : []),
     ],
     options: {
@@ -6333,53 +6342,53 @@ async function averageTimeHistoryChart(data, appLanguage) {
     series: [
       ...(times.length
         ? [
-          {
-            name: t('BEE2530' /* Tempo */, undefined, appLanguage),
-            data: times,
-          },
-        ]
+            {
+              name: t('BEE2530' /* Tempo */, undefined, appLanguage),
+              data: times,
+            },
+          ]
         : []),
     ],
     options: {
       ...(averageLine
         ? <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
-          annotations: {
-            yaxis: [
-              {
-                y: averageLine.toFixed(1),
-                borderColor: '#ffb900',
-                label: {
-                  offsetY: 7,
+            annotations: {
+              yaxis: [
+                {
+                  y: averageLine.toFixed(1),
                   borderColor: '#ffb900',
-                  style: {
-                    color: '#fff',
-                    background: '#ffb900',
-                    fontSize: '15px',
+                  label: {
+                    offsetY: 7,
+                    borderColor: '#ffb900',
+                    style: {
+                      color: '#fff',
+                      background: '#ffb900',
+                      fontSize: '15px',
+                    },
+                    text: `Média: ${averageLine.toFixed(1)}`,
                   },
-                  text: `Média: ${averageLine.toFixed(1)}`,
                 },
-              },
-            ],
-          },
-        }
+              ],
+            },
+          }
         : {
-          annotations: {
-            yaxis: [
-              {
-                floating: true,
-                axisTicks: {
-                  show: false,
+            annotations: {
+              yaxis: [
+                {
+                  floating: true,
+                  axisTicks: {
+                    show: false,
+                  },
+                  axisBorder: {
+                    show: false,
+                  },
+                  labels: {
+                    show: false,
+                  },
                 },
-                axisBorder: {
-                  show: false,
-                },
-                labels: {
-                  show: false,
-                },
-              },
-            ],
-          },
-        }),
+              ],
+            },
+          }),
       chart: {
         type: 'line',
         shadow: {
@@ -6572,48 +6581,48 @@ async function getInboundOrdersAverageTimes(req, res) {
       Document:
         fromStartToFinishTimes.Document.length &amp;&amp;
         fromStartToFinishTimes.Document.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b)</span> /
-        fromStartToFinishTimes.Document.length,
+          fromStartToFinishTimes.Document.length,
 &nbsp;
       Line:
         fromStartToFinishTimes.Line.length &amp;&amp;
 <span class="branch-1 cbranch-no" title="branch not covered" >        fromStartToFinishTimes.Line.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b)</span> /</span>
-        fromStartToFinishTimes.Line.length,
+          fromStartToFinishTimes.Line.length,
     };
 &nbsp;
     const untilConferenceTimeAverageTime = {
       Document:
         untilConferenceTime.Document.length &amp;&amp;
         untilConferenceTime.Document.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b)</span> /
-        untilConferenceTime.Document.length,
+          untilConferenceTime.Document.length,
 &nbsp;
       Line:
         untilConferenceTime.Line.length &amp;&amp;
         untilConferenceTime.Line.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b)</span> /
-        untilConferenceTime.Line.length,
+          untilConferenceTime.Line.length,
     };
 &nbsp;
     const inConferenceTimesAverageTime = {
       Document:
         inConferenceTimes.Document.length &amp;&amp;
         inConferenceTimes.Document.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b)</span> /
-        inConferenceTimes.Document.length,
+          inConferenceTimes.Document.length,
 &nbsp;
       Line:
         inConferenceTimes.Line.length &amp;&amp;
 <span class="branch-1 cbranch-no" title="branch not covered" >        inConferenceTimes.Line.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b)</span> /</span>
-        inConferenceTimes.Line.length,
+          inConferenceTimes.Line.length,
     };
 &nbsp;
     const inStorageTimesAverageTime = {
       Document:
         inStorageTimes.Document.length &amp;&amp;
         inStorageTimes.Document.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b)</span> /
-        inStorageTimes.Document.length,
+          inStorageTimes.Document.length,
 &nbsp;
       Line:
         inStorageTimes.Line.length &amp;&amp;
 <span class="branch-1 cbranch-no" title="branch not covered" >        inStorageTimes.Line.reduce(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; <span class="cstat-no" title="statement not covered" >a + b)</span> /</span>
-        inStorageTimes.Line.length,
+          inStorageTimes.Line.length,
     };
 &nbsp;
     const averageTimeCards = {
@@ -6775,7 +6784,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-26T13:52:34.038Z
+                at 2025-08-26T18:05:44.017Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">92.85% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,30 +101,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,32 +132,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import axios from 'axios';
 import config from '../../../config/config';
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getProductImages(</span>productCode, imageHubHostAddress) {
+async function getProductImages(productCode, imageHubHostAddress) {
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const dbUrl = <span class="cstat-no" title="statement not covered" >`${imageHubHostAddress}/api/images/${productCode}`;</span>
-    let url = <span class="cstat-no" title="statement not covered" >dbUrl || config.beetranslateHost;</span>
+  try {
+    const dbUrl = `${imageHubHostAddress}/api/images/${productCode}`;
+    let url = dbUrl || <span class="branch-1 cbranch-no" title="branch not covered" >config.beetranslateHost;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    url = url.endsWith('/') ? url.slice(0, -1) : url;</span>
+    url = url.endsWith('/') ? url.slice(0, -1) : url;
 &nbsp;
-    const response = <span class="cstat-no" title="statement not covered" >await axios.get(url);</span>
+    const response = await axios.get(url);
 &nbsp;
-    let productImages = <span class="cstat-no" title="statement not covered" >[];</span>
+    let productImages = [];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (response &amp;&amp; response.status === 200 &amp;&amp; response.data) {</span>
-<span class="cstat-no" title="statement not covered" >      productImages = response.data.images.map(<span class="fstat-no" title="function not covered" >(i</span>mage) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+    if (response &amp;&amp; response.status === 200 &amp;&amp; response.data) {
+      productImages = response.data.images.map((image) =&gt; ({
         url: `${imageHubHostAddress}${image.url}`,
         description: image.description,
         tags: response.data.tags,
       }));
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return productImages;</span>
+    return productImages;
   } catch (err) {
     const getProductImagesError =
-<span class="cstat-no" title="statement not covered" >      err.response &amp;&amp; err.response.data &amp;&amp; err.response.data;</span>
-<span class="cstat-no" title="statement not covered" >    console.log(getProductImagesError || err);</span>
-<span class="cstat-no" title="statement not covered" >    return [];</span>
+      err.response &amp;&amp; err.response.data &amp;&amp; err.response.data;
+    console.log(getProductImagesError || err);
+    return [];
   }
 }
 &nbsp;
@@ -169,7 +169,7 @@ export default getProductImages;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-26T13:52:34.038Z
+                at 2025-08-26T18:05:44.017Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -127,7 +127,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,8 +145,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">50x</span>
+<span class="cline-any cline-yes">164x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,27 +155,27 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">160x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">128x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">160x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,7 +185,7 @@
 import UsersFiltersDao from '../../database/dao/usersFilters';
 import { models } from '../../../config/database';
 &nbsp;
-async function getOptionsUsersFilters(query = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> userId, opts = {}) {
+async function getOptionsUsersFilters(query = {}, userId, opts = {}) {
   const usersFilters = await UsersFiltersDao.findUsersFilters(query, {
     include: [{
       required: true,
@@ -204,8 +204,8 @@ async function getOptionsUsersFilters(query = <span class="branch-0 cbranch-no" 
     ...opts
   });
 &nbsp;
-  const reduced = <span class="cstat-no" title="statement not covered" >usersFilters.reduce(<span class="fstat-no" title="function not covered" >(a</span>cum, it) =&gt; {</span>
-    const filter = <span class="cstat-no" title="statement not covered" >{</span>
+  const reduced = usersFilters.reduce((acum, it) =&gt; {
+    const filter = {
       id: it.id,
       filterName: `${it.user.name} - ${it.filterName}`,
       filterNameValue: it.filterName,
@@ -214,27 +214,27 @@ async function getOptionsUsersFilters(query = <span class="branch-0 cbranch-no" 
       filter: JSON.parse(it.filter),
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (it.userId === userId &amp;&amp; it.permission === 'private') {</span>
-<span class="cstat-no" title="statement not covered" >      acum.filterPrivate.push(filter);</span>
-<span class="cstat-no" title="statement not covered" >      acum.userFilters.push(filter);</span>
-    } else <span class="cstat-no" title="statement not covered" >if (it.permission === 'public') {</span>
-<span class="cstat-no" title="statement not covered" >      acum.filterPublic.push(filter);</span>
-<span class="cstat-no" title="statement not covered" >      if (it.userId === userId) <span class="cstat-no" title="statement not covered" >acum.userFilters.push(filter);</span></span>
+    if (it.userId === userId &amp;&amp; it.permission === 'private') {
+      acum.filterPrivate.push(filter);
+      acum.userFilters.push(filter);
+    } else if (it.permission === 'public') {
+      acum.filterPublic.push(filter);
+      if (it.userId === userId) acum.userFilters.push(filter);
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return acum;</span>
+    return acum;
   }, { filterPrivate: [], filterPublic: [], userFilters: [] });
 &nbsp;
   // Orders
-<span class="cstat-no" title="statement not covered" >  reduced.filterPrivate = _.orderBy(reduced.filterPrivate, ['filterName'], 'asc');</span>
-<span class="cstat-no" title="statement not covered" >  reduced.filterPublic = _.orderBy(reduced.filterPublic, ['filterName'], 'asc');</span>
-<span class="cstat-no" title="statement not covered" >  reduced.userFilters = _.orderBy(reduced.userFilters, ['filterName'], 'asc');</span>
+  reduced.filterPrivate = _.orderBy(reduced.filterPrivate, ['filterName'], 'asc');
+  reduced.filterPublic = _.orderBy(reduced.filterPublic, ['filterName'], 'asc');
+  reduced.userFilters = _.orderBy(reduced.userFilters, ['filterName'], 'asc');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return reduced;</span>
+  return reduced;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getFilter(</span>query = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> opts = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >  return await UsersFiltersDao.findUserFilter(query, opts);</span>
+async function getFilter(query = {}, opts = {}) {
+  return await UsersFiltersDao.findUserFilter(query, opts);
 }
 &nbsp;
 export default {
@@ -247,7 +247,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-26T18:05:44.017Z
+                at 2025-08-26T20:52:58.979Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

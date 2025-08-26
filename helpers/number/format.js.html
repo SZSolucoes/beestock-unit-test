@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/20</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,36 +122,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">269x</span>
-<span class="cline-any cline-yes">269x</span>
-<span class="cline-any cline-yes">264x</span>
+<span class="cline-any cline-yes">286x</span>
+<span class="cline-any cline-yes">286x</span>
+<span class="cline-any cline-yes">277x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,24 +182,24 @@ function format(
   return '';
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >fixedSub(</span>num1, num2, fix = <span class="branch-0 cbranch-no" title="branch not covered" >4)</span> {
-  const minuend = <span class="cstat-no" title="statement not covered" >parseFloat(num1);</span>
-  const subtrahend = <span class="cstat-no" title="statement not covered" >parseFloat(num2);</span>
-<span class="cstat-no" title="statement not covered" >  if (!Number.isFinite(minuend) || !Number.isFinite(subtrahend)) {</span>
-<span class="cstat-no" title="statement not covered" >    return NaN;</span>
+function fixedSub(num1, num2, fix = 4) {
+  const minuend = parseFloat(num1);
+  const subtrahend = parseFloat(num2);
+  if (!Number.isFinite(minuend) || !Number.isFinite(subtrahend)) {
+    return NaN;
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return Number((minuend - subtrahend).toFixed(fix));</span>
+  return Number((minuend - subtrahend).toFixed(fix));
 }
 &nbsp;
-function <span class="fstat-no" title="function not covered" >fixedAdd(</span>num1, num2, fix = <span class="branch-0 cbranch-no" title="branch not covered" >4)</span> {
-  const term1 = <span class="cstat-no" title="statement not covered" >parseFloat(num1);</span>
-  const term2 = <span class="cstat-no" title="statement not covered" >parseFloat(num2);</span>
-<span class="cstat-no" title="statement not covered" >  if (!Number.isFinite(term1) || !Number.isFinite(term2)) {</span>
-<span class="cstat-no" title="statement not covered" >    return NaN;</span>
+function fixedAdd(num1, num2, fix = 4) {
+  const term1 = parseFloat(num1);
+  const term2 = parseFloat(num2);
+  if (!Number.isFinite(term1) || !Number.isFinite(term2)) {
+    return NaN;
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return Number((term1 + term2).toFixed(fix));</span>
+  return Number((term1 + term2).toFixed(fix));
 }
 &nbsp;
 export default {
@@ -214,7 +214,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-26T18:05:44.017Z
+                at 2025-08-26T20:52:58.979Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

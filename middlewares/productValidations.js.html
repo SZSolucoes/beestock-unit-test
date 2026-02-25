@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">99.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>127/127</span>
+                <span class='fraction'>129/130</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">99.21% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>125/125</span>
+                <span class='fraction'>126/127</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">99.21% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>125/125</span>
+                <span class='fraction'>127/128</span>
             </div>
         
             
@@ -514,7 +514,26 @@
 <a name='L449'></a><a href='#L449'>449</a>
 <a name='L450'></a><a href='#L450'>450</a>
 <a name='L451'></a><a href='#L451'>451</a>
-<a name='L452'></a><a href='#L452'>452</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -800,11 +819,28 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -976,6 +1012,7 @@ import ProductInformation from '../source/products/information';
 import StockInformation from '../source/stock/information';
 import UnitMeasureInformation from '../source/unitsMeasure/information';
 import OutboundOrderProductInformation from '../source/outboundOrderProducts/information';
+import AddressTransferWaveProductsInformation from '../source/addressTransferWaveProducts/information';
 &nbsp;
 async function validProductId(req) {
   const productId = req.body.productId || req.query.productId;
@@ -1251,6 +1288,13 @@ async function validControlExpirationDate(req) {
   if (controlExpirationDate !== productDetails.controlExpirationDate) {
     const productAvailableStockBalances =
       await StockInformation.getAvailableBalances({ productCode });
+    const productPendingAddressTransfer =
+      await AddressTransferWaveProductsInformation.getAllAddressTransferWaveProducts(
+        {
+          productCode,
+          status: [1, 2], // Pendente, Em processo
+        }
+      );
     if (
       Object.keys(productAvailableStockBalances).length !== 0 &amp;&amp;
       controlExpirationDate === false
@@ -1262,6 +1306,16 @@ async function validControlExpirationDate(req) {
           {
             0: productCode,
           } /* Não é possível alterar o campo "Controlar Vencimento", pois o produto %{0} possui saldo no sistema */
+        )
+      );
+    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (Object.keys(productPendingAddressTransfer).length !== 0) {
+<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+        '',
+        t(
+          'BEE4493',
+          {
+            0: productCode,
+          } /* Não é possível alterar o campo "Controlar Vencimento", pois o produto %{0} possui transferências pendentes. */
         )
       );
     } else {
@@ -1423,7 +1477,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-27T17:52:07.147Z
+                at 2026-02-25T16:52:28.935Z
             </div>
         <script src="../prettify.js"></script>
         <script>

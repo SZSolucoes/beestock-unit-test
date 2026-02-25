@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.63% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>40/49</span>
+                <span class='fraction'>48/48</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">68.75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>44/64</span>
+                <span class='fraction'>60/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>39/48</span>
+                <span class='fraction'>47/47</span>
             </div>
         
             
@@ -293,10 +293,7 @@
 <a name='L228'></a><a href='#L228'>228</a>
 <a name='L229'></a><a href='#L229'>229</a>
 <a name='L230'></a><a href='#L230'>230</a>
-<a name='L231'></a><a href='#L231'>231</a>
-<a name='L232'></a><a href='#L232'>232</a>
-<a name='L233'></a><a href='#L233'>233</a>
-<a name='L234'></a><a href='#L234'>234</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L231'></a><a href='#L231'>231</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -481,19 +478,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -501,14 +496,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -712,21 +706,19 @@ async function validDeleteDepositStockBalance(req) {
   }
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >validTransferControl(</span>req) {
+async function validTransferControl(req) {
   const newWaveTransferIn =
-<span class="cstat-no" title="statement not covered" >    req.body.waveTransferIn || req.query.waveTransferIn || 0;</span>
+    req.body.waveTransferIn || req.query.waveTransferIn || 0;
   const newWaveTransferOut =
-<span class="cstat-no" title="statement not covered" >    req.body.waveTransferOut || req.query.waveTransferOut || 0;</span>
-  const newAddressTransfer =
-<span class="cstat-no" title="statement not covered" >    req.body.addressTransfer || req.query.addressTransfer || 0;</span>
-  const depositId = <span class="cstat-no" title="statement not covered" >req.body.depositId || req.query.depositId;</span>
+    req.body.waveTransferOut || req.query.waveTransferOut || 0;
+  const depositId = req.body.depositId || req.query.depositId;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (depositId) {</span>
-    const { code, waveTransferIn, waveTransferOut, addressTransfer } =
-<span class="cstat-no" title="statement not covered" >      await DepositInformation.getDeposit({ id: depositId });</span>
+  if (depositId) {
+    const { code, waveTransferIn, waveTransferOut } =
+      await DepositInformation.getDeposit({ id: depositId });
 &nbsp;
     const addressTransferWave =
-<span class="cstat-no" title="statement not covered" >      await AddressTransferWaveInformation.getAllAddressTransferWaves(</span>
+      await AddressTransferWaveInformation.getAllAddressTransferWaves(
         {
           depositCode: code,
           status: [1, 2],
@@ -734,14 +726,13 @@ async function <span class="fstat-no" title="function not covered" >validTransfe
         { userBranches: req.userBranches }
       );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (</span>
+    if (
       addressTransferWave &amp;&amp;
       addressTransferWave.length &gt; 0 &amp;&amp;
       (newWaveTransferIn !== waveTransferIn ||
-        newWaveTransferOut !== waveTransferOut ||
-        newAddressTransfer !== addressTransfer)
+        newWaveTransferOut !== waveTransferOut)
     ) {
-<span class="cstat-no" title="statement not covered" >      throw new APIError(</span>
+      throw new APIError(
         '',
         t(
           'BEE4419' /* Há transferências por onda pendentes neste depósito. Finalize ou cancele antes de prosseguir com a configuração. */
@@ -769,7 +760,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-27T17:52:07.147Z
+                at 2026-02-25T16:52:28.935Z
             </div>
         <script src="../prettify.js"></script>
         <script>

@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>21/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
@@ -581,7 +581,22 @@
 <a name='L516'></a><a href='#L516'>516</a>
 <a name='L517'></a><a href='#L517'>517</a>
 <a name='L518'></a><a href='#L518'>518</a>
-<a name='L519'></a><a href='#L519'>519</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L519'></a><a href='#L519'>519</a>
+<a name='L520'></a><a href='#L520'>520</a>
+<a name='L521'></a><a href='#L521'>521</a>
+<a name='L522'></a><a href='#L522'>522</a>
+<a name='L523'></a><a href='#L523'>523</a>
+<a name='L524'></a><a href='#L524'>524</a>
+<a name='L525'></a><a href='#L525'>525</a>
+<a name='L526'></a><a href='#L526'>526</a>
+<a name='L527'></a><a href='#L527'>527</a>
+<a name='L528'></a><a href='#L528'>528</a>
+<a name='L529'></a><a href='#L529'>529</a>
+<a name='L530'></a><a href='#L530'>530</a>
+<a name='L531'></a><a href='#L531'>531</a>
+<a name='L532'></a><a href='#L532'>532</a>
+<a name='L533'></a><a href='#L533'>533</a>
+<a name='L534'></a><a href='#L534'>534</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -593,6 +608,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -718,8 +736,8 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -880,9 +898,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -998,9 +1022,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1141,6 +1171,8 @@ async function getAllTypeOrders(req, res) {
           'usesRequestManual',
           'automaticAllocation',
           'automaticPickingConfirmation',
+          'itemLevelObservation',
+          'orderLevelObservation',
           'prefix',
           'urgentAutoAssignSeparator',
           'documentSeparationUzSuggestion',
@@ -1155,6 +1187,7 @@ async function getAllTypeOrders(req, res) {
           'printOutboundFractionalPackagingLabel',
           'printInboundFractionalPackagingLabel',
           'automaticStorage',
+          'printSalesOrderPdf',
         ],
         userBranches: req.userBranches,
       }
@@ -1317,17 +1350,17 @@ async function getGridOptions(req, res) {
 &nbsp;
     data.inboundColumnOrderCheck.selected =
       orderType &amp;&amp; orderType.inboundColumnOrderCheck
-        ? <span class="branch-0 cbranch-no" title="branch not covered" >orderType.inboundColumnOrderCheck.split('|')</span>
+        ? orderType.inboundColumnOrderCheck.split('|')
         : [];
 &nbsp;
     data.inboundColumnOrderStorage.selected =
       orderType &amp;&amp; orderType.inboundColumnOrderStorage
-        ? <span class="branch-0 cbranch-no" title="branch not covered" >orderType.inboundColumnOrderStorage.split('|')</span>
+        ? orderType.inboundColumnOrderStorage.split('|')
         : [];
 &nbsp;
     data.outboundColumnOrderCheck.selected =
       orderType &amp;&amp; orderType.outboundColumnOrderCheck
-        ? <span class="branch-0 cbranch-no" title="branch not covered" >orderType.outboundColumnOrderCheck.split('|')</span>
+        ? orderType.outboundColumnOrderCheck.split('|')
         : [];
 &nbsp;
     if (groupProductsOnSeparation === false) {
@@ -1381,6 +1414,8 @@ async function createTypeOrders(req, res) {
     usesRequestManual,
     allocateBalanceDeposits,
     automaticPickingConfirmation,
+    itemLevelObservation,
+    orderLevelObservation,
     urgentAutoAssignSeparator,
     fullAllocation,
     documentSeparationUzSuggestion,
@@ -1398,6 +1433,7 @@ async function createTypeOrders(req, res) {
     inboundColumnOrderCheck,
     inboundColumnOrderStorage,
     outboundColumnOrderCheck,
+    printSalesOrderPdf,
   } = req.body;
 &nbsp;
   const typeOrder = {
@@ -1429,6 +1465,8 @@ async function createTypeOrders(req, res) {
     usesRequestManual,
     allocateBalanceDeposits,
     automaticPickingConfirmation,
+    itemLevelObservation,
+    orderLevelObservation,
     fullAllocation,
     separateProductIntegration,
     urgentAutoAssignSeparator,
@@ -1445,6 +1483,7 @@ async function createTypeOrders(req, res) {
     inboundColumnOrderCheck,
     inboundColumnOrderStorage,
     outboundColumnOrderCheck,
+    printSalesOrderPdf,
     createdUser: req.userId,
     updatedUser: req.userId,
   };
@@ -1501,6 +1540,8 @@ async function updateTypeOrders(req, res) {
     allocateBalanceDeposits,
     documentSeparationUzSuggestion,
     automaticPickingConfirmation,
+    itemLevelObservation,
+    orderLevelObservation,
     fullAllocation,
     separateProductIntegration,
     singleScanReturnAddress,
@@ -1516,6 +1557,7 @@ async function updateTypeOrders(req, res) {
     inboundColumnOrderStorage,
     outboundColumnOrderCheck,
     automaticStorage,
+    printSalesOrderPdf,
   } = req.body;
 &nbsp;
   const updateTypeOrder = {
@@ -1548,6 +1590,8 @@ async function updateTypeOrders(req, res) {
     allocateBalanceDeposits,
     documentSeparationUzSuggestion,
     automaticPickingConfirmation,
+    itemLevelObservation,
+    orderLevelObservation,
     fullAllocation,
     separateProductIntegration,
     singleScanReturnAddress,
@@ -1563,6 +1607,7 @@ async function updateTypeOrders(req, res) {
     inboundColumnOrderStorage,
     outboundColumnOrderCheck,
     automaticStorage,
+    printSalesOrderPdf,
   };
 &nbsp;
   try {
@@ -1624,7 +1669,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-27T17:52:07.147Z
+                at 2026-02-25T16:52:28.935Z
             </div>
         <script src="../prettify.js"></script>
         <script>

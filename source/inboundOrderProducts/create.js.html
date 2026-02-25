@@ -112,13 +112,18 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,12 +154,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,29 +176,30 @@ import InboundOrderProductDao from '../../database/dao/inboundOrderProduct';
 &nbsp;
 async function createInboundOrderProduct(inboundOrder, inboundOrderProduct) {
   try {
-    const newInboundOrderProduct = await InboundOrderProductDao.createInboundOrderProduct({
-      inboundOrderId: inboundOrder.id,
-      branchCode: inboundOrderProduct.branchCode,
-      lineNumber: inboundOrderProduct.lineNumber,
-      productCode: inboundOrderProduct.productCode,
-      supplierProductCode: inboundOrderProduct.supplierProductCode,
-      quantity: inboundOrderProduct.quantity,
-      deliveryDate: inboundOrderProduct.deliveryDate,
-      unitMeasure: inboundOrderProduct.unitMeasure,
-      purchaseRequest: inboundOrderProduct.purchaseRequest,
-      purchaseOrder: inboundOrderProduct.purchaseOrder,
-      installment: inboundOrderProduct.installment,
-      crossDockingOrder: inboundOrderProduct.crossDockingOrder,
-      crossDockingQuantity: inboundOrderProduct.crossDockingQuantity,
-      status: inboundOrderProduct.status ? inboundOrderProduct.status : 1,
-      note: inboundOrderProduct.note,
-      createdUser: inboundOrderProduct.createdUser,
-      createdAt: moment().format(),
-      updatedUser: inboundOrderProduct.updatedUser,
-      updatedAt: moment().format(),
-    });
+    const newInboundOrderProduct =
+      await InboundOrderProductDao.createInboundOrderProduct({
+        inboundOrderId: inboundOrder.id,
+        branchCode: inboundOrderProduct.branchCode,
+        lineNumber: inboundOrderProduct.lineNumber,
+        productCode: inboundOrderProduct.productCode,
+        supplierProductCode: inboundOrderProduct.supplierProductCode,
+        quantity: inboundOrderProduct.quantity,
+        deliveryDate: inboundOrderProduct.deliveryDate,
+        unitMeasure: inboundOrderProduct.unitMeasure,
+        purchaseRequest: inboundOrderProduct.purchaseRequest,
+        purchaseOrder: inboundOrderProduct.purchaseOrder,
+        installment: inboundOrderProduct.installment,
+        crossDockingOrder: inboundOrderProduct.crossDockingOrder,
+        crossDockingQuantity: inboundOrderProduct.crossDockingQuantity,
+        status: inboundOrderProduct.status ? inboundOrderProduct.status : 1,
+        note: inboundOrderProduct.note,
+        createdUser: inboundOrderProduct.createdUser,
+        createdAt: moment().format(),
+        updatedUser: inboundOrderProduct.updatedUser,
+        updatedAt: moment().format(),
+      });
     return newInboundOrderProduct;
-  } catch(error) {
+  } catch (error) {
     console.log(error);
     throw new APIError('', error);
   }
@@ -198,10 +207,12 @@ async function createInboundOrderProduct(inboundOrder, inboundOrderProduct) {
 &nbsp;
 async function createInboundOrderProducts(inboundOrderProducts) {
   try {
-    const newInboundOrderProducts = await InboundOrderProductDao.createInboundOrderProducts(
-      inboundOrderProducts);
+    const newInboundOrderProducts =
+      await InboundOrderProductDao.createInboundOrderProducts(
+        inboundOrderProducts
+      );
     return newInboundOrderProducts;
-  } catch(error) {
+  } catch (error) {
     console.log(error);
     throw new APIError('', error);
   }
@@ -210,14 +221,15 @@ async function createInboundOrderProducts(inboundOrderProducts) {
 export default {
   createInboundOrderProduct,
   createInboundOrderProducts,
-}</pre></td></tr></table></pre>
+};
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-27T17:52:07.147Z
+                at 2026-02-25T16:52:28.935Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

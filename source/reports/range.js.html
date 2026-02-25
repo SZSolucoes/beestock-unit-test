@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -163,12 +163,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,42 +199,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import RangeDao from '../../database/dao/range';
@@ -247,8 +247,8 @@ import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 export default async function generateData(
   columns,
   filters,
-  headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
-  rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+  headers = [],
+  rows = [],
   opts = {}
 ) {
   const where = mountWhereBasedFilter(filters);
@@ -298,26 +298,26 @@ export default async function generateData(
     const storageAddressCodes = [];
     const usersRangesCodes = [];
     const usersRangesNames = [];
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (it.storageAddress.length &gt; 0) {
+    if (it.storageAddress.length &gt; 0) {
       it.storageAddress.forEach((storageAddress) =&gt;
         storageAddressCodes.push(storageAddress.code)
       );
     }
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (it.usersRanges.length &gt; 0) {
+    if (it.usersRanges.length &gt; 0) {
       it.usersRanges.forEach((userRange) =&gt; {
         usersRangesCodes.push(userRange.user.login);
         usersRangesNames.push(userRange.user.name);
       });
     }
-    it.branchCode = it.branch ? `${it.branch.code}-${it.branch.name}` : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+    it.branchCode = it.branch ? `${it.branch.code}-${it.branch.name}` : '';
     it.storageAddressesCode =
       storageAddressCodes.length &gt; 0
         ? storageAddressCodes.toLocaleString()
-        : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+        : '';
     it.usersRangesCode =
-      usersRangesCodes.length &gt; 0 ? usersRangesCodes.toLocaleString() : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+      usersRangesCodes.length &gt; 0 ? usersRangesCodes.toLocaleString() : '';
     it.usersRangesName =
-      usersRangesNames.length &gt; 0 ? usersRangesNames.toLocaleString() : <span class="branch-1 cbranch-no" title="branch not covered" >'';</span>
+      usersRangesNames.length &gt; 0 ? usersRangesNames.toLocaleString() : '';
     const row = [];
     for (let index = 0; index &lt; headersValue.length; index++) {
       const column = headersValue[index];
@@ -334,7 +334,7 @@ export default async function generateData(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-27T17:52:07.147Z
+                at 2026-02-25T16:52:28.935Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

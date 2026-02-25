@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.27% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>26/37</span>
+                <span class='fraction'>37/37</span>
             </div>
         
             
@@ -182,22 +182,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -254,9 +252,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -283,8 +283,8 @@ import { mountWhereBasedFilter } from '../../helpers/reports/sequelize';
 &nbsp;
 export default async function generateData(
   filters,
-  headers = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
-  rows = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span>
+  headers = [],
+  rows = [],
   opts = {},
   appLanguage = 'ptBr'
 ) {
@@ -363,21 +363,21 @@ export default async function generateData(
   for (let index = 0; index &lt; dados.length; index++) {
     const element = dados[index];
     rows.push([
-      element.branch &amp;&amp; element.branch.code ? element.branch.code : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
-      element.branch &amp;&amp; element.branch.name ? element.branch.name : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+      element.branch &amp;&amp; element.branch.code ? element.branch.code : '',
+      element.branch &amp;&amp; element.branch.name ? element.branch.name : '',
       // (element.warehouse &amp;&amp; element.warehouse.code &amp;&amp; element.warehouse.name) ? `${element.warehouse.code} - ${element.warehouse.name}` : '',
-      element.deposit &amp;&amp; element.deposit.code ? element.deposit.code : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
-      element.deposit &amp;&amp; element.deposit.name ? element.deposit.name : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
-      element.productCode ? element.productCode : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
-      element.product &amp;&amp; element.product.name ? element.product.name : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+      element.deposit &amp;&amp; element.deposit.code ? element.deposit.code : '',
+      element.deposit &amp;&amp; element.deposit.name ? element.deposit.name : '',
+      element.productCode ? element.productCode : '',
+      element.product &amp;&amp; element.product.name ? element.product.name : '',
       // (element.product &amp;&amp; element.product.fullName) ? element.product.fullName : '',
-      element.addressCode ? element.addressCode : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
-      element.address &amp;&amp; element.address.curve ? element.address.curve : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+      element.addressCode ? element.addressCode : '',
+      element.address &amp;&amp; element.address.curve ? element.address.curve : '',
       element.product &amp;&amp;
       element.product.productBranch &amp;&amp;
       element.product.productBranch.curve
         ? element.product.productBranch.curve
-        : <span class="branch-1 cbranch-no" title="branch not covered" >'',</span>
+        : '',
     ]);
   }
 }
@@ -388,7 +388,7 @@ export default async function generateData(
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-27T17:52:07.147Z
+                at 2026-02-25T16:52:28.935Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
